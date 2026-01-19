@@ -1,11 +1,11 @@
-# Compound Marketplace - Claude Code Plugin Marketplace
+# Every Marketplace - Claude Code Plugin Marketplace
 
 This repository is a Claude Code plugin marketplace that distributes the `compound-engineering` plugin to developers building with AI-powered tools.
 
 ## Repository Structure
 
 ```
-compound-marketplace/
+every-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace catalog (lists available plugins)
 ├── docs/                         # Documentation site (GitHub Pages)
@@ -261,7 +261,7 @@ python -m http.server 8000
 1. Install the marketplace locally:
 
    ```bash
-   claude /plugin marketplace add /Users/yourusername/compound-marketplace
+   claude /plugin marketplace add /Users/yourusername/every-marketplace
    ```
 
 2. Install the plugin:
