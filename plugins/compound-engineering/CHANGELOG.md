@@ -5,6 +5,30 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.33.0] - 2026-02-12
+
+### Added
+
+- **`setup` skill** — Interactive configurator for review agents
+  - Auto-detects project type (Rails, Python, TypeScript, etc.)
+  - Two paths: "Auto-configure" (one click) or "Customize" (pick stack, focus areas, depth)
+  - Writes `compound-engineering.local.md` in project root (tool-agnostic — works for Claude, Codex, OpenCode)
+  - Invoked automatically by `/workflows:review` when no settings file exists
+- **`learnings-researcher` in `/workflows:review`** — Always-run agent that searches `docs/solutions/` for past issues related to the PR
+- **`schema-drift-detector` wired into `/workflows:review`** — Conditional agent for PRs with migrations
+
+### Changed
+
+- **`/workflows:review`** — Now reads review agents from `compound-engineering.local.md` settings file. Falls back to invoking setup skill if no file exists.
+- **`/workflows:work`** — Review agents now configurable via settings file
+- **`/release-docs` command** — Moved from plugin to local `.claude/commands/` (repo maintenance, not distributed)
+
+### Removed
+
+- **`/technical_review` command** — Superseded by configurable review agents
+
+---
+
 ## [2.32.0] - 2026-02-11
 
 ### Added

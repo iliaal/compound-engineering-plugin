@@ -7,8 +7,8 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 | Component | Count |
 |-----------|-------|
 | Agents | 29 |
-| Commands | 25 |
-| Skills | 16 |
+| Commands | 22 |
+| Skills | 19 |
 | MCP Servers | 1 |
 
 ## Agents
@@ -94,7 +94,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `/create-agent-skill` | Create or edit Claude Code skills |
 | `/generate_command` | Generate new slash commands |
 | `/heal-skill` | Fix skill documentation issues |
-| `/technical_review` | Multi-agent technical/architecture review in parallel |
+| `/sync` | Sync Claude Code config across machines |
 | `/report-bug` | Report a bug in the plugin |
 | `/reproduce-bug` | Reproduce bugs using logs and console |
 | `/resolve_parallel` | Resolve TODO comments in parallel |
@@ -134,6 +134,8 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `every-style-editor` | Review copy for Every's style guide compliance |
 | `file-todos` | File-based todo tracking system |
 | `git-worktree` | Manage Git worktrees for parallel development |
+| `resolve-pr-parallel` | Resolve PR review comments in parallel |
+| `setup` | Configure which review agents run for your project |
 
 ### Multi-Agent Orchestration
 

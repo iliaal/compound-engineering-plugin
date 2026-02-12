@@ -175,22 +175,9 @@ This command takes a work document (plan, specification, or todo file) and execu
 
 2. **Consider Reviewer Agents** (Optional)
 
-   Use for complex, risky, or large changes:
+   Use for complex, risky, or large changes. Read agents from `compound-engineering.local.md` frontmatter (`review_agents`). If no settings file, invoke the `setup` skill to create one.
 
-   - **code-simplicity-reviewer**: Check for unnecessary complexity
-   - **kieran-rails-reviewer**: Verify Rails conventions (Rails projects)
-   - **performance-oracle**: Check for performance issues
-   - **security-sentinel**: Scan for security vulnerabilities
-   - **cora-test-reviewer**: Review test quality (Rails projects with comprehensive test coverage)
-
-   Run reviewers in parallel with Task tool:
-
-   ```
-   Task(code-simplicity-reviewer): "Review changes for simplicity"
-   Task(kieran-rails-reviewer): "Check Rails conventions"
-   ```
-
-   Present findings to user and address critical issues.
+   Run configured agents in parallel with Task tool. Present findings and address critical issues.
 
 3. **Final Validation**
    - All TodoWrite tasks marked completed
@@ -199,6 +186,16 @@ This command takes a work document (plan, specification, or todo file) and execu
    - Code follows existing patterns
    - Figma designs match (if applicable)
    - No console errors or warnings
+
+4. **Prepare Operational Validation Plan** (REQUIRED)
+   - Add a `## Post-Deploy Monitoring & Validation` section to the PR description for every change.
+   - Include concrete:
+     - Log queries/search terms
+     - Metrics or dashboards to watch
+     - Expected healthy signals
+     - Failure signals and rollback/mitigation trigger
+     - Validation window and owner
+   - If there is truly no production/runtime impact, still include the section with: `No additional operational monitoring required` and a one-line reason.
 
 ### Phase 4: Ship It
 
@@ -268,6 +265,22 @@ This command takes a work document (plan, specification, or todo file) and execu
    ## Testing
    - Tests added/modified
    - Manual testing performed
+
+   ## Post-Deploy Monitoring & Validation
+   - **What to monitor/search**
+     - Logs:
+     - Metrics/Dashboards:
+   - **Validation checks (queries/commands)**
+     - `command or query here`
+   - **Expected healthy behavior**
+     - Expected signal(s)
+   - **Failure signal(s) / rollback trigger**
+     - Trigger + immediate action
+   - **Validation window & owner**
+     - Window:
+     - Owner:
+   - **If no operational impact**
+     - `No additional operational monitoring required: <reason>`
 
    ## Before / After Screenshots
    | Before | After |
@@ -407,6 +420,7 @@ Before creating PR, verify:
 - [ ] Figma designs match implementation (if applicable)
 - [ ] Before/after screenshots captured and uploaded (for UI changes)
 - [ ] Commit messages follow conventional format
+- [ ] PR description includes Post-Deploy Monitoring & Validation section (or explicit no-impact rationale)
 - [ ] PR description includes summary, testing notes, and screenshots
 - [ ] PR description includes Compound Engineered badge
 

@@ -103,7 +103,7 @@ function convertAgent(agent: ClaudeAgent, options: ClaudeToOpenCodeOptions) {
     }
   }
 
-  const content = formatFrontmatter(frontmatter, agent.body)
+  const content = formatFrontmatter(frontmatter, rewriteClaudePaths(agent.body))
 
   return {
     name: agent.name,
@@ -117,7 +117,7 @@ function convertCommands(commands: ClaudeCommand[]): Record<string, OpenCodeComm
     if (command.disableModelInvocation) continue
     const entry: OpenCodeCommandConfig = {
       description: command.description,
-      template: command.body,
+      template: rewriteClaudePaths(command.body),
     }
     if (command.model && command.model !== "inherit") {
       entry.model = normalizeModel(command.model)
@@ -242,6 +242,12 @@ function renderHookStatements(
   }
 
   return statements
+}
+
+function rewriteClaudePaths(body: string): string {
+  return body
+    .replace(/~\/\.claude\//g, "~/.config/opencode/")
+    .replace(/\.claude\//g, ".opencode/")
 }
 
 function normalizeModel(model: string): string {
