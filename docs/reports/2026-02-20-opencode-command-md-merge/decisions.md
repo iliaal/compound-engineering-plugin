@@ -41,4 +41,43 @@ export type OpenCodeBundle = {
 ## Alternatives Considered
 
 1. Keep inline in config - Rejected: limits flexibility
-2. Use separate JSON files - Rejected: YAML frontmatter is more idiomatic for commands
+2. Use separate JSON files - Rejected: YAML frontmatter is more idiomatic for command
+
+---
+
+## Decision: Phase 2 - Converter Emits .md Files
+
+**Date:** 2026-02-20  
+**Status:** Implemented
+
+## Context
+
+The converter needs to populate `commandFiles` in the bundle rather than `config.command`.
+
+## Decision
+
+`convertCommands()` returns `OpenCodeCommandFile[]` where each file contains:
+- **filename**: `<command-name>.md`
+- **content**: YAML frontmatter (`description`, optionally `model`) + body (template text with Claude path rewriting)
+
+### Frontmatter Structure
+```yaml
+---
+description: "Review code changes"
+model: openai/gpt-4o
+---
+
+Template text here...
+```
+
+### Filtering
+- Commands with `disableModelInvocation: true` are excluded from output
+
+### Path Rewriting
+- `.claude/` paths rewritten to `.opencode/` in body content (via `rewriteClaudePaths()`)
+
+## Consequences
+
+- Converter now produces command files ready for file-system output
+- Writer phase will handle writing to `.opencode/commands/` directory
+- Phase 1 type changes are now fully utilizeds
