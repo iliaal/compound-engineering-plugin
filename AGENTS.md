@@ -49,7 +49,4 @@ Avoid adding a provider if the target spec is unstable or undocumented.
 
 ## Repository Docs Convention
 
-- **ADRs** live in `docs/decisions/` and are numbered with 4-digit zero-padding: `0001-short-title.md`, `0002-short-title.md`, etc.
-- **Orchestrator run reports** live in `docs/reports/`.
-
-When recording a significant decision (new provider, output format change, merge strategy), create an ADR in `docs/decisions/` following the numbering sequence.
+- **Plans** live in `docs/plans/` and track implementation progress.
