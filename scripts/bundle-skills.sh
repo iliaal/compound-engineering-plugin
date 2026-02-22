@@ -114,19 +114,27 @@ fi
 agent_count=$(find "$PLUGIN_DIR/agents" -name "*.md" -type f | wc -l)
 command_count=$(find "$PLUGIN_DIR/commands" -name "*.md" -type f | wc -l)
 skill_count=$(find "$SKILLS_DIR" -name "SKILL.md" -type f | wc -l)
+hook_count=0
+if [[ -f "$PLUGIN_DIR/hooks/hooks.json" ]]; then
+    hook_count=$(jq '[.[] | .[].hooks | length] | add // 0' "$PLUGIN_DIR/hooks/hooks.json")
+fi
 mcp_count=$(jq '.mcpServers | length' "$PLUGIN_JSON")
+
+# Build hook fragment for descriptions
+hook_fragment=""
+[[ "$hook_count" -gt 0 ]] && hook_fragment="${hook_count} hook, "
 
 # --- Update metadata ---
 
 if [[ "$DRY_RUN" == false ]]; then
     # Update plugin.json description
-    desc="AI-powered development tools. ${agent_count} agents, ${command_count} commands, ${skill_count} skills, ${mcp_count} MCP server for code review, research, design, and workflow automation."
+    desc="AI-powered development tools. ${agent_count} agents, ${command_count} commands, ${skill_count} skills, ${hook_fragment}${mcp_count} MCP server for code review, research, design, and workflow automation."
     tmp=$(mktemp)
     jq --arg d "$desc" '.description = $d' "$PLUGIN_JSON" > "$tmp"
     mv "$tmp" "$PLUGIN_JSON"
 
     # Update marketplace.json plugin description
-    mkt_desc="AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes ${agent_count} specialized agents, ${command_count} commands, and ${skill_count} skills."
+    mkt_desc="AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes ${agent_count} specialized agents, ${command_count} commands, ${skill_count} skills, and ${hook_fragment}${mcp_count} MCP server."
     tmp=$(mktemp)
     jq --arg d "$mkt_desc" '.plugins[0].description = $d' "$MARKETPLACE_JSON" > "$tmp"
     mv "$tmp" "$MARKETPLACE_JSON"

@@ -9,6 +9,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 | Agents | 26 |
 | Commands | 19 |
 | Skills | 29 |
+| Hooks | 1 |
 | MCP Servers | 1 |
 
 ## Agents
@@ -162,6 +163,21 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | [`orchestrating-swarms`](skills/orchestrating-swarms/SKILL.md) | Comprehensive guide to multi-agent swarm orchestration |
 
 
+## Hooks
+
+| Hook | Event | Description |
+|------|-------|-------------|
+| `inject-skills` | PreToolUse (Task) | Injects relevant skill instructions into subagent prompts |
+
+When the main agent spawns a subagent via the Task tool, this hook analyzes the subagent's prompt and identifies matching skills based on trigger keywords. It prepends "Read these SKILL.md files" instructions to the prompt so subagents follow the same methodology as the main agent.
+
+Skills are matched using a 3-tier priority system:
+1. **Methodology** (planning, debugging, code-review, etc.) — process skills, matched first
+2. **Domain** (php-laravel, react-frontend, terraform, etc.) — language/framework skills
+3. **Supporting** (writing, md-docs, reflect, etc.) — workflow skills
+
+Up to 5 matching skills are injected per subagent call, prioritized by tier. Subagent types without file read access (e.g., Bash) are skipped.
+
 ## MCP Servers
 
 | Server | Description |
@@ -188,26 +204,22 @@ claude /plugin install compound-engineering
 
 ### MCP Server Setup
 
-**Issue:** The bundled Docfork MCP server may not load automatically when the plugin is installed, and requires an API key for use.
+**Issue:** The bundled Docfork MCP server may not load automatically when the plugin is installed.
 
-**Setup:**
-
-1. Sign up for a free API key at [docfork.com](https://docfork.com)
-2. Add to your project's `.claude/settings.json` (or `~/.claude/settings.json` for all projects):
+**Setup:** Add to your project's `.claude/settings.json` (or `~/.claude/settings.json` for all projects):
 
 ```json
 {
   "mcpServers": {
     "docfork": {
       "type": "http",
-      "url": "https://mcp.docfork.com/mcp",
-      "headers": {
-        "DOCFORK_API_KEY": "your-api-key-here"
-      }
+      "url": "https://mcp.docfork.com/mcp"
     }
   }
 }
 ```
+
+No API key required. Free tier includes 1,000 requests/month.
 
 ## Version History
 

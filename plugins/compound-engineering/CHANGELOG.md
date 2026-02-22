@@ -5,6 +5,16 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.38.0] - 2026-02-22
+
+### Added
+
+- **`inject-skills` hook** — PreToolUse hook that intercepts Task tool calls and injects relevant SKILL.md file paths into subagent prompts via `updatedInput`, ensuring subagents follow skill methodology instead of working manually
+- **Skill pattern matching** — 29 skills mapped to regex trigger patterns with 3-tier priority system (methodology > domain > supporting), capped at 5 skills per injection
+- **`scripts/generate-skill-hooks.sh`** — generation script that extracts trigger keywords from SKILL.md frontmatter to produce `hooks/skill-patterns.sh` as a draft for hand-tuning
+
+---
+
 ## [2.37.3] - 2026-02-22
 
 ### Fixed

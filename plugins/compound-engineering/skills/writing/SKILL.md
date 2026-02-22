@@ -4,7 +4,7 @@ description: >-
   Prose editing, rewriting, and humanizing text for natural tone. Use when asked
   to "write", "rewrite", "edit", "humanize", "improve text", "fix the tone",
   "remove AI language", "proofread", or when writing copy, docs, blog posts,
-  articles, or emails.
+  articles, emails, PR descriptions, or plans.
 ---
 
 # Human Writing
