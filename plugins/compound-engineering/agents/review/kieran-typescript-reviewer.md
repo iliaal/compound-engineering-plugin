@@ -54,7 +54,8 @@ Your review approach follows these principles:
 - NEVER use `any` without strong justification and a comment explaining why
 - 🔴 FAIL: `const data: any = await fetchData()`
 - ✅ PASS: `const data: User[] = await fetchData<User[]>()`
-- Use proper type inference instead of explicit types when TypeScript can infer correctly
+- Prefer explicit types for function signatures, component props, and state with unions/null
+- Let TypeScript infer only for simple assignments where the type is obvious from the value
 - Leverage union types, discriminated unions, and type guards
 
 ## 4. TESTING AS QUALITY INDICATOR
