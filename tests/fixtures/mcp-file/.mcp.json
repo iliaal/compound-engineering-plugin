@@ -1,6 +1,0 @@
-{
-  "remote": {
-    "type": "sse",
-    "url": "https://example.com/stream"
-  }
-}

@@ -23,7 +23,7 @@ export default defineCommand({
     to: {
       type: "string",
       default: "opencode",
-      description: "Target format (opencode | codex | droid | cursor | pi | copilot | gemini | kiro)",
+      description: "Target format (opencode | codex)",
     },
     output: {
       type: "string",
@@ -34,11 +34,6 @@ export default defineCommand({
       type: "string",
       alias: "codex-home",
       description: "Write Codex output to this .codex root (ex: ~/.codex)",
-    },
-    piHome: {
-      type: "string",
-      alias: "pi-home",
-      description: "Write Pi output to this Pi root (ex: ~/.pi/agent or ./.pi)",
     },
     also: {
       type: "string",
@@ -79,7 +74,6 @@ export default defineCommand({
     const plugin = await loadClaudePlugin(String(args.source))
     const outputRoot = resolveOutputRoot(args.output)
     const codexHome = resolveTargetHome(args.codexHome, path.join(os.homedir(), ".codex"))
-    const piHome = resolveTargetHome(args.piHome, path.join(os.homedir(), ".pi", "agent"))
 
     const options = {
       agentMode: String(args.agentMode) === "primary" ? "primary" : "subagent",
@@ -87,7 +81,7 @@ export default defineCommand({
       permissions: permissions as PermissionMode,
     }
 
-    const primaryOutputRoot = resolveTargetOutputRoot(targetName, outputRoot, codexHome, piHome)
+    const primaryOutputRoot = resolveTargetOutputRoot(targetName, outputRoot, codexHome)
     const bundle = target.convert(plugin, options)
     if (!bundle) {
       throw new Error(`Target ${targetName} did not return a bundle.`)
@@ -113,7 +107,7 @@ export default defineCommand({
         console.warn(`Skipping ${extra}: no output returned.`)
         continue
       }
-      const extraRoot = resolveTargetOutputRoot(extra, path.join(outputRoot, extra), codexHome, piHome)
+      const extraRoot = resolveTargetOutputRoot(extra, path.join(outputRoot, extra), codexHome)
       await handler.write(extraRoot, extraBundle)
       console.log(`Converted ${plugin.manifest.name} to ${extra} at ${extraRoot}`)
     }
@@ -140,12 +134,7 @@ function resolveOutputRoot(value: unknown): string {
   return process.cwd()
 }
 
-function resolveTargetOutputRoot(targetName: string, outputRoot: string, codexHome: string, piHome: string): string {
+function resolveTargetOutputRoot(targetName: string, outputRoot: string, codexHome: string): string {
   if (targetName === "codex") return codexHome
-  if (targetName === "pi") return piHome
-  if (targetName === "droid") return path.join(os.homedir(), ".factory")
-  if (targetName === "cursor") return path.join(outputRoot, ".cursor")
-  if (targetName === "gemini") return path.join(outputRoot, ".gemini")
-  if (targetName === "kiro") return path.join(outputRoot, ".kiro")
   return outputRoot
 }

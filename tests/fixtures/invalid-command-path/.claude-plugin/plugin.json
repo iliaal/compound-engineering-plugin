@@ -1,5 +1,0 @@
-{
-  "name": "invalid-command-path",
-  "version": "1.0.0",
-  "commands": ["../outside-commands"]
-}

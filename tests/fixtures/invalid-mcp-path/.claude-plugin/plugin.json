@@ -1,5 +1,0 @@
-{
-  "name": "invalid-mcp-path",
-  "version": "1.0.0",
-  "mcpServers": ["../outside-mcp.json"]
-}
