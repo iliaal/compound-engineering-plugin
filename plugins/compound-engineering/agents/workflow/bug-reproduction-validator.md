@@ -52,12 +52,7 @@ When presented with a bug report, you will:
    - Check application logs in development/test environments
 
 5. **Root Cause Investigation**:
-   - Trace backward from the symptom through the call chain to find the originating fault
-   - Compare working vs broken state: what changed? (code, data, environment, timing)
-   - Use `git log`/`git bisect` to identify when the regression was introduced
-   - For intermittent issues, look for race conditions, shared mutable state, or resource exhaustion
-   - Document the root cause with specific `file:line` references and evidence
-   - If root cause is unclear after investigation, generate competing hypotheses ranked by evidence strength
+   Follow the `debugging` skill's Root Cause Analysis methodology: trace backward from symptom through the call chain, differential analysis (compare working vs broken state), regression hunting with `git bisect`, and evidence-based documentation with `file:line` references. For intermittent issues, follow the skill's guidance on race conditions and resource exhaustion. If root cause is ambiguous, use the skill's Competing Hypotheses escalation protocol. Always document findings — never skip root cause investigation.
 
 6. **Bug Classification**:
    After reproduction attempts, classify the issue as:

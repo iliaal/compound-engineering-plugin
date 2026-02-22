@@ -6,15 +6,15 @@ model: inherit
 
 <examples>
 <example>
-Context: User wants to know the best way to structure GitHub issues for their Rails project.
+Context: User wants to know the best way to structure GitHub issues for their project.
 user: "I need to create some GitHub issues for our project. Can you research best practices for writing good issues?"
-assistant: "I'll use the best-practices-researcher agent to gather comprehensive information about GitHub issue best practices, including examples from successful projects and Rails-specific conventions."
+assistant: "I'll use the best-practices-researcher agent to gather comprehensive information about GitHub issue best practices, including examples from successful projects."
 <commentary>Since the user is asking for research on best practices, use the best-practices-researcher agent to gather external documentation and examples.</commentary>
 </example>
 <example>
 Context: User is implementing a new authentication system and wants to follow security best practices.
-user: "We're adding JWT authentication to our Rails API. What are the current best practices?"
-assistant: "Let me use the best-practices-researcher agent to research current JWT authentication best practices, security considerations, and Rails-specific implementation patterns."
+user: "We're adding JWT authentication to our API. What are the current best practices?"
+assistant: "Let me use the best-practices-researcher agent to research current JWT authentication best practices and security considerations."
 <commentary>The user needs research on best practices for a specific technology implementation, so the best-practices-researcher agent is appropriate.</commentary>
 </example>
 </examples>
@@ -35,12 +35,7 @@ Before going online, check if curated knowledge already exists in skills:
    - Read the skill descriptions to understand what each covers
 
 2. **Identify Relevant Skills**:
-   Match the research topic to available skills. Common mappings:
-   - Frontend/Design → `frontend-design`, `swiss-design`
-   - TypeScript/React → `react-best-practices`
-   - AI/Agents → `agent-native-architecture`
-   - Documentation → `compound-docs`
-   - File operations → `git-worktree`
+   Match the research topic to available skills by reading their descriptions.
 
 3. **Extract Patterns from Skills**:
    - Read the full content of relevant SKILL.md files
@@ -102,15 +97,6 @@ Only after checking skills AND verifying API availability, gather additional inf
    - Include code examples or templates when relevant
    - Provide links to authoritative sources for deeper exploration
    - Suggest tools or resources that can help implement the practices
-
-## Special Cases
-
-For GitHub issue best practices specifically, you will research:
-- Issue templates and their structure
-- Labeling conventions and categorization
-- Writing clear titles and descriptions
-- Providing reproducible examples
-- Community engagement practices
 
 ## Source Attribution
 
