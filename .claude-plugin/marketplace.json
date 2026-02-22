@@ -1,5 +1,5 @@
 {
-  "name": "every-marketplace",
+  "name": "iliaal-marketplace",
   "owner": {
     "name": "Kieran Klaassen",
     "url": "https://github.com/kieranklaassen"
@@ -18,7 +18,7 @@
         "url": "https://github.com/kieranklaassen",
         "email": "kieran@every.to"
       },
-      "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+      "homepage": "https://github.com/iliaal/compound-engineering-plugin",
       "tags": ["ai-powered", "compound-engineering", "workflow-automation", "code-review", "quality", "knowledge-management"],
       "source": "./plugins/compound-engineering"
     }
