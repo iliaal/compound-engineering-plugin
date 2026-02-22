@@ -51,11 +51,13 @@ Your review approach follows these principles:
 
 ## 3. TYPE HINTS CONVENTION
 
-- ALWAYS use type hints for function parameters and return values
+- Use type hints for function signatures (parameters and return values), class attributes, and module-level variables
+- Let type checkers infer types for simple local assignments where the value makes the type obvious
 - 🔴 FAIL: `def process_data(items):`
 - ✅ PASS: `def process_data(items: list[User]) -> dict[str, Any]:`
 - Use modern Python 3.10+ type syntax: `list[str]` not `List[str]`
 - Leverage union types with `|` operator: `str | None` not `Optional[str]`
+- Include `py.typed` marker in packages; use `ty` or `mypy` for type checking
 
 ## 4. TESTING AS QUALITY INDICATOR
 
