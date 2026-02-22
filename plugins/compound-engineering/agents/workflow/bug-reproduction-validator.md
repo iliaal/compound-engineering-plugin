@@ -34,7 +34,7 @@ When presented with a bug report, you will:
    - Set up the minimal test case needed to reproduce the issue
    - Execute the reproduction steps methodically, documenting each step
    - If the bug involves data states, check fixtures or create appropriate test data
-   - For UI bugs, use agent-browser CLI to visually verify (see `agent-browser` skill)
+   - For UI bugs, inspect component state and rendered output
    - For backend bugs, examine logs, database states, and service interactions
 
 3. **Validation Methodology**:
@@ -49,9 +49,17 @@ When presented with a bug report, you will:
    - Check related test files to understand expected behavior
    - Review error handling and validation logic
    - Examine database constraints and model validations
-   - For Rails apps, check logs in development/test environments
+   - Check application logs in development/test environments
 
-5. **Bug Classification**:
+5. **Root Cause Investigation**:
+   - Trace backward from the symptom through the call chain to find the originating fault
+   - Compare working vs broken state: what changed? (code, data, environment, timing)
+   - Use `git log`/`git bisect` to identify when the regression was introduced
+   - For intermittent issues, look for race conditions, shared mutable state, or resource exhaustion
+   - Document the root cause with specific `file:line` references and evidence
+   - If root cause is unclear after investigation, generate competing hypotheses ranked by evidence strength
+
+6. **Bug Classification**:
    After reproduction attempts, classify the issue as:
    - **Confirmed Bug**: Successfully reproduced with clear deviation from expected behavior
    - **Cannot Reproduce**: Unable to reproduce with given steps
@@ -65,7 +73,7 @@ When presented with a bug report, you will:
    - **Reproduction Status**: Confirmed/Cannot Reproduce/Not a Bug
    - **Steps Taken**: Detailed list of what you did to reproduce
    - **Findings**: What you discovered during investigation
-   - **Root Cause**: If identified, the specific code or configuration causing the issue
+   - **Root Cause**: The specific code, configuration, or condition causing the issue (always investigate — never skip this)
    - **Evidence**: Relevant code snippets, logs, or test results
    - **Severity Assessment**: Critical/High/Medium/Low based on impact
    - **Recommended Next Steps**: Whether to fix, close, or investigate further
