@@ -11,14 +11,21 @@
   "plugins": [
     {
       "name": "compound-engineering",
-      "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 22 specialized agents, 19 commands, and 10 skills.",
-      "version": "2.36.0",
+      "description": "AI-powered development tools that get smarter with every use. Make each unit of engineering work easier than the last. Includes 26 specialized agents, 19 commands, and 29 skills.",
+      "version": "2.37.0",
       "author": {
         "name": "Ilia Alshanetsky",
         "url": "https://github.com/iliaal"
       },
       "homepage": "https://github.com/iliaal/compound-engineering-plugin",
-      "tags": ["ai-powered", "compound-engineering", "workflow-automation", "code-review", "quality", "knowledge-management"],
+      "tags": [
+        "ai-powered",
+        "compound-engineering",
+        "workflow-automation",
+        "code-review",
+        "quality",
+        "knowledge-management"
+      ],
       "source": "./plugins/compound-engineering"
     }
   ]

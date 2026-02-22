@@ -5,6 +5,29 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.37.0] - 2026-02-22
+
+### Added
+
+- **Bundle infrastructure** — `scripts/bundle-skills.sh` and `.bundle-manifest.json` for syncing generic skills from ai-skills repo into the plugin for distribution
+- **19 bundled skills** — code-review, debugging, linux-bash-scripting, md-docs, meta-prompting, nodejs-backend, php-laravel, pinescript, planning, postgresql, python-services, react-frontend, refine-prompt, reflect, simplifying-code, terraform, testing-laravel, testing-react, writing
+- **`accessibility-tester` agent** — WCAG 2.1 audit: keyboard navigation, screen reader, contrast, ARIA, forms, cognitive accessibility
+- **`cloud-architect` agent** — Cloud infrastructure design: Well-Architected Framework, cost optimization, DR, migration strategies, secrets management
+- **`deployment-engineer` agent** — CI/CD pipeline design, deployment strategies (blue-green, canary, rolling, feature flags), GitOps workflows
+- **`devops-engineer` agent** — Docker containerization, monitoring/observability (RED/USE methods, OpenTelemetry), incident management
+- **External agents analysis** — `docs/external-agents-analysis.md` documenting evaluation of 14 external agents (4 imported, 10 skipped with rationale)
+
+### Changed
+
+- **Agent/skill overlap resolution** — Resolved 6 overlap pairs between agents and skills with clear delegation boundaries (code-simplicity-reviewer→simplifying-code, kieran-typescript-reviewer→domain skills, bug-reproduction-validator→debugging, security-sentinel→nodejs-backend, and more)
+- **`php-laravel` skill** — Updated to PHP 8.4 (property hooks, asymmetric visibility, array_find/any/all), added PHPStan level 8+, production performance section (OPcache, JIT, preloading), new `references/laravel-ecosystem.md` (Notifications, Task Scheduling, Custom Casts)
+- **`debugging` skill** — Expanded concurrency coverage (deadlocks, async race conditions, pool exhaustion), added Postmortem template
+- **`compound-docs` skill** — Generalized all Rails/CORA-specific schema enums, field names, and examples to be stack-agnostic
+- **`orchestrating-swarms` skill** — Removed Rails-specific examples from prompts
+- **`file-todos` skill** — Generalized Rails Todo model reference
+
+---
+
 ## [2.36.0] - 2026-02-21
 
 ### Removed

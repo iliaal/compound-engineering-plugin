@@ -1,0 +1,16 @@
+{
+  "native": [
+    "agent-native-architecture",
+    "brainstorming",
+    "compound-docs",
+    "document-review",
+    "file-todos",
+    "frontend-design",
+    "git-worktree",
+    "orchestrating-swarms",
+    "resolve-pr-parallel",
+    "setup"
+  ],
+  "source": "~/ai/ai-skills/skills",
+  "bundled_at": "2026-02-22T16:40:38Z"
+}

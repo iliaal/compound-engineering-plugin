@@ -239,10 +239,9 @@ grep -r "payment" todos/
 - Standalone markdown files with YAML frontmatter
 - Used by humans and agents
 
-**Rails Todo model:**
-- Database model in `app/models/todo.rb`
-- User-facing feature in the application
-- Active Record CRUD operations
+**Application Todo model (user-facing):**
+- Database model for user-facing task management
+- ORM CRUD operations
 - Different from this file-based system
 
 **TodoWrite tool:**

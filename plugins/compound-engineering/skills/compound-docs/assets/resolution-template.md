@@ -2,12 +2,12 @@
 module: [Module name or "System" for system-wide]
 date: [YYYY-MM-DD]
 problem_type: [build_error|test_failure|runtime_error|performance_issue|database_issue|security_issue|ui_bug|integration_issue|logic_error]
-component: [rails_model|rails_controller|rails_view|service_object|background_job|database|frontend_stimulus|hotwire_turbo|email_processing|brief_system|assistant|authentication|payments]
+component: [model|controller|view|service_object|background_job|database|frontend_component|api_endpoint|authentication|payments]
 symptoms:
   - [Observable symptom 1 - specific error message or behavior]
   - [Observable symptom 2 - what user actually saw/experienced]
 root_cause: [missing_association|missing_include|missing_index|wrong_api|scope_issue|thread_violation|async_timing|memory_leak|config_error|logic_error|test_isolation|missing_validation|missing_permission]
-rails_version: [7.1.2 - optional]
+framework_version: [7.1.2 - optional]
 resolution_type: [code_fix|migration|config_change|test_fix|dependency_update|environment_setup]
 severity: [critical|high|medium|low]
 tags: [keyword1, keyword2, keyword3]
@@ -20,8 +20,8 @@ tags: [keyword1, keyword2, keyword3]
 
 ## Environment
 - Module: [Name or "System-wide"]
-- Rails Version: [e.g., 7.1.2]
-- Affected Component: [e.g., "Email Processing model", "Brief System service", "Authentication controller"]
+- Framework/Language Version: [e.g., Laravel 11.0, Python 3.12, Node 20.0]
+- Affected Component: [e.g., "User model", "Payment service", "Auth controller"]
 - Date: [YYYY-MM-DD when this was solved]
 
 ## Symptoms
@@ -47,7 +47,7 @@ tags: [keyword1, keyword2, keyword3]
 [The actual fix that worked - provide specific details]
 
 **Code changes** (if applicable):
-```ruby
+```
 # Before (broken):
 [Show the problematic code]
 
@@ -56,7 +56,7 @@ tags: [keyword1, keyword2, keyword3]
 ```
 
 **Database migration** (if applicable):
-```ruby
+```
 # Migration change:
 [Show what was changed in the migration]
 ```
@@ -72,7 +72,7 @@ tags: [keyword1, keyword2, keyword3]
 [Technical explanation of:]
 1. What was the ROOT CAUSE of the problem?
 2. Why does the solution address this root cause?
-3. What was the underlying issue (API misuse, configuration error, Rails version issue, etc.)?
+3. What was the underlying issue (API misuse, configuration error, version incompatibility, etc.)?
 
 [Be detailed enough that future developers understand the "why", not just the "what"]
 

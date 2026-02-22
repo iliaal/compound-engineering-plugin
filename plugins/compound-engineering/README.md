@@ -6,19 +6,20 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 | Component | Count |
 |-----------|-------|
-| Agents | 22 |
+| Agents | 26 |
 | Commands | 19 |
-| Skills | 10 |
+| Skills | 29 |
 | MCP Servers | 1 |
 
 ## Agents
 
 Agents are organized into categories for easier discovery.
 
-### Review (10)
+### Review (11)
 
 | Agent | Description |
 |-------|-------------|
+| `accessibility-tester` | WCAG 2.1 accessibility audit: keyboard, screen reader, contrast, ARIA, forms |
 | `agent-native-reviewer` | Verify features are agent-native (action + context parity) |
 | `architecture-strategist` | Analyze architectural decisions and compliance |
 | `code-simplicity-reviewer` | Final pass for simplicity and minimalism |
@@ -41,19 +42,22 @@ Agents are organized into categories for easier discovery.
 | `learnings-researcher` | Search institutional learnings for relevant past solutions |
 | `repo-research-analyst` | Research repository structure and conventions |
 
-### Design (3)
+### Design (4)
 
 | Agent | Description |
 |-------|-------------|
+| `cloud-architect` | Cloud infrastructure design, cost optimization, DR, migration strategies |
 | `design-implementation-reviewer` | Verify UI implementations match Figma designs |
 | `design-iterator` | Iteratively refine UI through systematic design iterations |
 | `figma-design-sync` | Synchronize web implementations with Figma designs |
 
-### Workflow (3)
+### Workflow (6)
 
 | Agent | Description |
 |-------|-------------|
 | `bug-reproduction-validator` | Systematically reproduce and validate bug reports |
+| `deployment-engineer` | CI/CD pipeline design, deployment strategies, GitOps workflows |
+| `devops-engineer` | Docker containerization, monitoring/observability, incident management |
 | `pr-comment-resolver` | Address PR comments and implement fixes |
 | `spec-flow-analyzer` | Analyze user flows and identify gaps in specifications |
 
@@ -98,24 +102,58 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | Skill | Description |
 |-------|-------------|
 | `agent-native-architecture` | Build AI agents using prompt-native architecture |
+| `frontend-design` | Create production-grade frontend interfaces |
+| `react-frontend` | React, TypeScript, and Next.js patterns |
+| `simplifying-code` | Simplify, polish, and declutter code |
 
-### Development Tools
+### Language & Framework
 
 | Skill | Description |
 |-------|-------------|
-| `compound-docs` | Capture solved problems as categorized documentation |
-| `frontend-design` | Create production-grade frontend interfaces |
+| `nodejs-backend` | Node.js backend patterns: Express/Fastify, TypeScript, validation |
+| `php-laravel` | Modern PHP 8.4 and Laravel patterns |
+| `python-services` | Python CLI tools, async parallelism, FastAPI services |
+| `terraform` | Terraform/OpenTofu configuration, modules, testing, state |
+| `postgresql` | PostgreSQL schema design, query optimization, indexing |
+| `pinescript` | Pine Script v6 patterns for TradingView |
+| `linux-bash-scripting` | Defensive Bash scripting for Linux |
+
+### Testing
+
+| Skill | Description |
+|-------|-------------|
+| `testing-laravel` | Laravel tests using PHPUnit/Pest |
+| `testing-react` | React/TypeScript tests using Vitest and RTL |
+
+### Code Quality & Review
+
+| Skill | Description |
+|-------|-------------|
+| `code-review` | Two-stage code reviews with severity-ranked findings |
+| `debugging` | Systematic root-cause debugging with postmortem |
+| `planning` | Software implementation planning with file persistence |
 
 ### Content & Workflow
 
 | Skill | Description |
 |-------|-------------|
-| `brainstorming` | Explore requirements and approaches through collaborative dialogue |
+| `brainstorming` | Explore requirements and approaches through dialogue |
+| `compound-docs` | Capture solved problems as categorized documentation |
 | `document-review` | Improve documents through structured self-review |
 | `file-todos` | File-based todo tracking system |
 | `git-worktree` | Manage Git worktrees for parallel development |
+| `md-docs` | Manages project documentation: AGENTS.md, README.md |
 | `resolve-pr-parallel` | Resolve PR review comments in parallel |
 | `setup` | Configure which review agents run for your project |
+| `writing` | Prose editing, rewriting, and humanizing text |
+
+### AI & Prompting
+
+| Skill | Description |
+|-------|-------------|
+| `meta-prompting` | Enhanced reasoning patterns via slash commands |
+| `refine-prompt` | Transform vague prompts into precise instructions |
+| `reflect` | Session retrospective and skill audit |
 
 ### Multi-Agent Orchestration
 

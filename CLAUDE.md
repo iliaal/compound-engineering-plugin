@@ -12,9 +12,9 @@ compound-engineering-plugin/
     └── compound-engineering/     # The plugin
         ├── .claude-plugin/
         │   └── plugin.json      # Plugin metadata
-        ├── agents/              # 22 agents (review, research, design, workflow)
+        ├── agents/              # 26 agents (review, research, design, workflow)
         ├── commands/            # 19 slash commands
-        ├── skills/              # 10 skills
+        ├── skills/              # 29 skills (10 native + 19 bundled from ai-skills)
         ├── README.md            # Plugin documentation
         └── CHANGELOG.md         # Version history
 ```

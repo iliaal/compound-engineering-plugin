@@ -364,7 +364,7 @@ Task({
 Task({
   subagent_type: "compound-engineering:research:best-practices-researcher",
   description: "Research auth best practices",
-  prompt: "Research current best practices for JWT authentication in Rails 2024-2026"
+  prompt: "Research current best practices for JWT authentication 2024-2026"
 })
 
 // Framework documentation
@@ -923,7 +923,7 @@ Research first, then implement:
 const research = await Task({
   subagent_type: "compound-engineering:research:best-practices-researcher",
   description: "Research caching patterns",
-  prompt: "Research best practices for implementing caching in Rails APIs. Include: cache invalidation strategies, Redis vs Memcached, cache key design."
+  prompt: "Research best practices for implementing API caching. Include: cache invalidation strategies, Redis vs Memcached, cache key design."
 })
 
 // 2. Use research to guide implementation
