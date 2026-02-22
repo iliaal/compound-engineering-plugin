@@ -2,7 +2,7 @@
 
 Claude Code plugin marketplace distributing the `compound-engineering` plugin for PHP/React/Python/JavaScript/TypeScript workflows.
 
-## Repository Structure
+## Repository structure
 
 ```
 compound-engineering-plugin/
@@ -19,7 +19,14 @@ compound-engineering-plugin/
         └── CHANGELOG.md         # Version history
 ```
 
-## Updating the Plugin
+## Working agreement
+
+- Do not delete or overwrite user data. Avoid destructive commands.
+- Hyphens for all file naming (agents, skills, commands).
+- `model: inherit` removed from agents — only declare when overriding (e.g., `model: haiku`).
+- Agents reference skills (one-directional); skills stay generic and portable.
+
+## Updating the plugin
 
 When agents, commands, or skills are added/removed:
 
@@ -33,48 +40,60 @@ ls -d plugins/compound-engineering/skills/*/ 2>/dev/null | wc -l
 
 ### 2. Update counts in ALL locations
 
-- [ ] `plugins/compound-engineering/.claude-plugin/plugin.json` → `description`
-- [ ] `.claude-plugin/marketplace.json` → plugin `description`
-- [ ] `plugins/compound-engineering/README.md` → components table
+- `plugins/compound-engineering/.claude-plugin/plugin.json` → `description`
+- `.claude-plugin/marketplace.json` → plugin `description`
+- `plugins/compound-engineering/README.md` → components table
 
 ### 3. Bump version
 
-- [ ] `plugins/compound-engineering/.claude-plugin/plugin.json` → `version`
-- [ ] `.claude-plugin/marketplace.json` → plugin `version`
+- `plugins/compound-engineering/.claude-plugin/plugin.json` → `version`
+- `.claude-plugin/marketplace.json` → plugin `version`
 
 ### 4. Update docs
 
-- [ ] `plugins/compound-engineering/README.md` → component tables
-- [ ] `plugins/compound-engineering/CHANGELOG.md` → document changes
+- `plugins/compound-engineering/README.md` → component tables
+- `plugins/compound-engineering/CHANGELOG.md` → document changes
 
 ### 5. Validate JSON
 
 ```bash
-cat .claude-plugin/marketplace.json | jq .
-cat plugins/compound-engineering/.claude-plugin/plugin.json | jq .
+jq . .claude-plugin/marketplace.json
+jq . plugins/compound-engineering/.claude-plugin/plugin.json
 ```
 
-## Common Tasks
+## Common tasks
 
-### Adding a New Agent
+### Adding a new agent
 
 1. Create `plugins/compound-engineering/agents/<category>/new-agent.md`
 2. Update counts and README tables
 3. Test with `claude agent new-agent "test"`
 
-### Adding a New Command
+### Adding a new command
 
 1. Create `plugins/compound-engineering/commands/new-command.md`
 2. Update counts and README tables
 3. Test with `claude /new-command`
 
-### Adding a New Skill
+### Adding a new skill
 
 1. Create `plugins/compound-engineering/skills/skill-name/SKILL.md`
 2. Update counts and README tables
 3. Test with `claude skill skill-name`
 
-## Marketplace.json Spec
+## Bundle workflow
+
+19 skills are bundled from the `ai-skills` repo via `scripts/bundle-skills.sh`. 10 native skills are maintained directly in this repo. `.bundle-manifest.json` tracks native vs bundled.
+
+```
+1. Edit skills in ai-skills repo
+2. Run: bash scripts/bundle-skills.sh
+3. Review: git diff plugins/compound-engineering/skills/
+4. Update CHANGELOG.md in both repos
+5. Commit and push both repos
+```
+
+## Marketplace.json spec
 
 Only include fields from the official Claude Code spec:
 
