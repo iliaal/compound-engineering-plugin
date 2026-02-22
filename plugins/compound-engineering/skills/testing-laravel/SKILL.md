@@ -1,10 +1,10 @@
 ---
 name: testing-laravel
 description: >-
-  Writes Laravel tests using PHPUnit. Use when "write tests", "add tests",
-  "phpunit", "laravel test", "feature test", "unit test", "mock", "factory",
-  or testing controllers, models, services, actions, jobs, artisan commands,
-  or API endpoints.
+  Writes and reviews Laravel tests using PHPUnit. Use when "write tests", "add
+  tests", "review tests", "check tests", "phpunit", "laravel test", "feature
+  test", "unit test", "mock", "factory", or testing/reviewing controllers,
+  models, services, actions, jobs, artisan commands, or API endpoints.
 ---
 
 # Testing Laravel

@@ -1,6 +1,6 @@
 ---
 name: testing-react
-description: Writes React/TypeScript tests using Vitest and React Testing Library. Use when "write react tests", "vitest", "component test", "hook test", "RTL", "testing library", "snapshot test", or testing React components, hooks, and utilities.
+description: Writes and reviews React/TypeScript tests using Vitest and React Testing Library. Use when "write react tests", "review tests", "check tests", "vitest", "component test", "hook test", "RTL", "testing library", "snapshot test", or testing/reviewing React components, hooks, and utilities.
 ---
 
 ## Test Classification
