@@ -110,6 +110,7 @@ jq . plugins/compound-engineering/.claude-plugin/plugin.json
 | `scripts/update-metadata.sh` | Count components, update `plugin.json` + `marketplace.json` descriptions | After any component change |
 | `scripts/bundle-skills.sh` | Bundle skills from ai-skills repo (calls `update-metadata.sh` automatically) | After editing bundled skills |
 | `scripts/generate-skill-hooks.sh` | Generate draft `hooks/skill-patterns.sh` from SKILL.md frontmatter | After adding/removing skills (hand-tune regex after) |
+| `scripts/sync-to-tools.sh` | Symlink plugin skills to `~/.agents/skills`, `~/.codex/skills`, `~/.kilocode/skills` | After bundling or adding native skills |
 
 ## Marketplace.json spec
 
