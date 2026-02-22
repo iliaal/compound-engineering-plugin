@@ -5,6 +5,21 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.36.0] - 2026-02-21
+
+### Removed
+
+- **Ruby/Rails agents** — Removed `dhh-rails-reviewer`, `kieran-rails-reviewer`, `schema-drift-detector`, `lint`, and `ankane-readme-writer` agents
+- **Ruby/Rails skills** — Removed `dhh-rails-style`, `dspy-ruby`, and `andrew-kane-gem-writer` skills
+- **Skill creation** — Removed `create-agent-skills` and `skill-creator` skills, and `/create-agent-skill` command
+- **Xcode** — Removed `/xcode-test` command
+- **Utility skills** — Removed `rclone`, `agent-browser`, and `gemini-imagegen` skills
+- **Company-specific** — Removed `every-style-editor` agent and skill
+- **Rails-specific** — Removed `julik-frontend-races-reviewer` agent (Hotwire/Turbo/Stimulus focused)
+- **Keywords** — Removed `rails`, `ruby`, `image-generation`, `agent-browser`, `browser-automation` from plugin keywords
+
+---
+
 ## [2.35.2] - 2026-02-20
 
 ### Changed

@@ -321,17 +321,7 @@ Example: For Hotwire Native Tailwind variants solution:
 - Add to `hotwire-native/references/resources.md` under "Project-Specific Resources"
 - Add to `hotwire-native/references/examples.md` with link to solution doc
 
-**Option 5: Create new skill**
-
-User selects this when the solution represents the start of a new learning domain:
-
-Action:
-1. Prompt: "What should the new skill be called? (e.g., stripe-billing, email-processing)"
-2. Run `python3 .claude/skills/skill-creator/scripts/init_skill.py [skill-name]`
-3. Create initial reference files with this solution as first example
-4. Confirm: "✓ Created new [skill-name] skill with this solution as first example"
-
-**Option 6: View documentation**
+**Option 5: View documentation**
 
 - Display the created documentation
 - Present decision menu again

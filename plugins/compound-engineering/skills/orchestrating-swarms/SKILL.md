@@ -330,13 +330,6 @@ Task({
   prompt: "Analyze this code for performance bottlenecks"
 })
 
-// Rails code review
-Task({
-  subagent_type: "compound-engineering:review:kieran-rails-reviewer",
-  description: "Rails review",
-  prompt: "Review this Rails code for best practices"
-})
-
 // Architecture review
 Task({
   subagent_type: "compound-engineering:review:architecture-strategist",
@@ -359,10 +352,7 @@ Task({
 - `data-integrity-guardian` - Database and data safety
 - `data-migration-expert` - Migration validation
 - `deployment-verification-agent` - Pre-deploy checklists
-- `dhh-rails-reviewer` - DHH/37signals Rails style
-- `julik-frontend-races-reviewer` - JavaScript race conditions
 - `kieran-python-reviewer` - Python best practices
-- `kieran-rails-reviewer` - Rails best practices
 - `kieran-typescript-reviewer` - TypeScript best practices
 - `pattern-recognition-specialist` - Design patterns and anti-patterns
 - `performance-oracle` - Performance analysis

@@ -55,7 +55,6 @@ options:
 
 ### If Auto-configure → Skip to Step 4 with defaults:
 
-- **Rails:** `[kieran-rails-reviewer, dhh-rails-reviewer, code-simplicity-reviewer, security-sentinel, performance-oracle]`
 - **Python:** `[kieran-python-reviewer, code-simplicity-reviewer, security-sentinel, performance-oracle]`
 - **TypeScript:** `[kieran-typescript-reviewer, code-simplicity-reviewer, security-sentinel, performance-oracle]`
 - **General:** `[code-simplicity-reviewer, security-sentinel, performance-oracle, architecture-strategist]`
@@ -72,8 +71,6 @@ header: "Stack"
 options:
   - label: "{detected_type} (Recommended)"
     description: "Auto-detected from project files"
-  - label: "Rails"
-    description: "Ruby on Rails — adds DHH-style and Rails-specific reviewers"
   - label: "Python"
     description: "Python — adds Pythonic pattern reviewer"
   - label: "TypeScript"
@@ -116,7 +113,6 @@ options:
 ## Step 4: Build Agent List and Write File
 
 **Stack-specific agents:**
-- Rails → `kieran-rails-reviewer, dhh-rails-reviewer`
 - Python → `kieran-python-reviewer`
 - TypeScript → `kieran-typescript-reviewer`
 - General → (none)
