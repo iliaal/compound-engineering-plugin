@@ -26,6 +26,18 @@ SKILL_TIERS[simplifying-code]=1
 SKILL_PATTERNS[brainstorming]='brainstorm|help.?me.?think|what.?should.?we.?build|explore.?approach'
 SKILL_TIERS[brainstorming]=1
 
+SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.?(commit|push|pr|merge)'
+SKILL_TIERS[verification-before-completion]=1
+
+SKILL_PATTERNS[receiving-code-review]='receiv.*(review|feedback)|pr.?feedback|implement.*(suggestion|feedback)|push.?back.*review|address.*(review|feedback)'
+SKILL_TIERS[receiving-code-review]=1
+
+SKILL_PATTERNS[writing-tests]='writ.*(test|spec)|add.?test|test.?quality|test.?anti.?pattern|mock.*(bad|wrong|instead)|test.?discipline'
+SKILL_TIERS[writing-tests]=1
+
+SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.?branch|merge.?locally|ready.?to.?merge|ship.?it|close.?branch|discard.?branch|branch.?cleanup'
+SKILL_TIERS[finishing-branch]=1
+
 # --- Tier 2: Domain/Language (language/framework-specific) ---
 
 SKILL_PATTERNS[php-laravel]='\bphp\b|laravel|eloquent|\bblade\b|artisan|migration.*php'
@@ -96,10 +108,10 @@ SKILL_TIERS[orchestrating-swarms]=3
 SKILL_PATTERNS[git-worktree]='worktree|parallel.?development'
 SKILL_TIERS[git-worktree]=3
 
-SKILL_PATTERNS[resolve-pr-parallel]='pr.?comment|review.?feedback|resolve.*(thread|comment)'
+SKILL_PATTERNS[resolve-pr-parallel]='resolve.*(thread|comment|pr)|batch.?resolve'
 SKILL_TIERS[resolve-pr-parallel]=3
 
 SKILL_PATTERNS[setup]='configure.*(review.?agent|compound)|setup.?compound'
 SKILL_TIERS[setup]=3
 
-# Total skills: 29
+# Total skills: 33

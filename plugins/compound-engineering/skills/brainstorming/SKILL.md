@@ -1,6 +1,10 @@
 ---
 name: brainstorming
-description: This skill should be used before implementing features, building components, or making changes. It guides exploring user intent, approaches, and design decisions before planning. Triggers on "let's brainstorm", "help me think through", "what should we build", "explore approaches", ambiguous feature requests, or when the user's request has multiple valid interpretations that need clarification.
+description: >-
+  Pre-implementation brainstorming: explore user intent, approaches, and design
+  decisions before planning. Use when asked to "brainstorm", "help me think
+  through", "explore approaches", or when a request has multiple valid
+  interpretations that need clarification.
 ---
 
 # Brainstorming
@@ -134,7 +138,7 @@ topic: <kebab-case-topic>
 → `/workflows:plan` for implementation details
 ```
 
-**Output Location:** `docs/brainstorms/YYYY-MM-DD-<topic>-brainstorm.md`
+**Output Location:** `docs/brainstorms/YYYY-MM-DD-<topic>-brainstorm.md` (create directory with `mkdir -p docs/brainstorms` if needed)
 
 ### Phase 4: Handoff
 
@@ -175,7 +179,7 @@ This prevents wasted effort on misaligned designs.
 | Making assumptions without validating | State assumptions explicitly and confirm |
 | Creating lengthy design documents | Keep it concise—details go in the plan |
 
-## Integration with Planning
+## Integration
 
 Brainstorming answers **WHAT** to build:
 - Requirements and acceptance criteria
@@ -188,3 +192,15 @@ Planning answers **HOW** to build it:
 - Testing strategy and verification
 
 When brainstorm output exists, `/workflows:plan` should detect it and use it as input, skipping its own idea refinement phase.
+
+## Workflow Chain
+
+```
+brainstorming → workflows:plan → workflows:work → finishing-branch
+     ↑              ↑                  ↑                  ↑
+   WHAT           HOW             EXECUTE             SHIP
+```
+
+- **Next step:** `workflows:plan` (always)
+- **Predecessor:** user request or ambiguous feature description
+- **End of chain:** `finishing-branch` (merge / PR / keep / discard)

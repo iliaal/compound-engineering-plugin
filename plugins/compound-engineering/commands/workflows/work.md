@@ -73,7 +73,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    - You plan to switch between branches frequently
 
 3. **Create Todo List**
-   - Use TodoWrite to break plan into actionable tasks
+   - Use TaskCreate to break plan into actionable tasks
    - Include dependencies between tasks
    - Prioritize based on what needs to be done first
    - Include testing and quality check tasks
@@ -87,14 +87,14 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    ```
    while (tasks remain):
-     - Mark task as in_progress in TodoWrite
+     - Mark task as in_progress via TaskUpdate
      - Read any referenced files from the plan
      - Look for similar patterns in codebase
      - Implement following existing conventions
      - Write tests for new functionality
      - Run System-Wide Test Check (see below)
      - Run tests after changes
-     - Mark task as completed in TodoWrite
+     - Mark task as completed via TaskUpdate
      - Mark off the corresponding checkbox in the plan file ([ ] → [x])
      - Evaluate for incremental commit (see below)
    ```
@@ -142,7 +142,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    **Handling merge conflicts:** If conflicts arise during rebasing or merging, resolve them immediately. Incremental commits make conflict resolution easier since each commit is small and focused.
 
-   **Note:** Incremental commits use clean conventional messages without attribution footers. The final Phase 4 commit/PR includes the full attribution.
+   **Note:** Incremental commits use clean conventional messages without attribution footers.
 
 3. **Follow Existing Patterns**
 
@@ -170,10 +170,21 @@ This command takes a work document (plan, specification, or todo file) and execu
    - Repeat until implementation matches design
 
 6. **Track Progress**
-   - Keep TodoWrite updated as you complete tasks
+   - Keep task list updated (TaskUpdate) as you complete tasks
    - Note any blockers or unexpected discoveries
    - Create new tasks if scope expands
    - Keep user informed of major milestones
+
+### Phase 2.5: Verify Before Proceeding
+
+Before moving to quality checks, run the `verification-before-completion` gate:
+
+1. Identify the verification command (project's test suite)
+2. Run it fresh — not "it passed earlier"
+3. Read the full output — check exit code, failure counts
+4. Confirm all tasks are actually complete (check TaskList)
+
+Do not proceed to Phase 3 if verification fails.
 
 ### Phase 3: Quality Check
 
@@ -185,8 +196,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    # Run full test suite (use project's test command)
    # Examples: bin/rails test, npm test, pytest, go test, etc.
 
-   # Run linting (per CLAUDE.md)
-   # Use linting-agent before pushing to origin
+   # Run linting (use project's lint command per CLAUDE.md)
    ```
 
 2. **Consider Reviewer Agents** (Optional)
@@ -196,7 +206,7 @@ This command takes a work document (plan, specification, or todo file) and execu
    Run configured agents in parallel with Task tool. Present findings and address critical issues.
 
 3. **Final Validation**
-   - All TodoWrite tasks marked completed
+   - All tasks marked completed (TaskList)
    - All tests pass
    - Linting passes
    - Code follows existing patterns
@@ -215,27 +225,7 @@ This command takes a work document (plan, specification, or todo file) and execu
 
 ### Phase 4: Ship It
 
-1. **Create Commit**
-
-   ```bash
-   git add .
-   git status  # Review what's being committed
-   git diff --staged  # Check the changes
-
-   # Commit with conventional format
-   git commit -m "$(cat <<'EOF'
-   feat(scope): description of what and why
-
-   Brief explanation if needed.
-
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-   Co-Authored-By: Claude <noreply@anthropic.com>
-   EOF
-   )"
-   ```
-
-2. **Capture and Upload Screenshots for UI Changes** (REQUIRED for any UI work)
+1. **Capture and Upload Screenshots for UI Changes** (REQUIRED for any UI work)
 
    For **any** design changes, new views, or UI modifications, you MUST capture and upload screenshots:
 
@@ -250,12 +240,11 @@ This command takes a work document (plan, specification, or todo file) and execu
    agent-browser snapshot -i
    agent-browser screenshot output.png
    ```
-   See the `agent-browser` skill for detailed usage.
+   Run `agent-browser --help` for full CLI usage.
 
-   **Step 3: Upload using imgup skill**
+   **Step 3: Upload screenshots**
    ```bash
-   skill: imgup
-   # Then upload each screenshot:
+   # Upload using imgup CLI (if available):
    imgup -h pixhost screenshot.png  # pixhost works without API key
    # Alternative hosts: catbox, imagebin, beeimg
    ```
@@ -267,62 +256,26 @@ This command takes a work document (plan, specification, or todo file) and execu
 
    **IMPORTANT**: Always include uploaded image URLs in PR description. This provides visual context for reviewers and documents the change.
 
-3. **Create Pull Request**
-
-   ```bash
-   git push -u origin feature-branch-name
-
-   gh pr create --title "Feature: [Description]" --body "$(cat <<'EOF'
-   ## Summary
-   - What was built
-   - Why it was needed
-   - Key decisions made
-
-   ## Testing
-   - Tests added/modified
-   - Manual testing performed
-
-   ## Post-Deploy Monitoring & Validation
-   - **What to monitor/search**
-     - Logs:
-     - Metrics/Dashboards:
-   - **Validation checks (queries/commands)**
-     - `command or query here`
-   - **Expected healthy behavior**
-     - Expected signal(s)
-   - **Failure signal(s) / rollback trigger**
-     - Trigger + immediate action
-   - **Validation window & owner**
-     - Window:
-     - Owner:
-   - **If no operational impact**
-     - `No additional operational monitoring required: <reason>`
-
-   ## Before / After Screenshots
-   | Before | After |
-   |--------|-------|
-   | ![before](URL) | ![after](URL) |
-
-   ## Figma Design
-   [Link if applicable]
-
-   ---
-
-   [![Compound Engineered](https://img.shields.io/badge/Compound-Engineered-6366f1)](https://github.com/iliaal/compound-engineering-plugin) 🤖 Generated with [Claude Code](https://claude.com/claude-code)
-   EOF
-   )"
-   ```
-
-4. **Update Plan Status**
+2. **Update Plan Status**
 
    If the input document has YAML frontmatter with a `status` field, update it to `completed`:
    ```
    status: active  →  status: completed
    ```
 
-5. **Notify User**
+3. **Finish the Branch**
+
+   Invoke the `finishing-branch` skill to close out the work:
+
+   ```
+   skill: finishing-branch
+   ```
+
+   This handles the full shipping decision: commit, merge locally, push + PR, keep as-is, or discard. Follow the skill's safety checks and PR template.
+
+4. **Notify User**
    - Summarize what was completed
-   - Link to PR
+   - Link to PR (if created)
    - Note any follow-up work needed
    - Suggest next steps if applicable
 
@@ -436,16 +389,15 @@ See the `orchestrating-swarms` skill for detailed swarm patterns and best practi
 Before creating PR, verify:
 
 - [ ] All clarifying questions asked and answered
-- [ ] All TodoWrite tasks marked completed
+- [ ] All tasks marked completed (TaskList)
 - [ ] Tests pass (run project's test command)
-- [ ] Linting passes (use linting-agent)
+- [ ] Linting passes (run project's lint command)
 - [ ] Code follows existing patterns
 - [ ] Figma designs match implementation (if applicable)
 - [ ] Before/after screenshots captured and uploaded (for UI changes)
 - [ ] Commit messages follow conventional format
 - [ ] PR description includes Post-Deploy Monitoring & Validation section (or explicit no-impact rationale)
 - [ ] PR description includes summary, testing notes, and screenshots
-- [ ] PR description includes Compound Engineered badge
 
 ## When to Use Reviewer Agents
 
@@ -465,6 +417,12 @@ For most features: tests + linting + following patterns is sufficient.
 - **Skipping clarifying questions** - Ask now, not after building wrong thing
 - **Ignoring plan references** - The plan has links for a reason
 - **Testing at the end** - Test continuously or suffer later
-- **Forgetting TodoWrite** - Track progress or lose track of what's done
+- **Forgetting task tracking** - Use TaskCreate/TaskUpdate or lose track of what's done
 - **80% done syndrome** - Finish the feature, don't move on early
 - **Over-reviewing simple changes** - Save reviewer agents for complex work
+
+## Integration
+
+- **Predecessor:** `workflows:plan` (provides the plan to execute)
+- **During execution:** `verification-before-completion`, `writing-tests`, `debugging`
+- **Next step:** `finishing-branch` (merge / PR / keep / discard)

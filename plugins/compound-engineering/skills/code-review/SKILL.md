@@ -74,3 +74,9 @@ Performance:
 ```
 
 Ground every finding in actual code — no invented line references. Limit to 10 findings per severity. If more exist, note the count and show the highest-impact ones.
+
+## Integration
+
+- `receiving-code-review` — the inbound side (processing review feedback received from others)
+- `workflows:review` — the full review command with multi-agent analysis
+- `resolve-pr-parallel` — batch-resolve PR comments with parallel agents

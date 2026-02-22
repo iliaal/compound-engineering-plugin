@@ -5,11 +5,15 @@
     "compound-docs",
     "document-review",
     "file-todos",
+    "finishing-branch",
     "frontend-design",
     "git-worktree",
     "orchestrating-swarms",
+    "receiving-code-review",
     "resolve-pr-parallel",
-    "setup"
+    "setup",
+    "verification-before-completion",
+    "writing-tests"
   ],
   "source": "~/ai/ai-skills/skills",
   "bundled_at": "2026-02-22T19:24:52Z"

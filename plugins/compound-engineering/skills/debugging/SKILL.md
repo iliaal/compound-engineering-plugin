@@ -13,6 +13,8 @@ description: >-
 
 Never propose a fix without first identifying the root cause. "Quick fix now, investigate later" is forbidden — it creates harder bugs.
 
+**Trivially obvious bugs** are their own root cause — state the cause and fix directly. A bug is trivially obvious only when the **cause** is in the error message (e.g., `ModuleNotFoundError: no module named foo`, a typo in a string literal). If the error shows **where** something fails but not **why** (e.g., `TypeError: Cannot read 'id' of undefined`), it is not trivially obvious — investigate why the value is undefined.
+
 ## Root Cause Analysis
 
 Root cause identification is the core deliverable of debugging — not the fix itself. A fix without a confirmed root cause is guesswork.
@@ -31,7 +33,7 @@ Root cause identification is the core deliverable of debugging — not the fix i
 
 **3. Hypothesize and test** — one change at a time. If a hypothesis is wrong, fully revert before testing the next. Use `git bisect` to find regressions efficiently.
 
-**4. Fix and verify** — create a failing test FIRST, then fix. Run the test. Confirm the original reproduction case passes. No completion claims without fresh verification evidence.
+**4. Fix and verify** — create a failing test FIRST, then fix. Run the test. Confirm the original reproduction case passes. No completion claims without fresh verification evidence (see `verification-before-completion`).
 
 ## Three-Fix Threshold
 
@@ -76,12 +78,38 @@ When multiple bugs exist, prioritize by:
 - **Type coercion** — `==` vs `===`, string-to-number conversion, truthy/falsy edge cases
 - **Timezone** — always store UTC, convert at display. Check DST transitions.
 
-## Anti-Patterns
+## Anti-Patterns and Red Flags
 
-- Shotgun debugging (random changes without hypothesis) — revert and think instead
-- Multiple simultaneous changes — isolate each change or you can't learn what worked
-- Fixing the symptom not the cause — the same bug will resurface differently
-- Ignoring intermittent failures ("works on my machine") — instrument and reproduce under load instead
+When you catch yourself doing or thinking these things, **stop and return to Phase 1 (Reproduce/Investigate)**:
+
+| What You're Doing / Thinking | What It Really Means |
+|-----------------------------|---------------------|
+| Shotgun debugging — random changes without a hypothesis | You're guessing. Form a hypothesis first, then revert and test one change. |
+| Multiple simultaneous changes | You're making the problem harder to diagnose. One change at a time. |
+| Fixing the symptom, not the cause | The same bug will resurface differently. Trace to root cause. |
+| Ignoring intermittent failures ("works on my machine") | Instrument and reproduce under load instead. |
+| "Quick fix for now, investigate later" | You don't understand the root cause. Later never comes. |
+| "Skip the test, I can see it works" | You can't. Run the verification. See `verification-before-completion`. |
+| "It's probably X" | "Probably" means you haven't verified. Trace the actual execution path. |
+| "One more fix attempt" (after 2+ failures) | You've hit the three-fix threshold. Step back and question assumptions. |
+| "I'll clean up the debugging later" | Remove diagnostic code now or it ships to production. |
+
+## Signals You're Off Track
+
+Watch for these signs from the user — they indicate you've left the systematic process:
+
+- "Is that not happening?" — you assumed behavior without checking
+- "Will it show us...?" — you're not gathering enough evidence
+- "Stop guessing" — you're proposing fixes without root cause
+- "We're going in circles" — same hypothesis repackaged, not a new approach
+- Repeating the same type of fix with slight variations — that's not a new hypothesis
+
+## Integration
+
+This skill is referenced by:
+- `workflows:work` — during task execution for bug investigation
+- `writing-tests` — creating failing tests to reproduce bugs
+- `verification-before-completion` — before claiming a bug is fixed
 
 ## Postmortem
 

@@ -8,7 +8,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 |-----------|-------|
 | Agents | 26 |
 | Commands | 19 |
-| Skills | 29 |
+| Skills | 33 |
 | Hooks | 1 |
 | MCP Servers | 1 |
 
@@ -16,7 +16,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 Agents are organized into categories for easier discovery.
 
-### Review (11)
+### Review (12)
 
 | Agent | Description |
 |-------|-------------|
@@ -123,6 +123,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 
 | Skill | Description |
 |-------|-------------|
+| [`writing-tests`](skills/writing-tests/SKILL.md) | Generic test discipline: quality, anti-patterns, rationalization resistance |
 | [`testing-laravel`](skills/testing-laravel/SKILL.md) | Laravel tests using PHPUnit |
 | [`testing-react`](skills/testing-react/SKILL.md) | React/TypeScript tests using Vitest and RTL |
 
@@ -131,7 +132,9 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | Skill | Description |
 |-------|-------------|
 | [`code-review`](skills/code-review/SKILL.md) | Two-stage code reviews with severity-ranked findings |
-| [`debugging`](skills/debugging/SKILL.md) | Systematic root-cause debugging with postmortem |
+| [`receiving-code-review`](skills/receiving-code-review/SKILL.md) | Process review feedback critically: verify, push back, no blind agreement |
+| [`debugging`](skills/debugging/SKILL.md) | Systematic root-cause debugging with anti-rationalization patterns |
+| [`verification-before-completion`](skills/verification-before-completion/SKILL.md) | Fresh verification evidence before any completion claim |
 | [`planning`](skills/planning/SKILL.md) | Software implementation planning with file persistence |
 
 ### Content & Workflow
@@ -142,6 +145,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | [`compound-docs`](skills/compound-docs/SKILL.md) | Capture solved problems as categorized documentation |
 | [`document-review`](skills/document-review/SKILL.md) | Improve documents through structured self-review |
 | [`file-todos`](skills/file-todos/SKILL.md) | File-based todo tracking system |
+| [`finishing-branch`](skills/finishing-branch/SKILL.md) | Workflow closer: merge, PR, keep, or discard with safety checks |
 | [`git-worktree`](skills/git-worktree/SKILL.md) | Manage Git worktrees for parallel development |
 | [`md-docs`](skills/md-docs/SKILL.md) | Manages project documentation: AGENTS.md, README.md |
 | [`resolve-pr-parallel`](skills/resolve-pr-parallel/SKILL.md) | Resolve PR review comments in parallel |

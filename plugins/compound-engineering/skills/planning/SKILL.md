@@ -1,8 +1,8 @@
 ---
 name: planning
 description: >-
-  Software implementation planning with file-based persistence (task_plan.md,
-  findings.md, progress.md). Use when asked to "plan", "break down this
+  Software implementation planning with file-based persistence (.plan/task_plan.md,
+  .plan/findings.md, .plan/progress.md). Use when asked to "plan", "break down this
   feature", "implementation plan", or starting complex tasks needing >5 tool
   calls. Apply proactively before non-trivial coding.
 ---
@@ -26,13 +26,21 @@ Planning tokens are cheaper than implementation tokens. Front-load thinking; sca
 
 ## Planning Files
 
-Create in project root before starting work:
+Create in `.plan/` directory before starting work:
+
+```bash
+mkdir -p .plan
+# Add to .gitignore if not already present
+grep -qxF '.plan/' .gitignore 2>/dev/null || echo '.plan/' >> .gitignore
+```
+
+Planning files are ephemeral working state — do not commit them. If working on multiple features sequentially, old files are overwritten; the plan captures the current task only.
 
 | File | Purpose | Update When |
 |------|---------|-------------|
-| `task_plan.md` | Phases, tasks, decisions, errors | After each phase |
-| `findings.md` | Research, discoveries, code analysis | After any discovery |
-| `progress.md` | Session log, test results, files changed | Throughout session |
+| `.plan/task_plan.md` | Phases, tasks, decisions, errors | After each phase |
+| `.plan/findings.md` | Research, discoveries, code analysis | After any discovery |
+| `.plan/progress.md` | Session log, test results, files changed | Throughout session |
 
 ## Plan Template
 
@@ -90,13 +98,13 @@ Only ask if truly blocking. Make reasonable assumptions for everything else.
 
 | Situation | Action |
 |-----------|--------|
-| Starting new phase | Read task_plan.md (refresh goals in attention window) |
-| After any discovery | Write to findings.md immediately |
-| After completing phase | Update task_plan.md status, log to progress.md |
+| Starting new phase | Read .plan/task_plan.md (refresh goals in attention window) |
+| After any discovery | Write to .plan/findings.md immediately |
+| After completing phase | Update .plan/task_plan.md status, log to .plan/progress.md |
 | After viewing image/PDF | Write findings NOW (multimodal content doesn't persist) |
 | Resuming after gap | Read all planning files |
 | Just wrote a file | Don't re-read it (still in context) |
-| Error occurred | Log to task_plan.md, read relevant files for state |
+| Error occurred | Log to .plan/task_plan.md, read relevant files for state |
 
 ## Error Protocol
 
@@ -123,17 +131,17 @@ If you can answer these, your planning is solid:
 
 | Question | Source |
 |----------|--------|
-| Where am I? | Current phase in task_plan.md |
+| Where am I? | Current phase in .plan/task_plan.md |
 | Where am I going? | Remaining phases |
 | What's the goal? | Approach section |
-| What have I learned? | findings.md |
-| What have I done? | progress.md |
+| What have I learned? | .plan/findings.md |
+| What have I done? | .plan/progress.md |
 
 ## Anti-Patterns
 
 | Don't | Do Instead |
 |-------|------------|
-| Start coding without a plan | Create task_plan.md first |
+| Start coding without a plan | Create .plan/task_plan.md first |
 | State goals once and forget | Re-read plan before decisions |
 | Hide errors and retry silently | Log errors, mutate approach |
 | Keep everything in context | Write large content to files |
@@ -141,3 +149,16 @@ If you can answer these, your planning is solid:
 | Create vague tasks ("improve X") | Concrete verb-first tasks with file paths |
 | Plan phases with 12+ files | Split into 5-8 file chunks |
 | Plan at 100% capacity | Budget for verification, fixes, and unknowns |
+
+## Relationship to `workflows:plan`
+
+This skill provides the **methodology** for planning (file persistence, phase sizing, context management). The `workflows:plan` command provides the **structured workflow** (research agents, issue templates, plan file creation).
+
+Use this skill's principles during any planning activity. Use `workflows:plan` when creating a full feature plan with research and issue structure.
+
+## Integration
+
+- **This skill** applies as methodology during `workflows:plan` and `workflows:work`
+- **Predecessor:** `brainstorming` (optional — if requirements are already clear, plan directly)
+- **End of chain:** `finishing-branch` (merge / PR / keep / discard)
+- See `brainstorming` for the full workflow chain diagram
