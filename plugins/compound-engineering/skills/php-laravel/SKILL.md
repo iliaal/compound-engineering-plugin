@@ -1,9 +1,9 @@
 ---
 name: php-laravel
 description: >-
-  Modern PHP 8.4 and Laravel patterns: architecture, Eloquent, queues, Pest
+  Modern PHP 8.4 and Laravel patterns: architecture, Eloquent, queues, PHPUnit
   testing. Use when asked to "write PHP", "build a Laravel app", "fix Eloquent
-  query", "add a queue job", "write a Pest test", or mentions PHP, Laravel,
+  query", "add a queue job", "write a PHPUnit test", or mentions PHP, Laravel,
   Eloquent, Blade, artisan, or migrations.
 ---
 
@@ -68,10 +68,10 @@ Use these when applicable — do not explain them in comments (Claude and develo
 - `ShouldBeUnique` interface to prevent duplicate processing
 - Always handle failures — implement `failed()` method on jobs
 
-## Testing (Pest)
+## Testing (PHPUnit)
 
 - RED → verify RED → GREEN → verify GREEN → REFACTOR
-- `test()` / `it()` syntax with `RefreshDatabase` trait
+- Extend `TestCase`, use `RefreshDatabase` trait
 - One assertion focus per test. Test name describes the behavior, not the method.
 - `Sanctum::actingAs($user, ['ability'])` for API auth testing
 - Run relevant tests first, offer full suite after

@@ -1,7 +1,6 @@
 ---
 name: kieran-typescript-reviewer
 description: "Reviews TypeScript code with an extremely high quality bar for type safety, modern patterns, and maintainability. Use after implementing features, modifying code, or creating new TypeScript components."
-model: inherit
 ---
 
 <examples>

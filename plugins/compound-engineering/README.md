@@ -19,47 +19,47 @@ Agents are organized into categories for easier discovery.
 
 | Agent | Description |
 |-------|-------------|
-| `accessibility-tester` | WCAG 2.1 accessibility audit: keyboard, screen reader, contrast, ARIA, forms |
-| `agent-native-reviewer` | Verify features are agent-native (action + context parity) |
-| `architecture-strategist` | Analyze architectural decisions and compliance |
-| `code-simplicity-reviewer` | Final pass for simplicity and minimalism |
-| `data-integrity-guardian` | Database migrations and data integrity |
-| `data-migration-expert` | Validate ID mappings match production, check for swapped values |
-| `deployment-verification-agent` | Create Go/No-Go deployment checklists for risky data changes |
-| `kieran-python-reviewer` | Python code review with strict conventions |
-| `kieran-typescript-reviewer` | TypeScript code review with strict conventions |
-| `pattern-recognition-specialist` | Analyze code for patterns and anti-patterns |
-| `performance-oracle` | Performance analysis and optimization |
-| `security-sentinel` | Security audits and vulnerability assessments |
+| [`accessibility-tester`](agents/review/accessibility-tester.md) | WCAG 2.1 accessibility audit: keyboard, screen reader, contrast, ARIA, forms |
+| [`agent-native-reviewer`](agents/review/agent-native-reviewer.md) | Verify features are agent-native (action + context parity) |
+| [`architecture-strategist`](agents/review/architecture-strategist.md) | Analyze architectural decisions and compliance |
+| [`code-simplicity-reviewer`](agents/review/code-simplicity-reviewer.md) | Final pass for simplicity and minimalism |
+| [`data-integrity-guardian`](agents/review/data-integrity-guardian.md) | Database migrations and data integrity |
+| [`data-migration-expert`](agents/review/data-migration-expert.md) | Validate ID mappings match production, check for swapped values |
+| [`deployment-verification-agent`](agents/review/deployment-verification-agent.md) | Create Go/No-Go deployment checklists for risky data changes |
+| [`kieran-python-reviewer`](agents/review/kieran-python-reviewer.md) | Python code review with strict conventions |
+| [`kieran-typescript-reviewer`](agents/review/kieran-typescript-reviewer.md) | TypeScript code review with strict conventions |
+| [`pattern-recognition-specialist`](agents/review/pattern-recognition-specialist.md) | Analyze code for patterns and anti-patterns |
+| [`performance-oracle`](agents/review/performance-oracle.md) | Performance analysis and optimization |
+| [`security-sentinel`](agents/review/security-sentinel.md) | Security audits and vulnerability assessments |
 
 ### Research (5)
 
 | Agent | Description |
 |-------|-------------|
-| `best-practices-researcher` | Gather external best practices and examples |
-| `framework-docs-researcher` | Research framework documentation and best practices |
-| `git-history-analyzer` | Analyze git history and code evolution |
-| `learnings-researcher` | Search institutional learnings for relevant past solutions |
-| `repo-research-analyst` | Research repository structure and conventions |
+| [`best-practices-researcher`](agents/research/best-practices-researcher.md) | Gather external best practices and examples |
+| [`framework-docs-researcher`](agents/research/framework-docs-researcher.md) | Research framework documentation and best practices |
+| [`git-history-analyzer`](agents/research/git-history-analyzer.md) | Analyze git history and code evolution |
+| [`learnings-researcher`](agents/research/learnings-researcher.md) | Search institutional learnings for relevant past solutions |
+| [`repo-research-analyst`](agents/research/repo-research-analyst.md) | Research repository structure and conventions |
 
 ### Design (4)
 
 | Agent | Description |
 |-------|-------------|
-| `cloud-architect` | Cloud infrastructure design, cost optimization, DR, migration strategies |
-| `design-implementation-reviewer` | Verify UI implementations match Figma designs |
-| `design-iterator` | Iteratively refine UI through systematic design iterations |
-| `figma-design-sync` | Synchronize web implementations with Figma designs |
+| [`cloud-architect`](agents/design/cloud-architect.md) | Cloud infrastructure design, cost optimization, DR, migration strategies |
+| [`design-implementation-reviewer`](agents/design/design-implementation-reviewer.md) | Verify UI implementations match Figma designs |
+| [`design-iterator`](agents/design/design-iterator.md) | Iteratively refine UI through systematic design iterations |
+| [`figma-design-sync`](agents/design/figma-design-sync.md) | Synchronize web implementations with Figma designs |
 
 ### Workflow (6)
 
 | Agent | Description |
 |-------|-------------|
-| `bug-reproduction-validator` | Systematically reproduce and validate bug reports |
-| `deployment-engineer` | CI/CD pipeline design, deployment strategies, GitOps workflows |
-| `devops-engineer` | Docker containerization, monitoring/observability, incident management |
-| `pr-comment-resolver` | Address PR comments and implement fixes |
-| `spec-flow-analyzer` | Analyze user flows and identify gaps in specifications |
+| [`bug-reproduction-validator`](agents/workflow/bug-reproduction-validator.md) | Systematically reproduce and validate bug reports |
+| [`deployment-engineer`](agents/workflow/deployment-engineer.md) | CI/CD pipeline design, deployment strategies, GitOps workflows |
+| [`devops-engineer`](agents/workflow/devops-engineer.md) | Docker containerization, monitoring/observability, incident management |
+| [`pr-comment-resolver`](agents/workflow/pr-comment-resolver.md) | Address PR comments and implement fixes |
+| [`spec-flow-analyzer`](agents/workflow/spec-flow-analyzer.md) | Analyze user flows and identify gaps in specifications |
 
 ## Commands
 
@@ -101,65 +101,65 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 
 | Skill | Description |
 |-------|-------------|
-| `agent-native-architecture` | Build AI agents using prompt-native architecture |
-| `frontend-design` | Create production-grade frontend interfaces |
-| `react-frontend` | React, TypeScript, and Next.js patterns |
-| `simplifying-code` | Simplify, polish, and declutter code |
+| [`agent-native-architecture`](skills/agent-native-architecture/SKILL.md) | Build AI agents using prompt-native architecture |
+| [`frontend-design`](skills/frontend-design/SKILL.md) | Create production-grade frontend interfaces |
+| [`react-frontend`](skills/react-frontend/SKILL.md) | React, TypeScript, and Next.js patterns |
+| [`simplifying-code`](skills/simplifying-code/SKILL.md) | Simplify, polish, and declutter code |
 
 ### Language & Framework
 
 | Skill | Description |
 |-------|-------------|
-| `nodejs-backend` | Node.js backend patterns: Express/Fastify, TypeScript, validation |
-| `php-laravel` | Modern PHP 8.4 and Laravel patterns |
-| `python-services` | Python CLI tools, async parallelism, FastAPI services |
-| `terraform` | Terraform/OpenTofu configuration, modules, testing, state |
-| `postgresql` | PostgreSQL schema design, query optimization, indexing |
-| `pinescript` | Pine Script v6 patterns for TradingView |
-| `linux-bash-scripting` | Defensive Bash scripting for Linux |
+| [`nodejs-backend`](skills/nodejs-backend/SKILL.md) | Node.js backend patterns: Express/Fastify, TypeScript, validation |
+| [`php-laravel`](skills/php-laravel/SKILL.md) | Modern PHP 8.4 and Laravel patterns |
+| [`python-services`](skills/python-services/SKILL.md) | Python CLI tools, async parallelism, FastAPI services |
+| [`terraform`](skills/terraform/SKILL.md) | Terraform/OpenTofu configuration, modules, testing, state |
+| [`postgresql`](skills/postgresql/SKILL.md) | PostgreSQL schema design, query optimization, indexing |
+| [`pinescript`](skills/pinescript/SKILL.md) | Pine Script v6 patterns for TradingView |
+| [`linux-bash-scripting`](skills/linux-bash-scripting/SKILL.md) | Defensive Bash scripting for Linux |
 
 ### Testing
 
 | Skill | Description |
 |-------|-------------|
-| `testing-laravel` | Laravel tests using PHPUnit/Pest |
-| `testing-react` | React/TypeScript tests using Vitest and RTL |
+| [`testing-laravel`](skills/testing-laravel/SKILL.md) | Laravel tests using PHPUnit |
+| [`testing-react`](skills/testing-react/SKILL.md) | React/TypeScript tests using Vitest and RTL |
 
 ### Code Quality & Review
 
 | Skill | Description |
 |-------|-------------|
-| `code-review` | Two-stage code reviews with severity-ranked findings |
-| `debugging` | Systematic root-cause debugging with postmortem |
-| `planning` | Software implementation planning with file persistence |
+| [`code-review`](skills/code-review/SKILL.md) | Two-stage code reviews with severity-ranked findings |
+| [`debugging`](skills/debugging/SKILL.md) | Systematic root-cause debugging with postmortem |
+| [`planning`](skills/planning/SKILL.md) | Software implementation planning with file persistence |
 
 ### Content & Workflow
 
 | Skill | Description |
 |-------|-------------|
-| `brainstorming` | Explore requirements and approaches through dialogue |
-| `compound-docs` | Capture solved problems as categorized documentation |
-| `document-review` | Improve documents through structured self-review |
-| `file-todos` | File-based todo tracking system |
-| `git-worktree` | Manage Git worktrees for parallel development |
-| `md-docs` | Manages project documentation: AGENTS.md, README.md |
-| `resolve-pr-parallel` | Resolve PR review comments in parallel |
-| `setup` | Configure which review agents run for your project |
-| `writing` | Prose editing, rewriting, and humanizing text |
+| [`brainstorming`](skills/brainstorming/SKILL.md) | Explore requirements and approaches through dialogue |
+| [`compound-docs`](skills/compound-docs/SKILL.md) | Capture solved problems as categorized documentation |
+| [`document-review`](skills/document-review/SKILL.md) | Improve documents through structured self-review |
+| [`file-todos`](skills/file-todos/SKILL.md) | File-based todo tracking system |
+| [`git-worktree`](skills/git-worktree/SKILL.md) | Manage Git worktrees for parallel development |
+| [`md-docs`](skills/md-docs/SKILL.md) | Manages project documentation: AGENTS.md, README.md |
+| [`resolve-pr-parallel`](skills/resolve-pr-parallel/SKILL.md) | Resolve PR review comments in parallel |
+| [`setup`](skills/setup/SKILL.md) | Configure which review agents run for your project |
+| [`writing`](skills/writing/SKILL.md) | Prose editing, rewriting, and humanizing text |
 
 ### AI & Prompting
 
 | Skill | Description |
 |-------|-------------|
-| `meta-prompting` | Enhanced reasoning patterns via slash commands |
-| `refine-prompt` | Transform vague prompts into precise instructions |
-| `reflect` | Session retrospective and skill audit |
+| [`meta-prompting`](skills/meta-prompting/SKILL.md) | Enhanced reasoning patterns via slash commands |
+| [`refine-prompt`](skills/refine-prompt/SKILL.md) | Transform vague prompts into precise instructions |
+| [`reflect`](skills/reflect/SKILL.md) | Session retrospective and skill audit |
 
 ### Multi-Agent Orchestration
 
 | Skill | Description |
 |-------|-------------|
-| `orchestrating-swarms` | Comprehensive guide to multi-agent swarm orchestration |
+| [`orchestrating-swarms`](skills/orchestrating-swarms/SKILL.md) | Comprehensive guide to multi-agent swarm orchestration |
 
 
 ## MCP Servers

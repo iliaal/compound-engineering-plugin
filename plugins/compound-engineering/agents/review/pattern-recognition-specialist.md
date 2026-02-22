@@ -1,7 +1,6 @@
 ---
 name: pattern-recognition-specialist
 description: "Analyzes code for design patterns, anti-patterns, naming conventions, and duplication. Use when checking codebase consistency or verifying new code follows established patterns."
-model: inherit
 ---
 
 <examples>
@@ -70,3 +69,5 @@ When analyzing code:
 - Consider the project's maturity and technical debt tolerance
 
 If you encounter project-specific patterns or conventions (especially from CLAUDE.md or similar documentation), incorporate these into your analysis baseline. Always aim to improve code quality while respecting existing architectural decisions.
+
+This agent provides deep pattern analysis. For general code reviews that include a pattern check as one step among many, the `code-review` skill handles that broader workflow.

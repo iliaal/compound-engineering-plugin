@@ -1,7 +1,6 @@
 ---
 name: design-implementation-reviewer
 description: "Review-only: visually compares live UI against Figma designs and reports discrepancies. Does NOT modify code. Use after writing or modifying HTML/CSS/React components to verify design fidelity."
-model: inherit
 ---
 
 <examples>

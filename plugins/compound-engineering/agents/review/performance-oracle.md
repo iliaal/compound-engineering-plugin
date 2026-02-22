@@ -1,7 +1,6 @@
 ---
 name: performance-oracle
 description: "Analyzes code for performance bottlenecks, algorithmic complexity, database queries, memory usage, and scalability. Use after implementing features or when performance concerns arise."
-model: inherit
 ---
 
 <examples>
@@ -135,3 +134,5 @@ Always provide specific code examples for recommended optimizations. Include ben
 - Provide migration strategies for optimizing existing code
 
 Your analysis should be actionable, with clear steps for implementing each optimization. Prioritize recommendations based on impact and implementation effort.
+
+This agent provides deep performance analysis. For general code reviews that include a performance check as one step among many, the `code-review` skill handles that broader workflow.

@@ -1,7 +1,6 @@
 ---
 name: architecture-strategist
 description: "Analyzes code changes from an architectural perspective for pattern compliance and design integrity. Use when reviewing PRs, adding services, or evaluating structural refactors."
-model: inherit
 ---
 
 <examples>
@@ -65,3 +64,5 @@ Be proactive in identifying architectural smells such as:
 - Missing or inadequate architectural boundaries
 
 When you identify issues, provide concrete, actionable recommendations that maintain architectural integrity while being practical for implementation. Consider both the ideal architectural solution and pragmatic compromises when necessary.
+
+This agent provides deep architectural analysis. For general code reviews that include an architecture check as one step among many, the `code-review` skill handles that broader workflow.

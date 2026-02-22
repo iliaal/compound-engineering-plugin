@@ -5,6 +5,16 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.37.1] - 2026-02-22
+
+### Fixed
+
+- **H1: Review agent → skill scope clarity** — Added scope notes to security-sentinel, performance-oracle, pattern-recognition-specialist, architecture-strategist clarifying they provide deep specialized analysis while code-review skill handles general review workflows
+- **H2: Data agent disambiguation** — Added mutual scope boundaries to data-integrity-guardian (schema/constraints), data-migration-expert (migration code validation), and deployment-verification-agent (deployment checklists) to prevent overlap confusion
+- **H3: design-iterator boilerplate** — Replaced verbose generic boilerplate with one-line design-specific instruction
+- **H4: php-laravel testing framework** — Changed from Pest to PHPUnit syntax (`test()`/`it()` → `TestCase` extends) to match project conventions
+- **H5: Phantom skill reference** — Removed nonexistent `swiss-design` skill reference from design-iterator
+
 ## [2.37.0] - 2026-02-22
 
 ### Added
