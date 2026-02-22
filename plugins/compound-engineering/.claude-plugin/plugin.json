@@ -3,11 +3,10 @@
   "version": "2.36.0",
   "description": "AI-powered development tools. 22 agents, 19 commands, 10 skills, 1 MCP server for code review, research, design, and workflow automation.",
   "author": {
-    "name": "Kieran Klaassen",
-    "email": "kieran@every.to",
-    "url": "https://github.com/kieranklaassen"
+    "name": "Ilia Alshanetsky",
+    "url": "https://github.com/iliaal"
   },
-  "homepage": "https://every.to/source-code/my-ai-had-already-fixed-the-code-before-i-saw-it",
+  "homepage": "https://github.com/iliaal/compound-engineering-plugin",
   "repository": "https://github.com/iliaal/compound-engineering-plugin",
   "license": "MIT",
   "keywords": [
