@@ -16,21 +16,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **`debugging` skill** — added anti-rationalization framework: 8-item rationalization red flags table with rebuttals, "signals you're off track" section with user feedback patterns, reference to verification-before-completion
-- **`brainstorming` skill** — added workflow chain section showing explicit successor/predecessor relationships
-- **`planning` skill** — added workflow chain section with predecessor (brainstorming) and next step (workflows:work)
-- **`workflows:work` command** — added Phase 2.5 verification gate before quality checks, added workflow chain reference at end
-- **`workflows:work` command** — Phase 4 now delegates all shipping decisions (commit, merge, PR, discard) to `finishing-branch` instead of duplicating commit/push/PR logic. Removed Co-Authored-By from templates per global rules.
+- **`debugging` skill** — added anti-rationalization framework (merged anti-patterns + red flags into single table), "signals you're off track" section, trivially obvious bug escape with cause-vs-symptom criteria, Integration section
+- **`brainstorming` skill** — added workflow chain diagram (canonical source), mkdir instruction for output dir, standardized Integration header
+- **`planning` skill** — moved planning files from project root to `.plan/` directory (auto-gitignored), replaced duplicate workflow chain with Integration section
+- **`workflows:work` command** — replaced TodoWrite with TaskCreate/TaskUpdate/TaskList, added Phase 2.5 verification gate, delegated Phase 4 shipping to `finishing-branch`, removed stale references (linting-agent, agent-browser skill, imgup skill), removed Co-Authored-By per global rules
 - **`code-review` skill** — added Integration section cross-referencing `receiving-code-review`, `workflows:review`, and `resolve-pr-parallel`
-- **`planning` skill** — clarified relationship to `workflows:plan` command (methodology vs structured workflow)
+- **`verification-before-completion` skill** — softened "exit code 0" to handle pre-existing failures, added `writing-tests` to Integration
 
 ### Fixed
 
-- **`finishing-branch` skill** — added guard against invocation on default branch, added commit step before options, expanded PR template, added remote branch cleanup to discard, fixed false "Called by brainstorming" cross-reference, delegated worktree cleanup to `git-worktree` skill
-- **`receiving-code-review` skill** — added scope table distinguishing from `pr-comment-resolver` agent, fixed "process one item at a time" vs batch-triage inconsistency
-- **`verification-before-completion` skill** — fixed "in this message" ambiguity to "immediately before the claim", fixed Integration section (workflows:review → receiving-code-review)
-- **`writing-tests` skill** — added framework test-double exception to mocking guidance (Laravel facade fakes, React providers), added full Integration section, improved tech-specific skill descriptions
-- **Trigger patterns** — tightened `verification-before-completion` (removed overly broad `before.*(commit|push)`), deduplicated `receiving-code-review`/`code-review`/`resolve-pr-parallel` triple-match, fixed `finishing-branch` merge collision with code-review, moved `finishing-branch` to Tier 1
+- **`finishing-branch` skill** — added guard against default branch invocation, added no-remote guard (disables push/PR when no remote), aligned prerequisites with verification-before-completion for test-free projects, added commit step before options, expanded PR template, delegated worktree cleanup to `git-worktree` skill
+- **`receiving-code-review` skill** — added scope table distinguishing from `pr-comment-resolver` agent, fixed triage-then-implement ordering
+- **`verification-before-completion` skill** — fixed "in this message" ambiguity to "immediately before the claim", added "When No Verification Command Exists" and "When Verification Fails" sections
+- **`writing-tests` skill** — added framework test-double exception (Laravel facade fakes, React providers), added "Tests expose bugs, not the reverse" principle, added Integration section
+- **`resolve-pr-parallel` skill** — fixed frontmatter name from underscores to hyphens per naming convention
+- **Trigger patterns** — tightened `verification-before-completion` (removed overly broad `before.*(commit|push)`), deduplicated review skill triple-match, fixed `finishing-branch` merge collision, moved `finishing-branch` to Tier 1
 
 ---
 
