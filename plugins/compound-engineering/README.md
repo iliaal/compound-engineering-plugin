@@ -166,15 +166,15 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 
 | Server | Description |
 |--------|-------------|
-| `context7` | Framework documentation lookup via Context7 |
+| `docfork` | Framework and library documentation lookup via Docfork |
 
-### Context7
+### Docfork
 
 **Tools provided:**
-- `resolve-library-id` - Find library ID for a framework/package
-- `get-library-docs` - Get documentation for a specific library
+- `query_docs` - Search documentation for a framework/library
+- `fetch_url` - Fetch full markdown content from a documentation URL
 
-Supports 100+ frameworks including Rails, React, Next.js, Vue, Django, Laravel, and more.
+9,000+ libraries with daily updates. Free tier: 1,000 requests/month.
 
 MCP servers start automatically when the plugin is enabled.
 
@@ -186,24 +186,28 @@ claude /plugin install compound-engineering
 
 ## Known Issues
 
-### MCP Servers Not Auto-Loading
+### MCP Server Setup
 
-**Issue:** The bundled Context7 MCP server may not load automatically when the plugin is installed.
+**Issue:** The bundled Docfork MCP server may not load automatically when the plugin is installed, and requires an API key for use.
 
-**Workaround:** Manually add it to your project's `.claude/settings.json`:
+**Setup:**
+
+1. Sign up for a free API key at [docfork.com](https://docfork.com)
+2. Add to your project's `.claude/settings.json` (or `~/.claude/settings.json` for all projects):
 
 ```json
 {
   "mcpServers": {
-    "context7": {
+    "docfork": {
       "type": "http",
-      "url": "https://mcp.context7.com/mcp"
+      "url": "https://mcp.docfork.com/mcp",
+      "headers": {
+        "DOCFORK_API_KEY": "your-api-key-here"
+      }
     }
   }
 }
 ```
-
-Or add it globally in `~/.claude/settings.json` for all projects.
 
 ## Version History
 
