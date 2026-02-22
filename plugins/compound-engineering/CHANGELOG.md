@@ -5,6 +5,13 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.37.3] - 2026-02-22
+
+### Fixed
+
+- **MCP server** — removed legacy `.mcp.json` that was installing Context7 MCP alongside Docfork; Docfork is now the sole MCP server, declared in `plugin.json` only
+- **Docfork** — no API key required by default (1,000 free requests/month); API keys only needed for team Cabinets and shared indexes
+
 ## [2.37.2] - 2026-02-22
 
 ### Changed
