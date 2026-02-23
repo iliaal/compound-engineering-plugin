@@ -86,6 +86,7 @@ MODIFIED_PROMPT=$(printf '%s\n\n%s' "$INJECTION" "$PROMPT")
 # Output updatedInput to modify the Task prompt
 jq -n --arg prompt "$MODIFIED_PROMPT" '{
   "hookSpecificOutput": {
+    "hookEventName": "PreToolUse",
     "permissionDecision": "allow",
     "updatedInput": {"prompt": $prompt}
   }

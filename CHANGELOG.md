@@ -5,6 +5,12 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.39.2] - 2026-02-23
+
+### Fixed
+
+- **inject-skills hook** — added missing `hookEventName: "PreToolUse"` discriminator to hook JSON output, fixing schema validation failure that silently prevented skill injection into subagents
+
 ## [2.39.1] - 2026-02-22
 
 ### Fixed
