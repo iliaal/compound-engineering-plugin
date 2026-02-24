@@ -5,6 +5,12 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.39.3] - 2026-02-24
+
+### Fixed
+
+- **inject-skills hook** — preserve all original `tool_input` fields in `updatedInput` response. `updatedInput` is a full replacement, not a merge; returning only `{prompt}` dropped `subagent_type`, `description`, and other Task fields, causing "Agent type 'undefined' not found" errors whenever skill patterns matched a subagent prompt.
+
 ## [2.39.2] - 2026-02-23
 
 ### Fixed
