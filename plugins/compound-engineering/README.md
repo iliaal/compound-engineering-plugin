@@ -104,7 +104,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 |-------|-------------|
 | [`agent-native-architecture`](skills/agent-native-architecture/SKILL.md) | Build AI agents using prompt-native architecture |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Create production-grade frontend interfaces |
-| [`react-frontend`](skills/react-frontend/SKILL.md) | React, TypeScript, and Next.js patterns |
+| [`react-frontend`](skills/react-frontend/SKILL.md) | React, TypeScript, Next.js patterns, Vitest/RTL testing |
 | [`simplifying-code`](skills/simplifying-code/SKILL.md) | Simplify, polish, and declutter code |
 
 ### Language & Framework
@@ -112,7 +112,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | Skill | Description |
 |-------|-------------|
 | [`nodejs-backend`](skills/nodejs-backend/SKILL.md) | Node.js backend patterns: Express/Fastify, TypeScript, validation |
-| [`php-laravel`](skills/php-laravel/SKILL.md) | Modern PHP 8.4 and Laravel patterns |
+| [`php-laravel`](skills/php-laravel/SKILL.md) | Modern PHP 8.4 and Laravel patterns, PHPUnit testing |
 | [`python-services`](skills/python-services/SKILL.md) | Python CLI tools, async parallelism, FastAPI services |
 | [`terraform`](skills/terraform/SKILL.md) | Terraform/OpenTofu configuration, modules, testing, state |
 | [`postgresql`](skills/postgresql/SKILL.md) | PostgreSQL schema design, query optimization, indexing |
@@ -124,8 +124,6 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | Skill | Description |
 |-------|-------------|
 | [`writing-tests`](skills/writing-tests/SKILL.md) | Generic test discipline: quality, anti-patterns, rationalization resistance |
-| [`testing-laravel`](skills/testing-laravel/SKILL.md) | Laravel tests using PHPUnit |
-| [`testing-react`](skills/testing-react/SKILL.md) | React/TypeScript tests using Vitest and RTL |
 
 ### Code Quality & Review
 

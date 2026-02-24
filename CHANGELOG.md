@@ -5,6 +5,25 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.40.0] - 2026-02-24
+
+### Changed
+
+- **Skill consolidation (33 → 31 skills)** — absorbed `testing-laravel` into `php-laravel` and `testing-react` into `react-frontend`. Testing content moved to `references/` for progressive disclosure. Hook trigger patterns merged into parent skills.
+- **Description trimming (23 skills)** — reduced system prompt overhead by trimming skill descriptions across 23 skills. Collapsed redundant quoted trigger phrases into concise keyword lists. Removed filler phrasing ("This skill should be used when"). Preserved all meaningful trigger keywords and behavioral anchors.
+- **MR/merge request triggers** — added MR trigger coverage to `code-review` and `receiving-code-review` for GitLab workflows
+- **planning skill** — added cross-references to `brainstorming` (for ambiguous requirements) and `writing` (for humanizing plan prose)
+- **writing-tests skill** — updated cross-references from deleted `testing-laravel`/`testing-react` to `php-laravel`/`react-frontend`
+
+### Fixed
+
+- **update-metadata.sh** — fixed broken jq query for hook counting after hooks.json restructure (`[.[] | .[].hooks | length]` → `[.hooks[][] | .hooks | length]`)
+
+### Removed
+
+- **`testing-laravel` skill** — absorbed into `php-laravel` with testing content as references
+- **`testing-react` skill** — absorbed into `react-frontend` with testing content as references
+
 ## [2.39.3] - 2026-02-24
 
 ### Fixed

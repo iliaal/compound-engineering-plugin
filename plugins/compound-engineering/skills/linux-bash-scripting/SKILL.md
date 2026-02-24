@@ -2,9 +2,8 @@
 name: linux-bash-scripting
 description: >-
   Defensive Bash scripting for Linux: safe foundations, argument parsing,
-  production patterns, ShellCheck compliance. Use when writing "bash script",
-  "shell script", "linux automation", "system script", "cron job",
-  "deployment script", "CLI tool in bash", or "automate with bash".
+  production patterns, ShellCheck compliance. Use when writing bash scripts,
+  shell scripts, cron jobs, or CLI tools in bash.
 ---
 
 # Linux Bash Scripting

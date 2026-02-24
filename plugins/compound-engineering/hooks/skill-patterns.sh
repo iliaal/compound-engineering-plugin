@@ -40,17 +40,11 @@ SKILL_TIERS[finishing-branch]=1
 
 # --- Tier 2: Domain/Language (language/framework-specific) ---
 
-SKILL_PATTERNS[php-laravel]='\bphp\b|laravel|eloquent|\bblade\b|artisan|migration.*php'
+SKILL_PATTERNS[php-laravel]='\bphp\b|laravel|eloquent|\bblade\b|artisan|migration.*php|phpunit|feature.?test.*php|unit.?test.*php|test.*(controller|model|service|action|job|command|endpoint).*php'
 SKILL_TIERS[php-laravel]=2
 
-SKILL_PATTERNS[testing-laravel]='phpunit|laravel.?test|feature.?test.*php|unit.?test.*php|test.*(controller|model|service|action|job|command|endpoint).*php'
-SKILL_TIERS[testing-laravel]=2
-
-SKILL_PATTERNS[react-frontend]='\breact\b|next\.?js|server.?component|jsx|tsx|\bhook[s]?\b.*component'
+SKILL_PATTERNS[react-frontend]='\breact\b|next\.?js|react.*test|jsx|tsx|\bhook[s]?\b.*component|vitest|component.?test|hook.?test|\brtl\b|testing.?library|snapshot.?test'
 SKILL_TIERS[react-frontend]=2
-
-SKILL_PATTERNS[testing-react]='vitest|component.?test|hook.?test|\brtl\b|testing.?library|snapshot.?test|react.*test'
-SKILL_TIERS[testing-react]=2
 
 SKILL_PATTERNS[nodejs-backend]='\bexpress\b.*server|\bfastify\b|node\.?js.*(backend|server|api)|server.?side.?typescript'
 SKILL_TIERS[nodejs-backend]=2
@@ -114,4 +108,4 @@ SKILL_TIERS[resolve-pr-parallel]=3
 SKILL_PATTERNS[setup]='configure.*(review.?agent|compound)|setup.?compound'
 SKILL_TIERS[setup]=3
 
-# Total skills: 33
+# Total skills: 31

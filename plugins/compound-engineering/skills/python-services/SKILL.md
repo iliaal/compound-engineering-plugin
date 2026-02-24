@@ -1,6 +1,9 @@
 ---
 name: python-services
-description: Python patterns for CLI tools, async parallelism, and backend services. Use when building CLI apps, async/parallel Python, FastAPI services, background jobs, or configuring Python project tooling (uv, ruff, ty).
+description: >-
+  Python patterns for CLI tools, async parallelism, and backend services. Use
+  when building CLI apps, FastAPI services, background jobs, or configuring uv,
+  ruff, or ty.
 ---
 
 # Python Services & CLI

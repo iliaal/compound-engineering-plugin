@@ -21,7 +21,7 @@ class PostFactory extends Factory
 
 ## States
 
-Name states as adjectives or past participles — they describe what the model IS:
+Name states as adjectives or past participles -- they describe what the model IS:
 
 ```php
 public function unpublished(): static
@@ -45,12 +45,12 @@ $post = Post::factory()->unpublished()->create();
 ## Relationships
 
 ```php
-// Has many — creates parent with 3 children
+// Has many -- creates parent with 3 children
 $post = Post::factory()
     ->has(Comment::factory()->count(3))
     ->create();
 
-// Belongs to — creates children for specific parent
+// Belongs to -- creates children for specific parent
 $posts = Post::factory()
     ->count(3)
     ->for($user)

@@ -2,9 +2,8 @@
 name: writing
 description: >-
   Prose editing, rewriting, and humanizing text for natural tone. Use when asked
-  to "write", "rewrite", "edit", "humanize", "improve text", "fix the tone",
-  "remove AI language", "proofread", or when writing copy, docs, blog posts,
-  articles, emails, PR descriptions, or plans.
+  to write, rewrite, edit, humanize, proofread, fix tone, or remove AI language.
+  For copy, docs, blog posts, emails, or PRs.
 ---
 
 # Human Writing

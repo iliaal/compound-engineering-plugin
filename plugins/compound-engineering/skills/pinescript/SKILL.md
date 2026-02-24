@@ -1,10 +1,9 @@
 ---
 name: pinescript
 description: >-
-  Pine Script v6 patterns: syntax rules, performance, debugging, backtesting,
-  visualization. Use when asked to "write a Pine Script", "create an
-  indicator", "build a strategy", "fix Pine code", or mentions PineScript,
-  TradingView, indicator, strategy, or backtest.
+  Pine Script v6 patterns: syntax, performance, debugging, backtesting,
+  visualization. Use when working with PineScript, TradingView, indicators,
+  strategies, or backtesting.
 ---
 
 # Pine Script Development

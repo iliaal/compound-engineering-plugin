@@ -24,7 +24,7 @@ command_count=$(find "$PLUGIN_DIR/commands" -name "*.md" -type f | wc -l)
 skill_count=$(find "$SKILLS_DIR" -name "SKILL.md" -type f | wc -l)
 hook_count=0
 if [[ -f "$PLUGIN_DIR/hooks/hooks.json" ]]; then
-    hook_count=$(jq '[.[] | .[].hooks | length] | add // 0' "$PLUGIN_DIR/hooks/hooks.json")
+    hook_count=$(jq '[.hooks[][] | .hooks | length] | add // 0' "$PLUGIN_DIR/hooks/hooks.json")
 fi
 mcp_count=$(jq '.mcpServers | length' "$PLUGIN_JSON")
 

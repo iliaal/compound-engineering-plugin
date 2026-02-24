@@ -1,11 +1,10 @@
 ---
 name: meta-prompting
 description: >-
-  Enhanced reasoning patterns via slash commands (/think, /verify, /adversarial,
-  /edge, /compare, /confidence, /budget, /constrain, /json, /flip, /assumptions,
-  /tensions, /analyze, /trade) or natural language ("argue against", "what could
-  break", "show reasoning", "deep review", "meta-prompts", "thinking modes",
-  "second-best approach", "list assumptions", "opposing perspectives").
+  Enhanced reasoning via slash commands (/think, /verify, /adversarial, /edge,
+  /compare, /confidence, /budget, /constrain, /json, /flip, /assumptions,
+  /tensions, /analyze, /trade) or natural language like "argue against" or
+  "what could break".
 ---
 
 # Meta-Prompting

@@ -1,10 +1,9 @@
 ---
 name: md-docs
 description: >-
-  Manages project documentation: AGENTS.md, README.md, and CONTRIBUTING.md.
-  Use when asked to "update README", "update agents", "init agents",
-  "create AGENTS.md", "update AGENTS.md", "update CONTRIBUTING",
-  "update context files", or "init context". Not for general markdown editing.
+  Manages project documentation: AGENTS.md, README.md, CONTRIBUTING.md. Use
+  when asked to update, create, or init these context files. Not for general
+  markdown editing.
 ---
 
 # Markdown Documentation

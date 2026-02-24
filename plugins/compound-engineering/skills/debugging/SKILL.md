@@ -1,10 +1,9 @@
 ---
 name: debugging
 description: >-
-  Systematic root-cause debugging: reproduce, investigate, hypothesize, fix
-  with verification. Use when asked to "debug this", "fix this bug", "why is
-  this failing", "troubleshoot", or mentions errors, stack traces, broken tests,
-  flaky tests, regressions, or unexpected behavior.
+  Systematic root-cause debugging: reproduce, investigate, hypothesize, fix with
+  verification. Use when debugging, troubleshooting, or facing errors, stack
+  traces, broken tests, flaky tests, or regressions.
 ---
 
 # Debugging

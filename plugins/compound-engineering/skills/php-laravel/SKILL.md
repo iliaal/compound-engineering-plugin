@@ -1,10 +1,9 @@
 ---
 name: php-laravel
 description: >-
-  Modern PHP 8.4 and Laravel patterns: architecture, Eloquent, queues, PHPUnit
-  testing. Use when asked to "write PHP", "build a Laravel app", "fix Eloquent
-  query", "add a queue job", "write a PHPUnit test", or mentions PHP, Laravel,
-  Eloquent, Blade, artisan, or migrations.
+  Modern PHP 8.4 and Laravel patterns: architecture, Eloquent, queues, testing.
+  Use when working with PHP, Laravel, Eloquent, Blade, artisan, migrations,
+  PHPUnit, or writing/reviewing tests for PHP code.
 ---
 
 # PHP & Laravel Development
@@ -70,11 +69,22 @@ Use these when applicable — do not explain them in comments (Claude and develo
 
 ## Testing (PHPUnit)
 
-- RED → verify RED → GREEN → verify GREEN → REFACTOR
-- Extend `TestCase`, use `RefreshDatabase` trait
-- One assertion focus per test. Test name describes the behavior, not the method.
-- `Sanctum::actingAs($user, ['ability'])` for API auth testing
-- Run relevant tests first, offer full suite after
+- **Feature tests** (`tests/Feature/`): HTTP through the full stack. Use `$this->getJson()`, `$this->postJson()`, etc.
+- **Unit tests** (`tests/Unit/`): Isolated logic -- services, actions, value objects. No HTTP, minimal database.
+- Default to feature tests for anything touching routes, controllers, or models
+- `use RefreshDatabase` trait in every test class that touches the database
+- Model factories for all test data -- never raw `DB::table()` inserts
+- One behavior per test. Name with `test_` prefix: `test_user_can_update_own_profile`
+- Assert both response status AND side effects (DB state, dispatched jobs, sent notifications)
+- `actingAs($user)` for auth, `Sanctum::actingAs($user, ['ability'])` for API auth
+- Fake facades BEFORE the action: `Queue::fake()` then act then `Queue::assertPushed(...)`
+- `assertDatabaseHas` / `assertDatabaseMissing` to verify persistence
+- **Tests expose bugs, not the reverse**: fix the source code, never adjust the test
+
+See [testing patterns and examples](./references/testing.md) for PHPUnit essentials, data providers, and running tests.
+See [feature testing](./references/feature-testing.md) for auth, validation, API, console, and DB assertions.
+See [mocking and faking](./references/mocking-and-faking.md) for facade fakes and action mocking.
+See [factories](./references/factories.md) for states, relationships, sequences, and afterCreating hooks.
 
 ## Discipline
 
@@ -100,4 +110,8 @@ Use these when applicable — do not explain them in comments (Claude and develo
 
 ## References
 
-- [laravel-ecosystem.md](./references/laravel-ecosystem.md) — Notifications, Task Scheduling, Custom Casts
+- [laravel-ecosystem.md](./references/laravel-ecosystem.md) -- Notifications, Task Scheduling, Custom Casts
+- [testing.md](./references/testing.md) -- PHPUnit essentials, data providers, running tests
+- [feature-testing.md](./references/feature-testing.md) -- Auth, validation, API, console, DB assertions
+- [mocking-and-faking.md](./references/mocking-and-faking.md) -- Facade fakes, action mocking, Mockery
+- [factories.md](./references/factories.md) -- States, relationships, sequences, afterCreating hooks

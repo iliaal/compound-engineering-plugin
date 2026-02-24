@@ -1,6 +1,9 @@
 ---
 name: react-frontend
-description: React, TypeScript, and Next.js patterns for frontend development. Use when building React components, managing state, fetching data, optimizing performance, or working with Next.js App Router. Covers React 18-19, hooks, Server Components, and type-safe patterns.
+description: >-
+  React, TypeScript, and Next.js patterns for frontend development and testing.
+  Use when working with React, Next.js, JSX/TSX, hooks, Vitest, React Testing
+  Library, or writing/reviewing tests for React components.
 ---
 
 # React Frontend
@@ -113,9 +116,31 @@ Form state           → React Hook Form
 
 **Data fetching:** Fetch in Server Components where data is used. Use Suspense boundaries for slow queries. `React.cache()` for per-request dedup. `generateStaticParams` for static generation. `generateMetadata` for dynamic SEO.
 
+## Testing (Vitest + React Testing Library)
+
+- **Component tests**: Vitest + RTL, co-located `*.test.tsx`. Default for React components.
+- **Hook tests**: `renderHook` + `act`, co-located `*.test.ts`
+- **Unit tests**: Vitest for pure functions, utilities, services
+- **E2E**: Playwright for user flows and critical paths
+- **Query priority**: `getByRole` > `getByLabelText` > `getByPlaceholderText` > `getByText` > `getByTestId`
+- Mock API services and external providers; render child components real for integration confidence
+- One behavior per test with AAA structure. Name: `should <behavior> when <condition>`
+- Use `userEvent` over `fireEvent` for realistic interactions
+- `findBy*` for async elements, `waitFor` after state-triggering actions
+- `vi.clearAllMocks()` in `beforeEach`. Recreate state per test.
+- **Tests expose bugs, not the reverse**: fix the source code, never adjust the test
+
+See [testing patterns and examples](./references/testing.md) for component, hook, and mocking examples.
+See [e2e testing](./references/e2e-testing.md) for Playwright patterns.
+
 ## Discipline
 
 - For non-trivial changes, pause and ask: "is there a more elegant way?" Skip for obvious fixes.
-- Simplicity first — every change as simple as possible, impact minimal code
-- Only touch what's necessary — avoid introducing unrelated changes
-- No hacky workarounds — if a fix feels wrong, step back and implement the clean solution
+- Simplicity first -- every change as simple as possible, impact minimal code
+- Only touch what's necessary -- avoid introducing unrelated changes
+- No hacky workarounds -- if a fix feels wrong, step back and implement the clean solution
+
+## References
+
+- [testing.md](./references/testing.md) -- Component, hook, and mocking test examples
+- [e2e-testing.md](./references/e2e-testing.md) -- Playwright E2E patterns

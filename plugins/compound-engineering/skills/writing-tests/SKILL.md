@@ -3,7 +3,7 @@ name: writing-tests
 description: >-
   Generic test writing discipline: test quality, real assertions, anti-patterns,
   and rationalization resistance. Use when writing tests for any language or
-  framework. Complements tech-specific skills (testing-laravel, testing-react).
+  framework. Complements tech-specific skills (php-laravel, react-frontend).
 ---
 
 # Writing Tests
@@ -162,7 +162,7 @@ This skill is referenced by:
 
 This skill provides generic test discipline. For framework-specific patterns, conventions, and tooling:
 
-- **Laravel/PHP** → `testing-laravel` (PHPUnit, factories, feature/unit split, facade faking, data providers)
-- **React/TypeScript** → `testing-react` (Vitest, RTL, component/hook patterns, Playwright E2E, mocking patterns)
+- **Laravel/PHP** → `php-laravel` (PHPUnit, factories, feature/unit split, facade faking, data providers)
+- **React/TypeScript** → `react-frontend` (Vitest, RTL, component/hook patterns, Playwright E2E, mocking patterns)
 
 Both skills are complementary — this skill covers principles (why and what to test), tech-specific skills cover implementation (how to test in that framework). When both are active, framework-specific guidance takes precedence for tooling and conventions.

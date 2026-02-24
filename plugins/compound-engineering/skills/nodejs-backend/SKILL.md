@@ -1,9 +1,9 @@
 ---
 name: nodejs-backend
 description: >-
-  Node.js backend patterns: framework selection, layered architecture, TypeScript,
-  validation, error handling, security, production deployment. Use when building
-  REST APIs, Express/Fastify servers, microservices, or server-side TypeScript.
+  Node.js backend patterns: layered architecture, TypeScript, validation, error
+  handling, security, deployment. Use when building REST APIs, Express/Fastify
+  servers, or server-side TypeScript.
 ---
 
 # Node.js Backend

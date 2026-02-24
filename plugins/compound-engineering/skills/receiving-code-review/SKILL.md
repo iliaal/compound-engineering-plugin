@@ -2,8 +2,8 @@
 name: receiving-code-review
 description: >-
   Process code review feedback critically: verify before implementing, push back
-  on incorrect suggestions, no performative agreement. Use when receiving PR
-  comments, review feedback, or suggestions from reviewers — human or agent.
+  on incorrect suggestions, no performative agreement. Use when receiving PR/MR
+  comments or review feedback.
 ---
 
 # Receiving Code Review

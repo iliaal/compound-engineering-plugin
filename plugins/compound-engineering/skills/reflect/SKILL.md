@@ -1,9 +1,8 @@
 ---
 name: reflect
 description: >-
-  Session retrospective and skill audit. Use when "/reflect", "session review",
-  "retrospective", "what went wrong", "lessons learned", "what should we
-  remember", or "what can we improve".
+  Session retrospective and skill audit. Use for retrospectives, lessons learned,
+  or reviewing what went well or wrong.
 ---
 
 # Reflect

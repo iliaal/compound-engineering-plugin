@@ -57,7 +57,7 @@ export default defineConfig({
 
 ## Page Object Model
 
-Tests never use selectors directly — page objects encapsulate all locators and actions.
+Tests never use selectors directly -- page objects encapsulate all locators and actions.
 
 ```typescript
 // e2e/pages/base.page.ts

@@ -2,9 +2,8 @@
 name: postgresql
 description: >-
   PostgreSQL schema design, query optimization, indexing, and administration.
-  Use when writing schemas, queries, migrations, or mentions PostgreSQL,
-  Postgres, JSONB, partitioning, RLS, CTEs, window functions, EXPLAIN ANALYZE,
-  or connection pooling.
+  Use when working with PostgreSQL, JSONB, partitioning, RLS, CTEs, window
+  functions, or EXPLAIN ANALYZE.
 ---
 
 # PostgreSQL

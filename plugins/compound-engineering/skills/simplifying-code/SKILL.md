@@ -2,9 +2,8 @@
 name: simplifying-code
 description: >-
   Simplifies, polishes, and declutters code without changing behavior. Use when
-  asked to "simplify code", "clean up code", "polish code", "refactor",
-  "declutter", "reduce complexity", "remove dead code", "remove AI slop",
-  "improve readability", or "tighten up this file".
+  asked to simplify, clean up, refactor, declutter, remove dead code or AI slop,
+  or improve readability.
 ---
 
 # Simplifying Code

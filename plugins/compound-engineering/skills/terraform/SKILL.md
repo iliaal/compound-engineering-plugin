@@ -2,9 +2,8 @@
 name: terraform
 description: >-
   Terraform and OpenTofu configuration, modules, testing, state management, and
-  HCL review. Use for "terraform module", "terraform test", "infrastructure as
-  code", "IaC", "HCL", "tfvars", "terraform plan", "terraform apply",
-  "OpenTofu", "tftest", or multi-environment patterns.
+  HCL review. Use when working with Terraform, HCL, tfvars, tftest, or IaC
+  patterns.
 ---
 
 # Terraform & OpenTofu

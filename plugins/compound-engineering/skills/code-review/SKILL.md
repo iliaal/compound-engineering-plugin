@@ -1,10 +1,8 @@
 ---
 name: code-review
 description: >-
-  Performs two-stage code reviews (spec compliance, then code quality) with
-  severity-ranked findings. Use when asked to "review code", "review this PR",
-  "check this diff", "review before merge", or mentions reviewing, auditing,
-  or critiquing code changes, pull requests, or diffs.
+  Two-stage code reviews (spec compliance, then code quality) with severity-ranked
+  findings. Use when reviewing, auditing, or critiquing code, PRs, MRs, or diffs.
 ---
 
 # Code Review

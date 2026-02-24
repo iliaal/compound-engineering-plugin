@@ -100,7 +100,7 @@ public function test_fetches_data_from_external_api(): void
 }
 ```
 
-Use `Http::preventStrayRequests()` after faking to fail on any unfaked URL — catches accidental real HTTP calls:
+Use `Http::preventStrayRequests()` after faking to fail on any unfaked URL -- catches accidental real HTTP calls:
 
 ```php
 Http::fake(['api.example.com/*' => Http::response(['ok' => true])]);
@@ -158,7 +158,7 @@ public function test_processes_order_and_notifies(): void
 }
 ```
 
-Only mock what you own — for external services (Stripe, etc.), create a service abstraction with a driver pattern and swap the driver config in tests, instead of mocking the SDK directly.
+Only mock what you own -- for external services (Stripe, etc.), create a service abstraction with a driver pattern and swap the driver config in tests, instead of mocking the SDK directly.
 
 ## Mockery (Service Mocking)
 

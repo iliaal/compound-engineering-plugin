@@ -1,10 +1,9 @@
 ---
 name: planning
 description: >-
-  Software implementation planning with file-based persistence (.plan/task_plan.md,
-  .plan/findings.md, .plan/progress.md). Use when asked to "plan", "break down this
-  feature", "implementation plan", or starting complex tasks needing >5 tool
-  calls. Apply proactively before non-trivial coding.
+  Software implementation planning with file-based persistence (.plan/). Use when
+  asked to plan, break down a feature, or starting complex tasks. Apply
+  proactively before non-trivial coding.
 ---
 
 # Planning
@@ -159,6 +158,7 @@ Use this skill's principles during any planning activity. Use `workflows:plan` w
 ## Integration
 
 - **This skill** applies as methodology during `workflows:plan` and `workflows:work`
-- **Predecessor:** `brainstorming` (optional — if requirements are already clear, plan directly)
+- **Predecessor:** `brainstorming` — use first when requirements are ambiguous or multiple approaches exist
+- **Prose quality:** `writing` — use to humanize plan language and remove AI slop from plan documents
 - **End of chain:** `finishing-branch` (merge / PR / keep / discard)
 - See `brainstorming` for the full workflow chain diagram

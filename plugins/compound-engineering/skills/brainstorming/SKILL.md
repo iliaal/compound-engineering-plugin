@@ -1,10 +1,9 @@
 ---
 name: brainstorming
 description: >-
-  Pre-implementation brainstorming: explore user intent, approaches, and design
-  decisions before planning. Use when asked to "brainstorm", "help me think
-  through", "explore approaches", or when a request has multiple valid
-  interpretations that need clarification.
+  Pre-implementation brainstorming: explore intent, approaches, and design
+  decisions before planning. Use when asked to brainstorm, think through
+  approaches, or clarify ambiguous requirements.
 ---
 
 # Brainstorming
