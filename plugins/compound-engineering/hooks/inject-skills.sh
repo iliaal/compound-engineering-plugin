@@ -83,11 +83,13 @@ If you cannot read the files, proceed with your best judgment."
 # Prepend injection to original prompt
 MODIFIED_PROMPT=$(printf '%s\n\n%s' "$INJECTION" "$PROMPT")
 
-# Output updatedInput to modify the Task prompt
-jq -n --arg prompt "$MODIFIED_PROMPT" '{
+# Output updatedInput — must include ALL original tool_input fields since
+# updatedInput is a full replacement, not a merge. Only the prompt changes.
+TOOL_INPUT=$(printf '%s' "$INPUT" | jq '.tool_input')
+printf '%s' "$TOOL_INPUT" | jq --arg prompt "$MODIFIED_PROMPT" '{
   "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
     "permissionDecision": "allow",
-    "updatedInput": {"prompt": $prompt}
+    "updatedInput": (. + {"prompt": $prompt})
   }
 }'
