@@ -10,15 +10,27 @@ This skill guides creation of distinctive, production-grade frontend interfaces 
 
 The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
 
+## Design Philosophy (Write First, Code Second)
+
+For full pages, applications, or multi-component interfaces: write a **3-sentence design philosophy** before any code. This forces a coherent aesthetic direction and prevents generic output.
+
+1. **Sentence 1 — Intent**: What emotional response should this interface provoke? (Not "clean and modern" — that's every AI default. Be specific: "controlled tension between density and breathing room" or "the quiet confidence of a well-bound book.")
+2. **Sentence 2 — Signature**: What single visual choice makes this unmistakable? (A typeface, a color relationship, a spatial pattern, a motion behavior.)
+3. **Sentence 3 — Constraint**: What will this design deliberately NOT do? (The constraint shapes the identity as much as the choices.)
+
+Write the philosophy as a comment or in conversation before implementation begins. The philosophy constrains implementation without being prescriptive — it's a compass, not a blueprint.
+
+For small components or quick additions to existing interfaces, skip the philosophy and match the surrounding design system.
+
 ## Design Thinking
 
-Before coding, understand the context and commit to a BOLD aesthetic direction:
+With the philosophy written, commit to the specifics:
 - **Purpose**: What problem does this interface solve? Who uses it?
 - **Tone**: Pick an extreme: brutally minimal, maximalist chaos, retro-futuristic, organic/natural, luxury/refined, playful/toy-like, editorial/magazine, brutalist/raw, art deco/geometric, soft/pastel, industrial/utilitarian, etc. There are so many flavors to choose from. Use these for inspiration but design one that is true to the aesthetic direction.
 - **Constraints**: Technical requirements (framework, performance, accessibility).
 - **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 
-**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work - the key is intentionality, not intensity.
+**CRITICAL**: Choose a clear conceptual direction and execute it with precision. Bold maximalism and refined minimalism both work — the key is intentionality, not intensity.
 
 Then implement working code (HTML/CSS/JS, React, Vue, etc.) that is:
 - Production-grade and functional

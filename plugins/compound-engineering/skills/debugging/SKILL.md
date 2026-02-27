@@ -24,6 +24,17 @@ Root cause identification is the core deliverable of debugging — not the fix i
 - **Evidence-based**: Document root cause with `file:line` references, log output, and concrete reproduction proof
 - **Competing hypotheses**: When the cause is ambiguous, generate multiple hypotheses and rank by evidence strength (see Escalation section below)
 
+## Environment Diagnostics
+
+Before investigating, capture the environment state using [collect-diagnostics.sh](./scripts/collect-diagnostics.sh):
+
+```bash
+bash collect-diagnostics.sh           # print to stdout
+bash collect-diagnostics.sh diag.md   # write to file
+```
+
+Collects system info, language versions, git state, project files, and environment variables. Use during differential analysis to compare working vs broken environments, or attach to bug reports.
+
 ## Process
 
 **1. Reproduce** — make the bug consistent. If intermittent, run N times under stress or simulate poor conditions (slow network, low memory) until it triggers reliably.

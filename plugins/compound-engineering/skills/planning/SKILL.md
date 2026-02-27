@@ -25,13 +25,13 @@ Planning tokens are cheaper than implementation tokens. Front-load thinking; sca
 
 ## Planning Files
 
-Create in `.plan/` directory before starting work:
+Scaffold the `.plan/` directory with pre-populated templates using [init-plan.sh](./scripts/init-plan.sh):
 
 ```bash
-mkdir -p .plan
-# Add to .gitignore if not already present
-grep -qxF '.plan/' .gitignore 2>/dev/null || echo '.plan/' >> .gitignore
+bash init-plan.sh "Feature Name"
 ```
+
+This creates `.plan/` with `task_plan.md`, `findings.md`, and `progress.md` — each pre-populated with the correct structure. Also adds `.plan/` to `.gitignore`.
 
 Planning files are ephemeral working state — do not commit them. If working on multiple features sequentially, old files are overwritten; the plan captures the current task only.
 

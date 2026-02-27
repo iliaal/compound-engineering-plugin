@@ -5,6 +5,18 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.41.0] - 2026-02-27
+
+### Added
+
+- **planning skill** — bundled `scripts/init-plan.sh` to scaffold `.plan/` directory with pre-populated template files (task_plan.md, findings.md, progress.md) and auto-gitignore. Replaces inline bash snippets with a deterministic script.
+- **debugging skill** — bundled `scripts/collect-diagnostics.sh` to gather environment diagnostics (system info, language versions, git state, project files, environment variables). Supports differential analysis of working vs broken environments.
+- **compound-docs skill** — bundled `scripts/validate-frontmatter.sh` to validate solution doc YAML frontmatter against the schema (required fields, enum values, date format, array constraints). Replaces LLM-based validation with deterministic checking.
+
+### Changed
+
+- **frontend-design skill** — added "Design Philosophy (Write First, Code Second)" section requiring a 3-sentence design philosophy (Intent, Signature, Constraint) before implementation for full pages/apps. Small components skip the philosophy and match surrounding design. Inspired by Anthropic's philosophy-first pattern in algorithmic-art/canvas-design skills.
+
 ## [2.40.0] - 2026-02-24
 
 ### Changed

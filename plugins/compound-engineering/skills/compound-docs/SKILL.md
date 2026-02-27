@@ -28,7 +28,7 @@ Follow the 7-step documentation capture process. For full details, see [document
 2. **Gather context** -- Extract module, symptom, investigation attempts, root cause, solution, prevention. BLOCK if critical context missing.
 3. **Check existing docs** -- Search `docs/solutions/` for similar issues. If found, offer: new doc with cross-reference, update existing, or other.
 4. **Generate filename** -- Format: `[sanitized-symptom]-[module]-[YYYYMMDD].md`
-5. **Validate YAML** -- Validate frontmatter against schema in [yaml-schema.md](./references/yaml-schema.md). BLOCK until valid.
+5. **Validate YAML** -- Run [validate-frontmatter.sh](./scripts/validate-frontmatter.sh) against the file. BLOCK until valid.
 6. **Create documentation** -- Write file to `docs/solutions/[category]/[filename].md` using [resolution-template.md](./assets/resolution-template.md).
 7. **Cross-reference** -- Link related issues. Detect critical patterns (3+ similar issues).
 
@@ -87,3 +87,4 @@ For detailed response handling, see [documentation-process.md](./references/docu
 - [example-scenario.md](./references/example-scenario.md) - Complete walkthrough of documenting an N+1 query fix
 - [resolution-template.md](./assets/resolution-template.md) - Template for documentation files
 - [critical-pattern-template.md](./assets/critical-pattern-template.md) - Template for critical pattern entries
+- [validate-frontmatter.sh](./scripts/validate-frontmatter.sh) - Validate YAML frontmatter against schema
