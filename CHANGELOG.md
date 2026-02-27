@@ -5,6 +5,15 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.42.1] - 2026-02-27
+
+### Changed
+
+- **postgresql skill** — re-distilled from upstream sources (Supabase, PlanetScale, postgres-patterns). Added RLS, concurrency patterns (UPSERT, deadlock prevention, N+1, queue processing), connection pooling, unindexed FK detection. Split operations and full-text search into `references/` for progressive disclosure.
+- **code-review skill** — added test coverage and resource cleanup review steps, expanded security terms (CSRF, SSRF, path traversal, unsafe deserialization), large diff handling guidance, clean review output.
+- **planning skill** — added flat-list planning tier for medium tasks, session recovery with `git diff --stat` reconciliation.
+- **debugging skill** — added stale state pattern, pattern comparison technique, explicit "no root cause found" escape hatch.
+
 ## [2.42.0] - 2026-02-27
 
 ### Added

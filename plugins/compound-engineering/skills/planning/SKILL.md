@@ -20,7 +20,8 @@ Planning tokens are cheaper than implementation tokens. Front-load thinking; sca
 
 ## When to Plan
 
-- **Always plan**: multi-file changes, new features, refactors, >5 tool calls
+- **Full plan** (.plan/ directory): multi-file changes, new features, refactors, >5 tool calls
+- **Flat list** (inline checklist): 3-5 file changes, clear scope, no research needed -- write a numbered task list in the conversation or a single progress.md, skip .plan/ scaffolding
 - **Skip planning**: single-file edits, quick lookups, simple questions
 
 ## Planning Files
@@ -101,7 +102,7 @@ Only ask if truly blocking. Make reasonable assumptions for everything else.
 | After any discovery | Write to .plan/findings.md immediately |
 | After completing phase | Update .plan/task_plan.md status, log to .plan/progress.md |
 | After viewing image/PDF | Write findings NOW (multimodal content doesn't persist) |
-| Resuming after gap | Read all planning files |
+| Resuming after gap | Read all planning files, run `git diff --stat` to reconcile actual vs planned state |
 | Just wrote a file | Don't re-read it (still in context) |
 | Error occurred | Log to .plan/task_plan.md, read relevant files for state |
 

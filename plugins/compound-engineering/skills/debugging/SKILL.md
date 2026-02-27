@@ -49,6 +49,8 @@ Collects system info, language versions, git state, project files, and environme
 
 After 3 failed fix attempts, STOP. The problem is likely architectural, not a surface bug. Step back and question assumptions about how the system works. Read the actual code path end-to-end instead of spot-checking.
 
+**No root cause found:** If investigation is exhausted without a clear root cause, say so explicitly. Document what was checked, what was ruled out, and what instrumentation to add for next occurrence. An honest "unknown" with good diagnostics beats a fabricated cause.
+
 ## Escalation: Competing Hypotheses
 
 When the cause is unclear across multiple components, use Analysis of Competing Hypotheses:
@@ -87,6 +89,11 @@ When multiple bugs exist, prioritize by:
 - **Async ordering** — missing `await`, unhandled promise rejection, callback firing before setup completes
 - **Type coercion** — `==` vs `===`, string-to-number conversion, truthy/falsy edge cases
 - **Timezone** — always store UTC, convert at display. Check DST transitions.
+- **Stale state** — cached values, stale closures, outdated config, old build artifacts. When behavior contradicts the code you're reading, verify you're running what you think you're running.
+
+## Pattern Comparison
+
+When the cause isn't obvious, find working similar code in the codebase and compare it structurally with the broken path. Enumerate every difference -- the bug is in one of them.
 
 ## Anti-Patterns and Red Flags
 

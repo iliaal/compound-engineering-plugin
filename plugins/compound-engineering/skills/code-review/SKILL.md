@@ -18,9 +18,13 @@ description: >-
 1. **Context** — read the PR description, linked issue, or task spec. Run the project's test/lint suite if available (`npm run test`, `make check`, etc.) to catch automated failures before manual review.
 2. **Structural scan** — architecture, file organization, API surface changes. Flag breaking changes.
 3. **Line-by-line** — correctness, edge cases, error handling, naming, readability. Use question-based feedback ("What happens if `input` is empty here?") instead of declarative statements to encourage author thinking.
-4. **Security** — input validation, auth checks, secrets exposure, injection vectors (SQL, XSS, command). Flag race conditions (TOCTOU, check-then-act).
-5. **Removal candidates** — identify dead code, unused imports, feature-flagged code that can be cleaned up. Distinguish safe-to-delete (no references) from defer-with-plan (needs migration).
-6. **Summary** — present findings grouped by severity, then ask user how to proceed. Do NOT auto-implement fixes.
+4. **Security** — input validation, auth checks, secrets exposure, injection vectors (SQL, XSS, CSRF, SSRF, command, path traversal, unsafe deserialization). Flag race conditions (TOCTOU, check-then-act).
+5. **Test coverage** — verify new code paths have tests. Flag untested error paths, edge cases, and behavioral changes without corresponding test updates.
+6. **Resource cleanup** — file handles, DB connections, event listeners, timers, subscriptions. Verify cleanup on both success and error paths.
+7. **Removal candidates** — identify dead code, unused imports, feature-flagged code that can be cleaned up. Distinguish safe-to-delete (no references) from defer-with-plan (needs migration).
+8. **Summary** — present findings grouped by severity, then ask user how to proceed. Do NOT auto-implement fixes.
+
+**Large diffs (>500 lines):** Review by module/directory rather than file-by-file. Summarize each module's changes first, then drill into high-risk areas. Flag if the PR should be split.
 
 ## Severity Levels
 
@@ -71,7 +75,9 @@ Performance:
 - [specific positive observation with why it's good]
 ```
 
-Ground every finding in actual code — no invented line references. Limit to 10 findings per severity. If more exist, note the count and show the highest-impact ones.
+Ground every finding in actual code -- no invented line references. Limit to 10 findings per severity. If more exist, note the count and show the highest-impact ones.
+
+**Clean review (no findings):** If the code is solid, say so explicitly. Summarize what was checked and why no issues were found. A clean review is a valid outcome, not an indication of insufficient effort.
 
 ## Integration
 
