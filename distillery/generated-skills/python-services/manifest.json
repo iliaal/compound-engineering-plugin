@@ -1,0 +1,28 @@
+{
+  "query": "python-services",
+  "search_queries": [
+    "python",
+    "python cli",
+    "python async"
+  ],
+  "instructions": "Focus on command-line tools, parallelism, and services.",
+  "generated": "2026-02-13",
+  "token_count": 1877,
+  "sources": [
+    {
+      "id": "wshobson/agents/python-performance-optimization",
+      "installs": 2993,
+      "sha1": "4f180ef1e7edb8da100cc38e94acee819565cccc"
+    },
+    {
+      "id": "wshobson/agents/async-python-patterns",
+      "installs": 1529,
+      "sha1": "72c0623f00b482f8f8d8996c8e66f7dbef29524e"
+    },
+    {
+      "id": "wshobson/agents/python-packaging",
+      "installs": 997,
+      "sha1": "8551039c0632b6d2bdcca648417880a04f7859a8"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "query": "testing-laravel",
+  "search_queries": ["testing", "php testing", "php laravel", "laravel testing", "phpunit", "php pest testing"],
+  "generated": "2026-02-20",
+  "token_count": 1180,
+  "sources": [
+    { "id": "anthropics/skills/webapp-testing", "installs": 12270, "sha1": "a71271f620ffaaceabe7506b6a5bbf73982e3a8e" },
+    { "id": "jeffallan/claude-skills/laravel-specialist", "installs": 2600, "sha1": "1b9e632c4f1bb5c7c03073845f899c8a58054d32" },
+    { "id": "wshobson/agents/e2e-testing-patterns", "installs": 3481, "sha1": "3b5def163e542f113ae3f1d047224497e0cc1684" },
+    { "id": "jeffallan/claude-skills/php-pro", "installs": 1115, "sha1": "d59aabf0057ec1319dce1e58f7d5fdc2eb3411" },
+    { "id": "iserter/laravel-claude-agents/laravel-tdd", "installs": 107, "sha1": "ed4804843ad3a3bc0028022957b8d9201ebb72ef" },
+    { "id": "leeovery/claude-laravel/laravel-testing", "installs": 0, "sha1": "manual-reference" },
+    { "id": "leeovery/claude-laravel/laravel-quality", "installs": 0, "sha1": "manual-reference" },
+    { "id": "fusengine/agents/laravel-testing", "installs": 0, "sha1": "manual-reference" },
+    { "id": "pluginagentmarketplace/custom-plugin-php/php-testing", "installs": 0, "sha1": "manual-reference" }
+  ]
+}

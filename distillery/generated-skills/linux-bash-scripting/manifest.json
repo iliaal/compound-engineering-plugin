@@ -1,0 +1,29 @@
+{
+  "query": "linux-bash-scripting",
+  "search_queries": [
+    "bash",
+    "bash shell scripting",
+    "bash linux",
+    "shell linux command line"
+  ],
+  "instructions": "Linux-specific only. No Windows or macOS content.",
+  "generated": "2026-02-13",
+  "token_count": 1415,
+  "sources": [
+    {
+      "id": "wshobson/agents/bash-defensive-patterns",
+      "installs": 1385,
+      "sha1": "ccd93c4df0582e507635db72a74371092d6a9b7f"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/bash-linux",
+      "installs": 370,
+      "sha1": "bb8d8cb016ec17220294f11c0e976c7181d0feea"
+    },
+    {
+      "id": "davila7/claude-code-templates/bash-linux",
+      "installs": 112,
+      "sha1": "bb8d8cb016ec17220294f11c0e976c7181d0feea"
+    }
+  ]
+}

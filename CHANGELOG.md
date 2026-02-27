@@ -5,6 +5,19 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.42.0] - 2026-02-27
+
+### Added
+
+- **Skill distillery** — absorbed `~/ai/skills` repo into `distillery/`. Skills are now generated, validated, and A/B tested directly in the plugin repo. Eliminates the 3-repo pipeline.
+- **mirror-to-ai-skills.sh** — new script to mirror plugin skills to the `ai-skills` public repo (reverse of old bundle-skills.sh direction)
+- **skill-distiller skill** — project-level skill (`.claude/skills/skill-distiller/`) for distillery workflow
+
+### Removed
+
+- **bundle-skills.sh** — replaced by direct skill editing + mirror-to-ai-skills.sh
+- **.bundle-manifest.json** — all skills are now native; no native/bundled distinction
+
 ## [2.41.0] - 2026-02-27
 
 ### Added

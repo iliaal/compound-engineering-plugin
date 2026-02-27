@@ -1,0 +1,50 @@
+{
+  "query": "testing-react",
+  "search_queries": [
+    "react testing",
+    "javascript testing",
+    "frontend testing",
+    "vitest",
+    "playwright e2e testing"
+  ],
+  "generated": "2026-02-20",
+  "token_count": 1132,
+  "instructions": "E2E testing patterns go in references/e2e-testing.md, not in main body. Must not conflict with testing-laravel skill triggers.",
+  "sources": [
+    {
+      "id": "antfu/skills/vitest",
+      "installs": 5253,
+      "sha1": "a205a2386c18d57dc658249b13600035e76ee6f6"
+    },
+    {
+      "id": "wshobson/agents/javascript-testing-patterns",
+      "installs": 2916,
+      "sha1": "c7753a42ad58898b607bdf70d9c98c690e5cbe84"
+    },
+    {
+      "id": "hieutrtr/ai1-skills/e2e-testing",
+      "installs": 1388,
+      "sha1": "ed2d000328b7038689b2aeb3660ae653a96740d9"
+    },
+    {
+      "id": "sergiodxa/agent-skills/frontend-testing-best-practices",
+      "installs": 1236,
+      "sha1": "121c019dcf7fa7bc1cc3fd3475e744c9d9e55d5a"
+    },
+    {
+      "id": "langgenius/dify/frontend-testing",
+      "installs": 1152,
+      "sha1": "87a164e4ef5947b86f7907b7c8008d391eb32844"
+    },
+    {
+      "id": "jeffallan/claude-skills/playwright-expert",
+      "installs": 764,
+      "sha1": "f53e2a86f8cbcb4dd87b293cdffc4c9e426e865e"
+    },
+    {
+      "id": "bobmatnyc/claude-mpm-skills/playwright-e2e-testing",
+      "installs": 489,
+      "sha1": "55631c9c746457a2e0b583675345f22af3a2d06e"
+    }
+  ]
+}

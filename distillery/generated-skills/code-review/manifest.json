@@ -1,0 +1,61 @@
+{
+  "query": "code review",
+  "search_queries": [
+    "code review"
+  ],
+  "instructions": "Review-only (no auto-fix). Focus on performing reviews, not requesting or receiving them.",
+  "generated": "2026-02-13",
+  "token_count": 969,
+  "sources": [
+    {
+      "id": "obra/superpowers/requesting-code-review",
+      "installs": 6345,
+      "sha1": "98f7b66963f0fa10c69ae6ef46ab700ee87c3c1d"
+    },
+    {
+      "id": "obra/superpowers/receiving-code-review",
+      "installs": 5419,
+      "sha1": "1ab3e001b39f0bae77cc5af2bfbe7a2687aedbf4"
+    },
+    {
+      "id": "wshobson/agents/code-review-excellence",
+      "installs": 2993,
+      "sha1": "24f9da0af3708aacf53c66586a5e5f8ee1e0bc40"
+    },
+    {
+      "id": "google-gemini/gemini-cli/code-reviewer",
+      "installs": 1806,
+      "sha1": "20cdaf7ce99a692e387b0e58e9c9d3f676a3bf1e"
+    },
+    {
+      "id": "langgenius/dify/frontend-code-review",
+      "installs": 1515,
+      "sha1": "0ccc49098dfb6e5ed16a21e839b0ed38bb8d0db7"
+    },
+    {
+      "id": "sanyuan0704/code-review-expert/code-review-expert",
+      "installs": 1422,
+      "sha1": "abf008ea98578efcce1dc1434a17c8124b4cdf83"
+    },
+    {
+      "id": "affaan-m/everything-claude-code/security-review",
+      "installs": 701,
+      "sha1": "cd4cb81994fc707e5c654c9237b9fd110ac294ef"
+    },
+    {
+      "id": "skillcreatorai/ai-agent-skills/code-review",
+      "installs": 380,
+      "sha1": "20ecc70188272ba0496501b103892ca5d98f2ce3"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/code-review-checklist",
+      "installs": 300,
+      "sha1": "f7b78ad5a6b617843c5cc70fc9080e5593a443a4"
+    },
+    {
+      "id": "jeffallan/claude-skills/code-reviewer",
+      "installs": 286,
+      "sha1": "20cdaf7ce99a692e387b0e58e9c9d3f676a3bf1e"
+    }
+  ]
+}

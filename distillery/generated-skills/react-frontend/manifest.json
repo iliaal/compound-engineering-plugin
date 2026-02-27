@@ -1,0 +1,29 @@
+{
+  "query": "react-frontend",
+  "search_queries": [
+    "react",
+    "frontend javascript",
+    "nextjs",
+    "typescript"
+  ],
+  "instructions": "NOT react native. Front-end JS development only.",
+  "generated": "2026-02-13",
+  "token_count": 1699,
+  "sources": [
+    {
+      "id": "vercel-labs/agent-skills/vercel-react-best-practices",
+      "installs": 124484,
+      "sha1": "d000dc79b8e456a4052fab3120c5d36c288b3b69"
+    },
+    {
+      "id": "wshobson/agents/nextjs-app-router-patterns",
+      "installs": 3151,
+      "sha1": "ec7c95300c4fe3eb929afbcef46df6dba5166707"
+    },
+    {
+      "id": "wshobson/agents/react-state-management",
+      "installs": 1851,
+      "sha1": "fb4e9aaa52718d1f71072efd460dacde9f0bc67d"
+    }
+  ]
+}

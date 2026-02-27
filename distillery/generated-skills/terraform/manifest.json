@@ -1,0 +1,40 @@
+{
+  "query": "terraform",
+  "search_queries": [
+    "terraform"
+  ],
+  "generated": "2026-02-13",
+  "token_count": 1376,
+  "sources": [
+    {
+      "id": "wshobson/agents/terraform-module-library",
+      "installs": 1556,
+      "sha1": "5b8d7dcb6505cde2788f5635110e09684eaca99a"
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-style-guide",
+      "installs": 552,
+      "sha1": "e132c6da8852dc3eb0bcab62908e8db19014a70c"
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-test",
+      "installs": 342,
+      "sha1": "6ddadda37b788e4a0e7210d981e64d7e2668f136"
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-stacks",
+      "installs": 252,
+      "sha1": "37fa0d540f050d3d52115e3967c135ee9e656d18"
+    },
+    {
+      "id": "antonbabenko/terraform-skill/terraform-skill",
+      "installs": 243,
+      "sha1": "418a692d2368a69981acde5c361ece9c37dc35e7"
+    },
+    {
+      "id": "jeffallan/claude-skills/terraform-engineer",
+      "installs": 221,
+      "sha1": "cfcc21c735b8bb60f6920c4e462795c3028e45ba"
+    }
+  ]
+}

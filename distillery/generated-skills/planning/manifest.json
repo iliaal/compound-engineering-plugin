@@ -1,0 +1,27 @@
+{
+  "query": "planning",
+  "search_queries": [
+    "planning",
+    "task management",
+    "implementation plan"
+  ],
+  "generated": "2026-02-13",
+  "token_count": 1219,
+  "sources": [
+    {
+      "id": "othmanadi/planning-with-files/planning-with-files",
+      "installs": 3500,
+      "sha1": "0164e8ea051cc3ccd024726efe2cd246f810cb07"
+    },
+    {
+      "id": "jezweb/claude-skills/project-planning",
+      "installs": 300,
+      "sha1": "3b3ff37f9eca3e34b850310e1d51222c45f2f856"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/concise-planning",
+      "installs": 236,
+      "sha1": "4e84dce1f277de68a19f7434ad6d71bff52867aa"
+    }
+  ]
+}

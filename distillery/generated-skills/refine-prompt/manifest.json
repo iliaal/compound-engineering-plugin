@@ -1,0 +1,37 @@
+{
+  "query": "refine-prompt",
+  "search_queries": [
+    "refine prompt",
+    "prompt engineering",
+    "prompt optimization"
+  ],
+  "generated": "2026-02-13",
+  "token_count": 702,
+  "sources": [
+    {
+      "id": "google-labs-code/stitch-skills/enhance-prompt",
+      "installs": 3542,
+      "sha1": "0af9f212e95d9698794220741f29d58d40f4b21c"
+    },
+    {
+      "id": "wshobson/agents/prompt-engineering-patterns",
+      "installs": 3103,
+      "sha1": "0d0205625397d05eff62575e76fccba809b7f8c5"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/prompt-engineer",
+      "installs": 435,
+      "sha1": "aed4b85c7a0757014b27ef6d7b68c83f09955c4d"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/prompt-engineering",
+      "installs": 337,
+      "sha1": "876e1185963566504a11daec234b1679baa13074"
+    },
+    {
+      "id": "intellectronica/agent-skills/promptify",
+      "installs": 140,
+      "sha1": "c3384f4bcf3109afe88753d289ebc3945341ff34"
+    }
+  ]
+}

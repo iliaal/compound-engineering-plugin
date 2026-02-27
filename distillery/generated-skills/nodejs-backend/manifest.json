@@ -1,0 +1,43 @@
+{
+  "query": "nodejs-backend",
+  "search_queries": [
+    "nodejs",
+    "javascript backend",
+    "typescript"
+  ],
+  "instructions": "Exclude front-end related patterns & concepts. Include TypeScript.",
+  "generated": "2026-02-13",
+  "token_count": 1161,
+  "sources": [
+    {
+      "id": "wshobson/agents/typescript-advanced-types",
+      "installs": 4473,
+      "sha1": "dc08d7b95f19533cf758739162f0fd82a5217f39"
+    },
+    {
+      "id": "wshobson/agents/nodejs-backend-patterns",
+      "installs": 3541,
+      "sha1": "b9aed50c84f7253e3805c33ab8556904c3e45a48"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/typescript-expert",
+      "installs": 1050,
+      "sha1": "a85100f5e5fb7b03bfdbbb06095b29602da45cd5"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/api-security-best-practices",
+      "installs": 815,
+      "sha1": "68e4f51e2702a060146107ee64e51059fe2b2fda"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/nodejs-best-practices",
+      "installs": 521,
+      "sha1": "26900cb9792a83bd4c846c96b9083b93fc23c60d"
+    },
+    {
+      "id": "pproenca/dot-skills/typescript",
+      "installs": 480,
+      "sha1": "5ce69fa74cdae95a345d61b28eec32e68b9cc341"
+    }
+  ]
+}

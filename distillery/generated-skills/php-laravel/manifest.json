@@ -1,0 +1,41 @@
+{
+  "query": "php-laravel",
+  "search_queries": [
+    "PHP",
+    "Laravel"
+  ],
+  "generated": "2026-02-13",
+  "token_count": 1039,
+  "sources": [
+    {
+      "id": "jeffallan/claude-skills/laravel-specialist",
+      "installs": 1105,
+      "sha1": "1b9e632c4f1bb5c7c03073845f899c8a58054d32"
+    },
+    {
+      "id": "jeffallan/claude-skills/php-pro",
+      "installs": 640,
+      "sha1": "4ed9bb0e784ba6799863a2e8493f60ac1e247073"
+    },
+    {
+      "id": "iserter/laravel-claude-agents/eloquent-best-practices",
+      "installs": 230,
+      "sha1": "2129093402e4e6ce04af1da7b805a0efa555a088"
+    },
+    {
+      "id": "thienanblog/awesome-ai-agent-skills/laravel-11-12-app-guidelines",
+      "installs": 193,
+      "sha1": "7e7520938b5326c6eeb98d59ca164db6f770c9c0"
+    },
+    {
+      "id": "asyrafhussin/agent-skills/php-best-practices",
+      "installs": 193,
+      "sha1": "f9ad3621d15dbd9c188b4df3459ecf3b421eb201"
+    },
+    {
+      "id": "asyrafhussin/agent-skills/laravel-best-practices",
+      "installs": 119,
+      "sha1": "2f11466d0263788d87a5a7e445525bc8dc56c5cb"
+    }
+  ]
+}

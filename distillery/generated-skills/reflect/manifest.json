@@ -1,0 +1,28 @@
+{
+  "query": "session retrospective / reflect",
+  "search_queries": [
+    "reflect session review",
+    "retrospective improvements",
+    "self-review mistakes",
+    "continuous improvement learning"
+  ],
+  "generated": "2026-02-16",
+  "token_count": 754,
+  "sources": [
+    {
+      "id": "softaworks/agent-toolkit/feedback-mastery",
+      "installs": 1812,
+      "sha1": "190c02b6c7ae2483c3437f7623aca57b958b2677"
+    },
+    {
+      "id": "affaan-m/everything-claude-code/continuous-learning",
+      "installs": 493,
+      "sha1": "19464da8fe8ff6d7dd1a8dc17e3ae680f9e4c5a5"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/kaizen",
+      "installs": 223,
+      "sha1": "963605d3881c9f85f33dcbb05d9c2ec3a610d59b"
+    }
+  ]
+}

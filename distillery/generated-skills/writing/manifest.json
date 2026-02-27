@@ -1,0 +1,31 @@
+{
+  "query": "writing",
+  "search_queries": [
+    "writing",
+    "humanizer"
+  ],
+  "generated": "2026-02-16",
+  "token_count": 1003,
+  "sources": [
+    {
+      "id": "coreyhaines31/marketingskills/copywriting",
+      "installs": 11984,
+      "sha1": "7f4969211c212359bc86ea9e927ff8acf5a6daac"
+    },
+    {
+      "id": "obra/superpowers/writing-skills",
+      "installs": 5543,
+      "sha1": "cf0cd727deb04cd1668de51804b7df820b7e10a6"
+    },
+    {
+      "id": "softaworks/agent-toolkit/writing-clearly-and-concisely",
+      "installs": 1460,
+      "sha1": "6add980474fc3cdaf31635b740cf2e50503ea3ad"
+    },
+    {
+      "id": "softaworks/agent-toolkit/humanizer",
+      "installs": 1427,
+      "sha1": "d2d8dd3f5a914c5e590ba1809dfa300128024f1e"
+    }
+  ]
+}

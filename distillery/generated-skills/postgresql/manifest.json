@@ -1,0 +1,28 @@
+{
+  "query": "postgresql",
+  "search_queries": [
+    "postgresql",
+    "postgres",
+    "sql database"
+  ],
+  "instructions": "Exclude Supabase-related content.",
+  "generated": "2026-02-13",
+  "token_count": 1609,
+  "sources": [
+    {
+      "id": "wshobson/agents/postgresql-table-design",
+      "installs": 2993,
+      "sha1": "6e601a7512b5eb24c508360c3320aba5b39fdfcc"
+    },
+    {
+      "id": "affaan-m/everything-claude-code/postgres-patterns",
+      "installs": 701,
+      "sha1": "af5c570aefb928bb24815601ed661213d6184d11"
+    },
+    {
+      "id": "jeffallan/claude-skills/postgres-pro",
+      "installs": 286,
+      "sha1": "32f65a485b5f35a7dde95c6c692ee1da12f15fa2"
+    }
+  ]
+}

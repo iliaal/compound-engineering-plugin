@@ -3,3 +3,6 @@
 node_modules/
 .codex/
 todos/
+distillery/.env
+distillery/.skill-distiller/
+__pycache__/

@@ -8,20 +8,25 @@ Claude Code plugin marketplace distributing the `compound-engineering` plugin fo
 compound-engineering-plugin/
 ├── .claude-plugin/
 │   └── marketplace.json          # Marketplace catalog
+├── distillery/                   # Skill distillery (generate skills from skills.sh)
+│   ├── scripts/
+│   │   ├── distiller.py          # Search, fetch, validate, test, A/B eval
+│   │   └── test_distiller.py     # pytest tests for distiller
+│   └── generated-skills/         # Generated skill output directory
 ├── scripts/
-│   ├── bundle-skills.sh          # Bundle skills from ai-skills repo
 │   ├── update-metadata.sh        # Update component counts in plugin.json + marketplace.json
-│   └── generate-skill-hooks.sh   # Generate hook patterns from SKILL.md frontmatter
+│   ├── generate-skill-hooks.sh   # Generate hook patterns from SKILL.md frontmatter
+│   ├── mirror-to-ai-skills.sh    # Mirror plugin skills to ai-skills public repo
+│   └── sync-to-tools.sh          # Symlink skills to .agents, .codex, .kilocode
 └── plugins/
     └── compound-engineering/     # The plugin
         ├── .claude-plugin/
         │   └── plugin.json      # Plugin metadata
         ├── agents/              # 26 agents (review, research, design, workflow)
         ├── commands/            # 19 slash commands
-        ├── skills/              # 29 skills (10 native + 19 bundled from ai-skills)
+        ├── skills/              # 31 skills (all native)
         ├── hooks/               # 1 hook (inject-skills into subagents)
-        ├── README.md            # Plugin documentation
-        └── CHANGELOG.md         # Version history
+        └── README.md            # Plugin documentation
 ```
 
 ## Working agreement
@@ -90,17 +95,22 @@ jq . plugins/compound-engineering/.claude-plugin/plugin.json
 3. Run `bash scripts/update-metadata.sh`
 4. Update README tables
 
-## Bundle workflow
+## Skill distillery
 
-19 skills are bundled from the `ai-skills` repo via `scripts/bundle-skills.sh`. 10 native skills are maintained directly in this repo. `.bundle-manifest.json` tracks native vs bundled.
+The `distillery/` directory generates skills from top-rated skills on skills.sh. Use the `skill-distiller` project-level skill (`.claude/skills/skill-distiller/SKILL.md`) for the full workflow.
 
 ```
-1. Edit skills in ~/ai/ai-skills/skills/<skill-name>/SKILL.md (canonical source)
-2. Run: bash scripts/bundle-skills.sh (bundles + calls update-metadata.sh)
-3. Review: git diff plugins/compound-engineering/skills/
-4. Update hooks/skill-patterns.sh if trigger keywords changed
-5. Update CHANGELOG.md in both repos
-6. Commit and push both repos
+# Generate a new skill
+python3 distillery/scripts/distiller.py search "react"
+python3 distillery/scripts/distiller.py fetch --skills '<json>'
+# ... analyze, synthesize, validate → distillery/generated-skills/<name>/
+
+# Promote to plugin
+cp -r distillery/generated-skills/<name> plugins/compound-engineering/skills/<name>
+bash scripts/update-metadata.sh
+
+# Mirror to ai-skills (read-only public distribution)
+bash scripts/mirror-to-ai-skills.sh
 ```
 
 ## Scripts
@@ -108,9 +118,9 @@ jq . plugins/compound-engineering/.claude-plugin/plugin.json
 | Script | Purpose | When to run |
 |--------|---------|-------------|
 | `scripts/update-metadata.sh` | Count components, update `plugin.json` + `marketplace.json` descriptions | After any component change |
-| `scripts/bundle-skills.sh` | Bundle skills from ai-skills repo (calls `update-metadata.sh` automatically) | After editing bundled skills |
+| `scripts/mirror-to-ai-skills.sh` | Mirror plugin skills to `~/ai/ai-skills` (read-only distribution) | After editing or adding skills |
 | `scripts/generate-skill-hooks.sh` | Generate draft `hooks/skill-patterns.sh` from SKILL.md frontmatter | After adding/removing skills (hand-tune regex after) |
-| `scripts/sync-to-tools.sh` | Symlink plugin skills to `~/.agents/skills`, `~/.codex/skills`, `~/.kilocode/skills` | After bundling or adding native skills |
+| `scripts/sync-to-tools.sh` | Symlink plugin skills to `~/.agents/skills`, `~/.codex/skills`, `~/.kilocode/skills` | After editing or adding skills |
 
 ## Marketplace.json spec
 

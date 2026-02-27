@@ -1,0 +1,41 @@
+{
+  "query": "debugging",
+  "search_queries": [
+    "debugging",
+    "debug troubleshoot fix bugs"
+  ],
+  "generated": "2026-02-13",
+  "token_count": 1036,
+  "sources": [
+    {
+      "id": "obra/superpowers/systematic-debugging",
+      "installs": 6345,
+      "sha1": "d5e4c57573966f4dcc6a0cdd64316cec9b221440"
+    },
+    {
+      "id": "wshobson/agents/debugging-strategies",
+      "installs": 2993,
+      "sha1": "de786c301e9801a632697ea47a33da4e8d094986"
+    },
+    {
+      "id": "wshobson/agents/parallel-debugging",
+      "installs": 1529,
+      "sha1": "1607060dfcb8932c683b50c2275c6c31c3010dab"
+    },
+    {
+      "id": "jeffallan/claude-skills/debugging-wizard",
+      "installs": 286,
+      "sha1": "da2d1c39951cc2c6ce93e8bfd220cc9909e38f40"
+    },
+    {
+      "id": "mrgoonie/claudekit-skills/debugging",
+      "installs": 380,
+      "sha1": "6891ddb858bf4b3cf01c14a53cbd06ba751cd010"
+    },
+    {
+      "id": "davila7/claude-code-templates/systematic-debugging",
+      "installs": 140,
+      "sha1": "d5e4c57573966f4dcc6a0cdd64316cec9b221440"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "query": "simplifying / polishing code",
+  "search_queries": [
+    "simplify code",
+    "clean code",
+    "code refactoring",
+    "code polish"
+  ],
+  "generated": "2026-02-17",
+  "token_count": 861,
+  "sources": [
+    {
+      "id": "brianlovin/claude-config/simplify",
+      "installs": 2017,
+      "sha1": "940d5fcddd55d4b5a99bfcec7a9a0aa1ae328fd0"
+    },
+    {
+      "id": "sickn33/antigravity-awesome-skills/clean-code",
+      "installs": 1743,
+      "sha1": "b3f01e8afdb919b29d1167a2eded9f088aec6812"
+    },
+    {
+      "id": "forrestchang/andrej-karpathy-skills/karpathy-guidelines",
+      "installs": 1341,
+      "sha1": "ecea16804429c4b712e2d096fcabb629909161c3"
+    },
+    {
+      "id": "skillcreatorai/ai-agent-skills/code-refactoring",
+      "installs": 325,
+      "sha1": "254762c318f760fb9d5542938d996535ae59cd59"
+    },
+    {
+      "id": "brianlovin/claude-config/deslop",
+      "installs": 214,
+      "sha1": "14b730d7e14b4b1177d4786be5ee167f3608aaa8"
+    }
+  ]
+}

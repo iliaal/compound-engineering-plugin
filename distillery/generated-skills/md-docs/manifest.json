@@ -1,0 +1,12 @@
+{
+  "query": "md-docs",
+  "instructions": "Project documentation management: AGENTS.md, README.md, CONTRIBUTING.md. Based on PaulRBerg/agent-skills/md-docs, compressed and adapted for PHP/Python/JS/TS/PineScript/Bash stacks with AGENTS.md as universal context file.",
+  "generated": "2026-02-13",
+  "sources": [
+    {
+      "id": "PaulRBerg/agent-skills/md-docs",
+      "installs": 18,
+      "url": "https://github.com/PaulRBerg/agent-skills/blob/main/skills/md-docs/SKILL.md"
+    }
+  ]
+}
