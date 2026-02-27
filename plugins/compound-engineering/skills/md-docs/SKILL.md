@@ -25,7 +25,7 @@ When this skill references "context files", it means AGENTS.md (and CLAUDE.md if
 
 ### Update Context Files
 
-Verify and fix AGENTS.md against the actual codebase. See `references/update-agents.md` for the full verification workflow.
+Verify and fix AGENTS.md against the actual codebase. See [update-agents.md](./references/update-agents.md) for the full verification workflow.
 
 1. Read existing AGENTS.md, extract verifiable claims (paths, commands, structure, tooling)
 2. Verify each claim against codebase (`ls`, `cat package.json`, `cat pyproject.toml`, etc.)
@@ -35,7 +35,7 @@ Verify and fix AGENTS.md against the actual codebase. See `references/update-age
 
 ### Update README
 
-Generate or refresh README.md from project metadata and structure. See `references/update-readme.md` for section templates and language-specific patterns.
+Generate or refresh README.md from project metadata and structure. See [update-readme.md](./references/update-readme.md) for section templates and language-specific patterns.
 
 1. Detect language/stack from config files (package.json, pyproject.toml, composer.json)
 2. Extract metadata: name, version, description, license, scripts
@@ -45,11 +45,11 @@ Generate or refresh README.md from project metadata and structure. See `referenc
 
 ### Update CONTRIBUTING
 
-Update existing CONTRIBUTING.md only — never auto-create. See `references/update-contributing.md`.
+Update existing CONTRIBUTING.md only — never auto-create. See [update-contributing.md](./references/update-contributing.md).
 
 ### Initialize Context
 
-Create AGENTS.md from scratch for projects without documentation. See `references/init-agents.md`.
+Create AGENTS.md from scratch for projects without documentation. See [init-agents.md](./references/init-agents.md).
 
 1. Analyze project: language, framework, structure, build/test tools
 2. Generate terse, expert-to-expert context sections
