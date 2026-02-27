@@ -35,7 +35,7 @@ SKILL_TIERS[receiving-code-review]=1
 SKILL_PATTERNS[writing-tests]='writ.*(test|spec)|add.?test|test.?quality|test.?anti.?pattern|mock.*(bad|wrong|instead)|test.?discipline'
 SKILL_TIERS[writing-tests]=1
 
-SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.{0,15}branch|merge.?locally|ready.?to.?merge|ship.?it|close.{0,15}branch|discard.{0,15}branch|branch.?cleanup'
+SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.{0,15}branch|merge.?locally|ready.?to.?merge|ship.?it|close.{0,15}branch|discard.{0,15}branch|branch.?cleanup|done.*integrat|completed.*branch'
 SKILL_TIERS[finishing-branch]=1
 
 # --- Tier 2: Domain/Language (language/framework-specific) ---
@@ -87,7 +87,7 @@ SKILL_TIERS[meta-prompting]=3
 SKILL_PATTERNS[reflect]='/reflect|session.?review|retrospective|lessons.?learned|what.?went.?wrong'
 SKILL_TIERS[reflect]=3
 
-SKILL_PATTERNS[compound-docs]='document.*(solution|problem)|capture.*knowledge|compound.*(doc|knowledge)'
+SKILL_PATTERNS[compound-docs]='document.*(solution|problem)|capture.*(knowledge|solved)|compound.*(doc|knowledge)'
 SKILL_TIERS[compound-docs]=3
 
 SKILL_PATTERNS[document-review]='refine.*(brainstorm|plan)|review.*(document|brainstorm|plan)'
