@@ -26,8 +26,6 @@ bun run src/index.ts install ./plugins/compound-engineering --to codex
 bun run src/index.ts sync --target opencode
 ```
 
-Skills are symlinked so changes in Claude Code are reflected immediately.
-
 ## Repository Structure
 
 ```
