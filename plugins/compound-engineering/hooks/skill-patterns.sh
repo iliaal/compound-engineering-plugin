@@ -11,7 +11,7 @@ declare -A SKILL_TIERS
 
 # --- Tier 1: Methodology (process/approach skills) ---
 
-SKILL_PATTERNS[planning]='plan\b|break.?down.*(feature|task)|implementation.?plan'
+SKILL_PATTERNS[planning]='plan.*(feature|task|sprint|this|implement|approach|phase|change|refactor|migration)|break.?down.*(feature|task)|implementation.?plan|(create|make|need|start|write|draft|let.?s).*plan'
 SKILL_TIERS[planning]=1
 
 SKILL_PATTERNS[debugging]='debug|fix.*(bug|this)|why.*(fail|broken)|troubleshoot|stack.?trace|broken.?test|flaky.?test|regression|unexpected.?behav'
@@ -23,7 +23,7 @@ SKILL_TIERS[code-review]=1
 SKILL_PATTERNS[simplifying-code]='simplif.*code|clean.?up.*code|polish.*code|\brefactor\b|declutter|reduce.?complexity|remove.*(dead.?code|ai.?slop)|improve.?readability'
 SKILL_TIERS[simplifying-code]=1
 
-SKILL_PATTERNS[brainstorming]='brainstorm|help.?me.?think|what.?should.?we.?build|explore.?approach'
+SKILL_PATTERNS[brainstorming]='brainstorm|help.?me.?think|what.?should.?we.?build|explore.*approach'
 SKILL_TIERS[brainstorming]=1
 
 SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.?(commit|push|pr|merge)'
@@ -35,7 +35,7 @@ SKILL_TIERS[receiving-code-review]=1
 SKILL_PATTERNS[writing-tests]='writ.*(test|spec)|add.?test|test.?quality|test.?anti.?pattern|mock.*(bad|wrong|instead)|test.?discipline'
 SKILL_TIERS[writing-tests]=1
 
-SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.?branch|merge.?locally|ready.?to.?merge|ship.?it|close.?branch|discard.?branch|branch.?cleanup'
+SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.{0,15}branch|merge.?locally|ready.?to.?merge|ship.?it|close.{0,15}branch|discard.{0,15}branch|branch.?cleanup'
 SKILL_TIERS[finishing-branch]=1
 
 # --- Tier 2: Domain/Language (language/framework-specific) ---
@@ -72,13 +72,13 @@ SKILL_TIERS[agent-native-architecture]=2
 
 # --- Tier 3: Supporting/Workflow ---
 
-SKILL_PATTERNS[writing]='\brewrite\b|humanize|improve.?text|fix.*(tone|wording)|proofread|remove.?ai.?language|pr.?description|write.*(pr|pull.?request|plan\b)'
+SKILL_PATTERNS[writing]='\brewrite\b|humanize|improve.*text|fix.*(tone|wording)|proofread|remove.*ai.?language|pr.?description|write.*(pr|pull.?request|plan\b)'
 SKILL_TIERS[writing]=3
 
-SKILL_PATTERNS[md-docs]='update.?readme|update.?agents|init.?agents|create.?agents\.md|update.?contributing|update.?context.?files'
+SKILL_PATTERNS[md-docs]='update.*readme|update.*agents|init.*agents|create.*agents\.md|update.*contributing|update.*context.?files'
 SKILL_TIERS[md-docs]=3
 
-SKILL_PATTERNS[refine-prompt]='refine.?prompt|improve.?prompt|promptify|optimize.?prompt|rewrite.?prompt|enhance.?prompt|sharpen.?instruction'
+SKILL_PATTERNS[refine-prompt]='refine.{0,15}prompt|improve.{0,15}prompt|promptify|optimize.{0,15}prompt|rewrite.{0,15}prompt|enhance.{0,15}prompt|sharpen.{0,15}instruction'
 SKILL_TIERS[refine-prompt]=3
 
 SKILL_PATTERNS[meta-prompting]='/think|/verify|/adversarial|argue.?against|what.?could.?break|deep.?review|meta.?prompt'
