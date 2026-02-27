@@ -8,7 +8,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 |-----------|-------|
 | Agents | 26 |
 | Commands | 19 |
-| Skills | 33 |
+| Skills | 31 |
 | Hooks | 1 |
 | MCP Servers | 1 |
 
@@ -52,7 +52,7 @@ Agents are organized into categories for easier discovery.
 | [`design-iterator`](agents/design/design-iterator.md) | Iteratively refine UI through systematic design iterations |
 | [`figma-design-sync`](agents/design/figma-design-sync.md) | Synchronize web implementations with Figma designs |
 
-### Workflow (6)
+### Workflow (5)
 
 | Agent | Description |
 |-------|-------------|
