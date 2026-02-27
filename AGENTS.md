@@ -1,6 +1,6 @@
 # Compound Engineering Plugin
 
-Claude Code plugin marketplace distributing the `compound-engineering` plugin for PHP/React/Python/JavaScript/TypeScript workflows.
+Claude Code plugin for PHP/React/Python/JavaScript/TypeScript workflows. Includes the plugin (agents, commands, skills, hooks), a skill distillery, and a CLI for cross-tool conversion.
 
 ## Repository structure
 
@@ -134,6 +134,6 @@ Do not add custom fields (`downloads`, `stars`, `rating`, `categories`, etc.).
 
 ## Resources
 
-- [Claude Code Plugin Documentation](https://docs.claude.com/en/docs/claude-code/plugins)
-- [Plugin Marketplace Documentation](https://docs.claude.com/en/docs/claude-code/plugin-marketplaces)
-- [Plugin Reference](https://docs.claude.com/en/docs/claude-code/plugins-reference)
+- [Claude Code Plugin Documentation](https://code.claude.com/en/docs/claude-code/plugins)
+- [Plugin Marketplace Documentation](https://code.claude.com/en/docs/claude-code/plugin-marketplaces)
+- [Plugin Reference](https://code.claude.com/en/docs/claude-code/plugins-reference)
