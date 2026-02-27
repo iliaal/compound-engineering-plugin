@@ -31,8 +31,7 @@ agents/
 ├── review/     # Code review agents
 ├── research/   # Research and analysis agents
 ├── design/     # Design and UI agents
-├── workflow/   # Workflow automation agents
-└── docs/       # Documentation agents
+└── workflow/   # Workflow automation agents
 
 commands/
 ├── workflows/  # Core workflow commands (workflows:plan, workflows:review, etc.)
@@ -84,6 +83,3 @@ grep -E '`(references|assets|scripts)/[^`]+`' skills/*/SKILL.md
 grep -E '^description:' skills/*/SKILL.md
 ```
 
-## Documentation
-
-See `docs/solutions/plugin-versioning-requirements.md` for detailed versioning workflow.

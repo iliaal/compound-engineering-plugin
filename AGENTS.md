@@ -56,7 +56,7 @@ This automatically counts all components (agents, commands, skills, hooks, MCP s
 ### 3. Update docs
 
 - `plugins/compound-engineering/README.md` → component tables
-- `plugins/compound-engineering/CHANGELOG.md` → document changes
+- `CHANGELOG.md` → document changes
 
 ### 4. Validate JSON
 
