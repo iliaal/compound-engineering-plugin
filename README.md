@@ -43,7 +43,6 @@ compound-engineering-plugin/
 │   └── generated-skills/           # Generated skill output
 ├── scripts/                        # Repo maintenance scripts
 │   ├── update-metadata.sh          # Update component counts
-│   ├── mirror-to-ai-skills.sh      # Mirror skills to ai-skills public repo
 │   ├── generate-skill-hooks.sh     # Generate trigger patterns from frontmatter
 │   └── sync-to-tools.sh            # Symlink skills to .agents, .codex, .kilocode
 └── src/                            # Bun/TS CLI for OpenCode/Codex conversion
@@ -74,14 +73,7 @@ python3 distillery/scripts/distiller.py ab-eval <name> --prompts '<json>'
 python3 distillery/scripts/distiller.py eval-triggers <name> --queries '<json>'
 ```
 
-Generated skills land in `distillery/generated-skills/`, then get promoted to `plugins/compound-engineering/skills/` and mirrored to the [ai-skills](https://github.com/iliaal/ai-skills) public repo.
-
-## Skill Distribution
-
-```
-distillery/generated-skills/ → plugin/skills/ → mirror-to-ai-skills.sh → ai-skills public repo
-                                               → sync-to-tools.sh → .agents, .codex, .kilocode
-```
+Generated skills land in `distillery/generated-skills/`, then get promoted to `plugins/compound-engineering/skills/`.
 
 Skills are also available standalone via the [ai-skills](https://github.com/iliaal/ai-skills) repo:
 
