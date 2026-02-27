@@ -14,10 +14,10 @@ declare -A SKILL_TIERS
 SKILL_PATTERNS[planning]='plan.*(feature|task|sprint|this|implement|approach|phase|change|refactor|migration)|break.?down.*(feature|task)|implementation.?plan|(create|make|need|start|write|draft|let.?s).*plan'
 SKILL_TIERS[planning]=1
 
-SKILL_PATTERNS[debugging]='debug|fix.*(bug|this)|why.*(fail|broken)|troubleshoot|stack.?trace|broken.?test|flaky.?test|regression|unexpected.?behav'
+SKILL_PATTERNS[debugging]='debug|fix.*(bug|this)|why.*(fail|broken)|troubleshoot|stack.?trace|broken.?test|test.*broken|flaky.?test|regression|unexpected.?behav'
 SKILL_TIERS[debugging]=1
 
-SKILL_PATTERNS[code-review]='review.*(code|pr|diff|merge)|audit.*code|critiqu'
+SKILL_PATTERNS[code-review]='review.*(code|pr|diff|merge)|code.?review|audit.*code|critiqu'
 SKILL_TIERS[code-review]=1
 
 SKILL_PATTERNS[simplifying-code]='simplif.*code|clean.?up.*code|polish.*code|\brefactor\b|declutter|reduce.?complexity|remove.*(dead.?code|ai.?slop)|improve.?readability'
@@ -26,7 +26,7 @@ SKILL_TIERS[simplifying-code]=1
 SKILL_PATTERNS[brainstorming]='brainstorm|help.?me.?think|what.?should.?we.?build|explore.*approach'
 SKILL_TIERS[brainstorming]=1
 
-SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.?(commit|push|pr|merge)'
+SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.{0,15}(commit|push|pr|merge)'
 SKILL_TIERS[verification-before-completion]=1
 
 SKILL_PATTERNS[receiving-code-review]='receiv.*(review|feedback)|pr.?feedback|implement.*(suggestion|feedback)|push.?back.*review|address.*(review|feedback)'
@@ -87,7 +87,7 @@ SKILL_TIERS[meta-prompting]=3
 SKILL_PATTERNS[reflect]='/reflect|session.?review|retrospective|lessons.?learned|what.?went.?wrong'
 SKILL_TIERS[reflect]=3
 
-SKILL_PATTERNS[compound-docs]='document.*(solution|problem)|capture.?knowledge|compound.*(doc|knowledge)'
+SKILL_PATTERNS[compound-docs]='document.*(solution|problem)|capture.*knowledge|compound.*(doc|knowledge)'
 SKILL_TIERS[compound-docs]=3
 
 SKILL_PATTERNS[document-review]='refine.*(brainstorm|plan)|review.*(document|brainstorm|plan)'
