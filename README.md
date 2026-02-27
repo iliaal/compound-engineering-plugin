@@ -1,6 +1,6 @@
 # Compound Engineering Plugin
 
-Claude Code plugin with 26 agents, 19 commands, 31 skills, 1 hook, and 1 MCP server for PHP/React/Python/JavaScript/TypeScript workflows. Includes a skill distillery for generating new skills from top-rated sources and a CLI for cross-tool compatibility.
+Claude Code plugin with 26 agents, 19 commands, 31 skills, 1 hook, and 1 MCP server for PHP/React/Python/JavaScript/TypeScript workflows. Includes a skill distillery for generating new skills from top-rated sources.
 
 ## Install
 
@@ -17,19 +17,13 @@ The repo includes a Bun/TypeScript CLI that converts Claude Code plugins to Open
 
 ```bash
 # Install to OpenCode
-bunx @every-env/compound-plugin install compound-engineering --to opencode
+bun run src/index.ts install ./plugins/compound-engineering --to opencode
 
 # Install to Codex
-bunx @every-env/compound-plugin install compound-engineering --to codex
-```
+bun run src/index.ts install ./plugins/compound-engineering --to codex
 
-### Sync Personal Config
-
-Sync your Claude Code config (`~/.claude/`) to other AI coding tools:
-
-```bash
-bunx @every-env/compound-plugin sync --target opencode
-bunx @every-env/compound-plugin sync --target codex
+# Sync personal Claude Code config (~/.claude/) to other tools
+bun run src/index.ts sync --target opencode
 ```
 
 Skills are symlinked so changes in Claude Code are reflected immediately.
@@ -52,7 +46,7 @@ compound-engineering-plugin/
 │   ├── mirror-to-ai-skills.sh      # Mirror skills to ai-skills public repo
 │   ├── generate-skill-hooks.sh     # Generate trigger patterns from frontmatter
 │   └── sync-to-tools.sh            # Symlink skills to .agents, .codex, .kilocode
-└── src/                            # CLI for OpenCode/Codex conversion
+└── src/                            # Bun/TS CLI for OpenCode/Codex conversion
 ```
 
 ## Core Workflow
