@@ -52,7 +52,7 @@ SKILL_TIERS[nodejs-backend]=2
 SKILL_PATTERNS[python-services]='\bfastapi\b|python.*(cli|service|backend|api)|async.*python|\bruff\b'
 SKILL_TIERS[python-services]=2
 
-SKILL_PATTERNS[postgresql]='postgres|jsonb|row.?level.?security|\brls\b|\bcte[s]?\b|window.?function|explain.?analyze'
+SKILL_PATTERNS[postgresql]='postgres|jsonb|row.?level.?security|\brls\b|\bcte[s]?\b|window.?function|explain.?analyze|partition.*(table|range|list|hash)|connection.?pool.*(pg|postgres|bouncer)|upsert|full.?text.?search|tsvector'
 SKILL_TIERS[postgresql]=2
 
 SKILL_PATTERNS[terraform]='terraform|opentofu|\biac\b|infrastructure.?as.?code|\bhcl\b|tfvars|tftest'

@@ -239,7 +239,7 @@ const result = await agent.run({
 <reference_index>
 ## Reference Files
 
-All references in `references/`:
+All reference files:
 
 **Core Patterns:**
 - [architecture-patterns.md](./references/architecture-patterns.md) - Event-driven, unified orchestrator, agent-to-UI
