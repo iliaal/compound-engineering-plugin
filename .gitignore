@@ -6,3 +6,4 @@ todos/
 distillery/.env
 distillery/.skill-distiller/
 __pycache__/
+.pytest_cache/

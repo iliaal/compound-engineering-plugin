@@ -18,6 +18,7 @@ compound-engineering-plugin/
 │   ├── generate-skill-hooks.sh   # Generate hook patterns from SKILL.md frontmatter
 │   ├── mirror-to-ai-skills.sh    # Mirror plugin skills to ai-skills public repo
 │   └── sync-to-tools.sh          # Symlink skills to .agents, .codex, .kilocode
+├── CHANGELOG.md                 # Version history
 └── plugins/
     └── compound-engineering/     # The plugin
         ├── .claude-plugin/

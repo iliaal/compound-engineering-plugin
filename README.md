@@ -43,17 +43,19 @@ compound-engineering-plugin/
 │   ├── update-metadata.sh          # Update component counts
 │   ├── generate-skill-hooks.sh     # Generate trigger patterns from frontmatter
 │   └── sync-to-tools.sh            # Symlink skills to .agents, .codex, .kilocode
-└── src/                            # Bun/TS CLI for OpenCode/Codex conversion
+├── src/                            # Bun/TS CLI for OpenCode/Codex conversion
+└── CHANGELOG.md                    # Version history
 ```
 
 ## Core Workflow
 
 ```
-Plan → Work → Review → Compound → Repeat
+Brainstorm → Plan → Work → Review → Compound → Repeat
 ```
 
 | Command | Purpose |
 |---------|---------|
+| `/workflows:brainstorm` | Explore requirements and approaches before planning |
 | `/workflows:plan` | Turn feature ideas into detailed implementation plans |
 | `/workflows:work` | Execute plans with worktrees and task tracking |
 | `/workflows:review` | Multi-agent code review before merging |
