@@ -2,7 +2,8 @@
 name: finishing-branch
 description: >-
   Workflow closer for completed feature branches: commit, merge, PR, keep, or
-  discard with safety checks. Use when work is done and needs integration.
+  discard with safety checks. Use when finishing a branch, wrapping up work,
+  creating a PR, merging a feature branch, or cleaning up after implementation.
 ---
 
 # Finishing a Branch

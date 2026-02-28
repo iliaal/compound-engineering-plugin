@@ -1,6 +1,9 @@
 ---
 name: setup
-description: Configure which review agents run for your project. Auto-detects stack and writes compound-engineering.local.md.
+description: >-
+  Configure which review agents run for your project. Auto-detects stack and
+  writes compound-engineering.local.md. Use when setting up compound-engineering
+  for a new project, configuring review agents, or running initial plugin setup.
 disable-model-invocation: true
 ---
 

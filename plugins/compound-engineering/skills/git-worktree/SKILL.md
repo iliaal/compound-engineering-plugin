@@ -1,8 +1,9 @@
 ---
 name: git-worktree
 description: >-
-  Manage Git worktrees for isolated parallel development. Create, list, switch,
-  and clean up worktrees.
+  Manage Git worktrees for isolated parallel development. Use when creating,
+  listing, switching, or cleaning up git worktrees, or when needing isolated
+  branches for parallel reviews or feature work.
 ---
 
 # Git Worktree Manager

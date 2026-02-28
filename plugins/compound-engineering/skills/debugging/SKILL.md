@@ -37,6 +37,8 @@ Collects system info, language versions, git state, project files, and environme
 
 ## Process
 
+**0. Read the error.** Read the full error message, stack trace, and line numbers before doing anything. Error messages frequently contain the exact fix. Don't skim -- read the entire output.
+
 **1. Reproduce** — make the bug consistent. If intermittent, run N times under stress or simulate poor conditions (slow network, low memory) until it triggers reliably.
 
 **2. Investigate** — trace backward through the call chain from the symptom. Add diagnostic logging at each component boundary. Compare working vs broken state using a differential table (environment, version, data, timing — what changed?).
@@ -47,7 +49,7 @@ Collects system info, language versions, git state, project files, and environme
 
 ## Three-Fix Threshold
 
-After 3 failed fix attempts, STOP. The problem is likely architectural, not a surface bug. Step back and question assumptions about how the system works. Read the actual code path end-to-end instead of spot-checking.
+After 3 failed fix attempts, STOP. The problem is likely architectural, not a surface bug. Escalate to the user before attempting further fixes. Step back and question assumptions about how the system works. Read the actual code path end-to-end instead of spot-checking.
 
 **No root cause found:** If investigation is exhausted without a clear root cause, say so explicitly. Document what was checked, what was ruled out, and what instrumentation to add for next occurrence. An honest "unknown" with good diagnostics beats a fabricated cause.
 

@@ -5,6 +5,19 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.42.2] - 2026-02-28
+
+### Fixed
+
+- **postgresql skill** — pgvector dimensions now model-agnostic instead of hardcoding OpenAI ada-002's 1536
+- **php-laravel, react-frontend skills** — removed duplicated "tests expose bugs" directive, added cross-reference to `writing-tests` skill
+- **code-review skill** — description clarified for performing reviews (vs receiving feedback)
+- **receiving-code-review skill** — description clarified for responding to review comments
+- **devops-engineer, cloud-architect agents** — "Use for" → "Use when" for consistent trigger phrasing
+- **agent-native-reviewer agent** — added cross-reference to `agent-native-architecture` skill
+- **bug-reproduction-validator agent** — added cross-references to `writing-tests` and `debugging` skills
+- **4 research agents** — removed hardcoded "2026" year note (redundant with system context)
+
 ## [2.42.1] - 2026-02-27
 
 ### Changed

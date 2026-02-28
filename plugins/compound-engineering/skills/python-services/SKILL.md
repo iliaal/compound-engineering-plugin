@@ -2,8 +2,9 @@
 name: python-services
 description: >-
   Python patterns for CLI tools, async parallelism, and backend services. Use
-  when building CLI apps, FastAPI services, background jobs, or configuring uv,
-  ruff, or ty.
+  when writing or reviewing Python code, building CLI apps, FastAPI services,
+  async with asyncio, background jobs, or configuring uv, ruff, ty, pytest, or
+  pyproject.toml.
 ---
 
 # Python Services & CLI
@@ -24,36 +25,7 @@ description: >-
 - PEP 723 inline metadata for standalone scripts with deps
 - `ruff check --fix . && ruff format .` for lint+format in one pass
 
-## CLI Tools
-
-**Entry points** in pyproject.toml:
-```toml
-[project.scripts]
-my-tool = "my_package.cli:main"
-```
-
-**Click** (recommended for complex CLIs):
-```python
-import click
-
-@click.group()
-@click.version_option()
-def cli(): ...
-
-@cli.command()
-@click.argument("name")
-@click.option("--count", default=1, type=int)
-def greet(name: str, count: int):
-    for _ in range(count):
-        click.echo(f"Hello, {name}!")
-
-def main():
-    cli()
-```
-
-**argparse** for simple CLIs — subparsers for subcommands, `parser.add_argument("--output", "-o")`.
-
-Use `src/` layout. Include `py.typed` for type hints. `importlib.resources.files()` for package data access.
+See [cli-tools.md](./references/cli-tools.md) for Click patterns, argparse, and CLI project layout.
 
 ## Parallelism
 
@@ -83,29 +55,7 @@ with ProcessPoolExecutor(max_workers=4) as pool:
     results = list(pool.map(cpu_task, items))
 ```
 
-## FastAPI Services
-
-**Project structure:**
-```
-app/
-├── api/v1/endpoints/    # Route handlers
-├── core/                # config.py, security.py, database.py
-├── models/              # SQLAlchemy models
-├── schemas/             # Pydantic request/response
-├── services/            # Business logic
-├── repositories/        # Data access (generic CRUD base)
-└── main.py              # Lifespan, middleware, router includes
-```
-
-**Lifespan** for startup/shutdown: `@asynccontextmanager async def lifespan(app):`
-
-**Configuration** — `pydantic_settings.BaseSettings` with `model_config = {"env_file": ".env"}`. Required fields = no default (fails fast at boot). `env_nested_delimiter = "__"` for grouped config. `secrets_dir` for Docker/K8s mounted secrets.
-
-**Dependency injection** — `Depends(get_db)` for sessions, `Depends(get_current_user)` for auth. Override in tests: `app.dependency_overrides[get_db] = mock_db`.
-
-**Async DB** — SQLAlchemy `AsyncSession` with `asyncpg`. Session-per-request via `async with AsyncSessionLocal() as session: yield session`.
-
-**Repository pattern** — Generic `BaseRepository[ModelType, CreateSchema, UpdateSchema]` with get/get_multi/create/update/delete. Service layer holds business logic, routes stay thin.
+See [fastapi.md](./references/fastapi.md) for project structure, lifespan, config, DI, async DB, and repository pattern.
 
 ## Background Jobs
 

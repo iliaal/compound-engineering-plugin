@@ -2,8 +2,9 @@
 name: writing-tests
 description: >-
   Generic test writing discipline: test quality, real assertions, anti-patterns,
-  and rationalization resistance. Use when writing tests for any language or
-  framework. Complements tech-specific skills (php-laravel, react-frontend).
+  and rationalization resistance. Use when writing tests, adding test coverage,
+  or fixing broken tests for any language or framework. Complements tech-specific
+  skills (php-laravel, react-frontend).
 ---
 
 # Writing Tests
@@ -123,6 +124,19 @@ The goal: by the time the feature is done, tests exist and pass. Whether you wro
 
 **Fix:** Use real objects or factory-generated fixtures with all fields populated. If you must mock, generate from the real type/schema.
 
+### Mocking without understanding
+
+Before mocking any method, ask: (1) What side effects does the real method have? (2) Does this test depend on any of those side effects? (3) Mock at the lowest level that removes the slow/external part -- not higher.
+
+## When Stuck
+
+| Stuck on... | Do this |
+|-------------|---------|
+| Don't know how to test | Write the assertion first (desired outcome), then build the test around it |
+| Test too complicated | Simplify the interface being tested |
+| Must mock everything | Code is too coupled -- use dependency injection |
+| Test setup too large | Extract helpers. Still complex? Simplify the design |
+
 ## Rationalization Table
 
 When you catch yourself thinking these things, stop:
@@ -137,6 +151,7 @@ When you catch yourself thinking these things, stop:
 | "It's just a refactor, behavior didn't change" | Run the existing tests. If they pass, you're done. If none exist, this is exactly when to add them. |
 | "100% coverage is overkill" | Nobody said 100%. But 0% is negligence. Test the important paths. |
 | "Mocks are faster" | Mocks are faster to run and slower to maintain. They test assumptions, not behavior. |
+| "I already wrote the implementation" | Sunk cost. Tests written after pass immediately and prove nothing about the original bug. |
 
 ## Test Quality Checklist
 

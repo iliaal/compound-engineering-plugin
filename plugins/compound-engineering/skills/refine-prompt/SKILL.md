@@ -2,7 +2,8 @@
 name: refine-prompt
 description: >-
   Transforms vague prompts into precise, structured AI instructions. Use when
-  asked to refine, improve, optimize, rewrite, or sharpen a prompt.
+  asked to refine, improve, rewrite, or sharpen a prompt, do prompt engineering,
+  write a system prompt, or make AI instructions more effective.
 ---
 
 # Refining Prompts

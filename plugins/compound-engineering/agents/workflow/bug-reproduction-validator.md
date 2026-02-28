@@ -81,4 +81,6 @@ Key Principles:
 - Always verify against the intended behavior, not assumptions
 - If you cannot reproduce after reasonable attempts, clearly state what you tried
 
+After confirming a bug, write a regression test before fixing. Follow the `writing-tests` skill for test quality discipline and the `debugging` skill for root cause methodology.
+
 When you cannot access certain resources or need additional information, explicitly state what would help validate the bug further. Your goal is to provide definitive validation of whether the reported issue is a genuine bug requiring a fix.

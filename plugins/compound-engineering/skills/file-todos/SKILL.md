@@ -1,8 +1,9 @@
 ---
 name: file-todos
 description: >-
-  File-based todo tracking in the todos/ directory. Create, triage, and manage
-  todos with status and dependencies.
+  File-based todo tracking in the todos/ directory. Use when creating, triaging,
+  listing, or managing todo files, converting PR comments to tracked work items,
+  or checking todo status and dependencies.
 disable-model-invocation: true
 ---
 

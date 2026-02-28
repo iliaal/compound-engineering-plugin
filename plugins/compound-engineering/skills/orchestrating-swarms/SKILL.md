@@ -1,8 +1,9 @@
 ---
 name: orchestrating-swarms
 description: >-
-  Orchestrate multi-agent swarms using TeammateTool and Task system. For parallel
-  reviews, pipeline workflows, and divide-and-conquer patterns.
+  Orchestrate multi-agent swarms using TeammateTool and Task system. Use when
+  coordinating multiple agents, running parallel reviews, building pipeline
+  workflows, or implementing divide-and-conquer patterns with subagents.
 disable-model-invocation: true
 ---
 
@@ -134,6 +135,4 @@ Detailed documentation for each subsystem:
 - [spawn-backends.md](./references/spawn-backends.md) - Backend comparison, auto-detection, in-process/tmux/iterm2 details, troubleshooting
 - [environment-config.md](./references/environment-config.md) - Environment variables and team config structure
 
----
-
-*Based on Claude Code v2.1.19 - Tested and verified 2026-01-25*
+*Last verified: 2026-01-25*

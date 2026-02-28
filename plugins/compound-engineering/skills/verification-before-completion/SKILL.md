@@ -67,6 +67,7 @@ Passing tests prove the code works. They don't prove the right code was written.
 | "Bug is fixed" | Original reproduction case now passes |
 | "Feature complete" | All acceptance criteria verified individually |
 | "No regressions" | Full test suite passes, not just new tests |
+| "Regression test works" | Red-green cycle: test passes, revert fix, test fails, restore fix, test passes |
 | "Linting clean" | Linter output showing 0 errors/warnings |
 
 ## When No Verification Command Exists
@@ -99,6 +100,7 @@ Stop and re-verify if you notice yourself:
 - Trusting a subagent's report without independent verification
 - Claiming success based on code reading ("the logic looks correct")
 - Skipping verification because "it's a small change"
+- Feeling confident about the result before running the command
 
 ## Integration
 

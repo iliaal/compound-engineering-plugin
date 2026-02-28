@@ -2,8 +2,8 @@
 name: receiving-code-review
 description: >-
   Process code review feedback critically: verify before implementing, push back
-  on incorrect suggestions, no performative agreement. Use when receiving PR/MR
-  comments or review feedback.
+  on incorrect suggestions, no performative agreement. Use when responding to
+  PR/MR review comments or implementing reviewer suggestions received from others.
 ---
 
 # Receiving Code Review
@@ -65,6 +65,7 @@ Push back (with evidence) when a suggestion:
 - **Violates project conventions** — "Our CLAUDE.md specifies we do it this way because..."
 - **Is technically incorrect** — "This API was deprecated in v3. We're on v4 which uses..."
 - **Adds unnecessary complexity** — "This handles a case that can't occur because..."
+- **Is unused (YAGNI)** — grep the codebase for actual usage. If the code being "improved" has zero callers, suggest removing it instead
 - **Conflicts with architectural decisions** — "We chose X over Y in the brainstorm because..."
 
 ## When NOT to Push Back
@@ -98,6 +99,10 @@ After triaging all feedback:
 4. **Complex fixes** — changes that need careful implementation
 
 Test after each individual fix, not after implementing everything.
+
+## When Your Pushback Was Wrong
+
+State the correction factually: "Checked this, you're correct because [reason]. Implementing." No extended apology, no self-deprecation -- just acknowledge and move on.
 
 ## GitHub PR Reviews
 

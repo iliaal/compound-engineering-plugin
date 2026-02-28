@@ -2,7 +2,7 @@
 name: code-review
 description: >-
   Two-stage code reviews (spec compliance, then code quality) with severity-ranked
-  findings. Use when reviewing, auditing, or critiquing code, PRs, MRs, or diffs.
+  findings. Use when performing a code review, auditing code quality, or critiquing PRs, MRs, or diffs.
 ---
 
 # Code Review

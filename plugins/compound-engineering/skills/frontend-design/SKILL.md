@@ -1,14 +1,15 @@
 ---
 name: frontend-design
 description: >-
-  Create distinctive, production-grade frontend interfaces. Use when building
-  web components, pages, or applications. Avoids generic AI aesthetics.
+  Create distinctive, production-grade frontend interfaces with real working
+  code. Use when building web pages, UI components, landing pages, dashboards,
+  or applications with HTML/CSS/JS/React. Avoids generic AI aesthetics.
 license: Complete terms in LICENSE.txt
 ---
 
-This skill guides creation of distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
+Create distinctive, production-grade frontend interfaces that avoid generic "AI slop" aesthetics. Implement real working code with exceptional attention to aesthetic details and creative choices.
 
-The user provides frontend requirements: a component, page, application, or interface to build. They may include context about the purpose, audience, or technical constraints.
+Read the user's frontend requirements: a component, page, application, or interface to build. Note context about purpose, audience, or technical constraints.
 
 ## Design Philosophy (Write First, Code Second)
 

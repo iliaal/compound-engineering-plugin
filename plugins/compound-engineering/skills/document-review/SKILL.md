@@ -2,7 +2,8 @@
 name: document-review
 description: >-
   Refine brainstorm or plan documents before proceeding to the next workflow
-  step. Improve structure, gaps, and clarity.
+  step. Use when reviewing a brainstorm doc, plan doc, or any pre-implementation
+  document for structure, gaps, clarity, or completeness.
 ---
 
 # Document Review

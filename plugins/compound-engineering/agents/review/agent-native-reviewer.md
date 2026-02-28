@@ -218,6 +218,10 @@ Structure your review as:
 - **Verdict**: [PASS/NEEDS WORK]
 ```
 
+## Skill Reference
+
+Follow the `agent-native-architecture` skill for the full design framework: action parity checklists, context injection patterns, tool primitives vs workflow anti-patterns, and shared workspace architecture.
+
 ## Review Triggers
 
 Use this review when:

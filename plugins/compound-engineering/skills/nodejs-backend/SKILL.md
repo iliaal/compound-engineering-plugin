@@ -91,6 +91,6 @@ Never `readFileSync` / sync methods in production. Offload CPU work to worker th
 
 ## References
 
-- [TypeScript config](references/typescript-config.md) — tsconfig, ESM, branded types, compiler performance
-- [Security](references/security.md) — JWT, password hashing, rate limiting, OWASP
-- [Database & production](references/database-production.md) — connection pooling, transactions, Docker, logging
+- [TypeScript config](./references/typescript-config.md) — tsconfig, ESM, branded types, compiler performance
+- [Security](./references/security.md) — JWT, password hashing, rate limiting, OWASP
+- [Database & production](./references/database-production.md) — connection pooling, transactions, Docker, logging

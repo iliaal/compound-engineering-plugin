@@ -1,6 +1,10 @@
 ---
 name: compound-docs
-description: Capture solved problems as categorized documentation with YAML frontmatter for fast lookup
+description: >-
+  Capture solved problems as categorized documentation with YAML frontmatter
+  for fast lookup. Use when documenting a resolved issue, saving a solution for
+  reuse, or building searchable institutional knowledge after debugging or
+  troubleshooting.
 disable-model-invocation: true
 allowed-tools:
   - Read # Parse conversation context
@@ -14,9 +18,9 @@ preconditions:
 
 # compound-docs Skill
 
-**Purpose:** Automatically document solved problems to build searchable institutional knowledge with category-based organization (enum-validated problem types).
+Automatically document solved problems to build searchable institutional knowledge with category-based organization (enum-validated problem types).
 
-**Organization:** Single-file architecture -- each problem documented as one markdown file in its symptom category directory (e.g., `docs/solutions/performance-issues/n-plus-one-briefs.md`). Files use YAML frontmatter for metadata and searchability.
+Single-file architecture -- each problem documented as one markdown file in its symptom category directory (e.g., `docs/solutions/performance-issues/n-plus-one-briefs.md`). Files use YAML frontmatter for metadata and searchability.
 
 ---
 
