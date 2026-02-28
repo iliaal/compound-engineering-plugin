@@ -1,7 +1,7 @@
 ---
 name: receiving-code-review
 description: >-
-  Process code review feedback critically: verify before implementing, push back
+  Process code review feedback critically: check correctness before acting, push back
   on incorrect suggestions, no performative agreement. Use when responding to
   PR/MR review comments or implementing reviewer suggestions received from others.
 ---

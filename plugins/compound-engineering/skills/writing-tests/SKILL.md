@@ -3,8 +3,8 @@ name: writing-tests
 description: >-
   Generic test writing discipline: test quality, real assertions, anti-patterns,
   and rationalization resistance. Use when writing tests, adding test coverage,
-  or fixing broken tests for any language or framework. Complements tech-specific
-  skills (php-laravel, react-frontend).
+  or fixing failing tests for any language or framework. Complements
+  language-specific skills.
 ---
 
 # Writing Tests

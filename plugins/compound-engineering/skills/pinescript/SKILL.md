@@ -1,7 +1,7 @@
 ---
 name: pinescript
 description: >-
-  Pine Script v6 patterns: syntax, performance, debugging, backtesting,
+  Pine Script v6 patterns: syntax, performance, error diagnosis, backtesting,
   visualization. Use when working with PineScript, TradingView, indicators,
   strategies, or backtesting.
 ---

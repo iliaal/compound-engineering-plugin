@@ -17,7 +17,7 @@ SKILL_TIERS[planning]=1
 SKILL_PATTERNS[debugging]='debug|fix.*(bug|this)|why.*(fail|broken)|troubleshoot|stack.?trace|broken.?test|test.*broken|flaky.?test|regression|unexpected.?behav'
 SKILL_TIERS[debugging]=1
 
-SKILL_PATTERNS[code-review]='review.*(code|pr|diff|merge)|code.?review|audit.*code|critiqu'
+SKILL_PATTERNS[code-review]='review.*(code|\bprs?\b|diff|merge)|code.?review|audit.*code|critiqu'
 SKILL_TIERS[code-review]=1
 
 SKILL_PATTERNS[simplifying-code]='simplif.*code|clean.?up.*code|polish.*code|\brefactor\b|declutter|reduce.?complexity|remove.*(dead.?code|ai.?slop)|improve.?readability'
@@ -26,13 +26,13 @@ SKILL_TIERS[simplifying-code]=1
 SKILL_PATTERNS[brainstorming]='brainstorm|help.?me.?think|what.?should.?we.?build|explore.*approach'
 SKILL_TIERS[brainstorming]=1
 
-SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.{0,15}(commit|push|pr|merge)'
+SKILL_PATTERNS[verification-before-completion]='verif.*(complet|done|pass|success)|completion.?claim|fresh.?evidence|verify.?before.{0,12}(commit|push|pr|merge)'
 SKILL_TIERS[verification-before-completion]=1
 
 SKILL_PATTERNS[receiving-code-review]='receiv.*(review|feedback)|pr.?feedback|implement.*(suggestion|feedback)|push.?back.*review|address.*(review|feedback)'
 SKILL_TIERS[receiving-code-review]=1
 
-SKILL_PATTERNS[writing-tests]='writ.*(test|spec)|add.?test|test.?quality|test.?anti.?pattern|mock.*(bad|wrong|instead)|test.?discipline'
+SKILL_PATTERNS[writing-tests]='writ.{0,25}(test|spec)|add.?test|test.?quality|test.?anti.?pattern|mock.*(bad|wrong|instead)|test.?discipline'
 SKILL_TIERS[writing-tests]=1
 
 SKILL_PATTERNS[finishing-branch]='finish.*(branch|feature)|merge.{0,15}branch|merge.?locally|ready.?to.?merge|ship.?it|close.{0,15}branch|discard.{0,15}branch|branch.?cleanup|done.*integrat|completed.*branch'
@@ -64,7 +64,7 @@ SKILL_TIERS[linux-bash-scripting]=2
 SKILL_PATTERNS[pinescript]='pine.?script|tradingview|backtest'
 SKILL_TIERS[pinescript]=2
 
-SKILL_PATTERNS[frontend-design]='frontend.*(design|interface)|ui.*(design|build|create)|build.*(web.?component|page|application)'
+SKILL_PATTERNS[frontend-design]='frontend.*(design|interface)|ui.*(design|build|create)|build.*(web.?component|web.?page|landing.?page|dashboard)'
 SKILL_TIERS[frontend-design]=2
 
 SKILL_PATTERNS[agent-native-architecture]='autonomous.?agent|mcp.?tool|self.?modif|agent.?native|prompt.?native'
@@ -72,7 +72,7 @@ SKILL_TIERS[agent-native-architecture]=2
 
 # --- Tier 3: Supporting/Workflow ---
 
-SKILL_PATTERNS[writing]='\brewrite\b|humanize|improve.*text|fix.*(tone|wording)|proofread|remove.*ai.?language|pr.?description|write.*(pr|pull.?request|plan\b)'
+SKILL_PATTERNS[writing]='\brewrite\b|humanize|improve.*text|fix.*(tone|wording)|proofread|remove.*ai.?language|\bpr.?description\b|write.*(pull.?request|\bplan\b)'
 SKILL_TIERS[writing]=3
 
 SKILL_PATTERNS[md-docs]='update.*readme|update.*agents|init.*agents|create.*agents\.md|update.*contributing|update.*context.?files'
@@ -96,7 +96,7 @@ SKILL_TIERS[document-review]=3
 SKILL_PATTERNS[file-todos]='todo.?directory|manage.?todo|file.?based.?todo'
 SKILL_TIERS[file-todos]=3
 
-SKILL_PATTERNS[orchestrating-swarms]='multi.?agent|swarm|parallel.*(agent|review|task)|divide.?and.?conquer'
+SKILL_PATTERNS[orchestrating-swarms]='multi.?agent|swarm|parallel.*(agent|task)|divide.?and.?conquer'
 SKILL_TIERS[orchestrating-swarms]=3
 
 SKILL_PATTERNS[git-worktree]='worktree|parallel.?development'
