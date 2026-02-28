@@ -17,7 +17,8 @@ compound-engineering-plugin/
 │   ├── update-metadata.sh        # Update component counts in plugin.json + marketplace.json
 │   ├── generate-skill-hooks.sh   # Generate hook patterns from SKILL.md frontmatter
 │   ├── mirror-to-ai-skills.sh    # Mirror plugin skills to ai-skills public repo
-│   └── sync-to-tools.sh          # Symlink skills to .agents, .codex, .kilocode
+│   ├── sync-to-tools.sh          # Symlink skills to .agents, .codex, .kilocode
+│   └── update-plugin.sh          # Update locally installed plugin to latest version
 ├── CHANGELOG.md                 # Version history
 └── plugins/
     └── compound-engineering/     # The plugin
@@ -122,6 +123,7 @@ bash scripts/mirror-to-ai-skills.sh
 | `scripts/mirror-to-ai-skills.sh` | Mirror plugin skills to `~/ai/ai-skills` (read-only distribution) | After editing or adding skills |
 | `scripts/generate-skill-hooks.sh` | Generate draft `hooks/skill-patterns.sh` from SKILL.md frontmatter | After adding/removing skills (hand-tune regex after) |
 | `scripts/sync-to-tools.sh` | Symlink plugin skills to `~/.agents/skills`, `~/.codex/skills`, `~/.kilocode/skills` | After editing or adding skills |
+| `scripts/update-plugin.sh` | Update locally installed plugin to latest pushed version | After pushing a new version to GitHub |
 
 ## Marketplace.json spec
 
