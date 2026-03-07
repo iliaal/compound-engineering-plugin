@@ -24,6 +24,10 @@ Brainstorming can be skipped when:
 - The user knows exactly what they want
 - The task is a straightforward bug fix or well-defined change
 
+## Hard Gate
+
+**No implementation until the design is approved.** Brainstorming produces a design document, not code. Do not invoke implementation skills, write production code, or create files outside `docs/brainstorms/` until the user explicitly approves the design and moves to planning.
+
 ## Core Process
 
 ### Phase 0: Assess Requirement Clarity
@@ -41,6 +45,7 @@ Before diving into questions, assess whether brainstorming is needed.
 - Multiple reasonable interpretations exist
 - Trade-offs haven't been discussed
 - User seems unsure about the approach
+- User described a solution ("build a dashboard") instead of a problem
 
 If requirements are clear, suggest: "Your requirements seem clear. Consider proceeding directly to planning or implementation."
 
@@ -75,8 +80,9 @@ Ask questions **one at a time** to understand the user's intent. Avoid overwhelm
 | Success | How will you measure success? What's the happy path? |
 | Edge Cases | What shouldn't happen? Any error states to consider? |
 | Existing Patterns | Are there similar features in the codebase to follow? |
+| Non-goals | What is explicitly NOT in scope? |
 
-**Exit Condition:** Continue until the idea is clear OR user says "proceed" or "let's move on"
+**Exit Condition:** Continue until the idea is clear OR user says "proceed". Before moving to Phase 2, summarize understanding in 3-5 bullets and confirm with the user.
 
 ### Phase 2: Explore Approaches
 
@@ -105,6 +111,7 @@ After understanding the idea, propose 2-3 concrete approaches.
 - Be honest about trade-offs
 - Consider YAGNI—simpler is usually better
 - Reference codebase patterns when relevant
+- If no approach is accepted after 2 rounds, ask the user to describe their preferred direction directly
 
 ### Phase 3: Capture the Design
 
@@ -138,6 +145,8 @@ topic: <kebab-case-topic>
 ```
 
 **Output Location:** `docs/brainstorms/YYYY-MM-DD-<topic>-brainstorm.md` (create directory with `mkdir -p docs/brainstorms` if needed)
+
+**Commit the design doc** to git after writing — design decisions are project history worth preserving.
 
 ### Phase 4: Handoff
 

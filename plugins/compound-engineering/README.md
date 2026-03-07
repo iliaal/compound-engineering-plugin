@@ -8,7 +8,7 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 |-----------|-------|
 | Agents | 26 |
 | Commands | 19 |
-| Skills | 31 |
+| Skills | 32 |
 | Hooks | 1 |
 | MCP Servers | 1 |
 
@@ -104,6 +104,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | [`agent-native-architecture`](skills/agent-native-architecture/SKILL.md) | Build AI agents using prompt-native architecture |
 | [`frontend-design`](skills/frontend-design/SKILL.md) | Create production-grade frontend interfaces |
 | [`react-frontend`](skills/react-frontend/SKILL.md) | React, TypeScript, Next.js patterns, Vitest/RTL testing |
+| [`tailwind-css`](skills/tailwind-css/SKILL.md) | Tailwind CSS v4 patterns, component variants, v3 migration |
 | [`simplifying-code`](skills/simplifying-code/SKILL.md) | Simplify, polish, and declutter code |
 
 ### Language & Framework

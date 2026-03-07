@@ -40,6 +40,7 @@ See [cli-tools.md](./references/cli-tools.md) for Click patterns, argparse, and 
 
 **asyncio patterns:**
 - `asyncio.gather(*tasks)` for concurrent I/O — use `return_exceptions=True` for partial failure tolerance
+- `asyncio.TaskGroup` (3.11+) for structured concurrency — automatic cancellation of sibling tasks on failure; prefer over `gather` when all tasks must succeed
 - `asyncio.Semaphore(n)` to limit concurrency (rate limiting external APIs)
 - `asyncio.wait_for(coro, timeout=N)` for timeouts
 - `asyncio.Queue` for producer-consumer
@@ -84,7 +85,10 @@ def call_api(url: str) -> dict: ...
 - Retry only transient errors: network, 429/502/503/504. Never retry 4xx (except 429), auth errors, validation errors
 - Every network call needs a timeout
 - `@fail_safe(default=[])` decorator for non-critical paths — return cached/default on failure
+- `functools.lru_cache(maxsize=N)` for pure-function memoization; `functools.cache` (unbounded) for small domains
 - Stack decorators: `@traced @with_timeout(30) @retry(...)` — separate infra from business logic
+
+**Connection pooling** is mandatory for production: reuse `httpx.AsyncClient()` across requests, configure SQLAlchemy `pool_size`/`max_overflow`, use `aiohttp.TCPConnector(limit=N)`.
 
 ## Observability
 

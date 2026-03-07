@@ -67,6 +67,9 @@ SKILL_TIERS[pinescript]=2
 SKILL_PATTERNS[frontend-design]='frontend.*(design|interface)|ui.*(design|build|create)|build.*(web.?component|web.?page|landing.?page|dashboard)'
 SKILL_TIERS[frontend-design]=2
 
+SKILL_PATTERNS[tailwind-css]='tailwind|@theme.*token|@utility.*css|tailwind.?variant|class.?variance|\bcva\b|\btv\(\b|utility.?class.*css|dark.?mode.*css'
+SKILL_TIERS[tailwind-css]=2
+
 SKILL_PATTERNS[agent-native-architecture]='autonomous.?agent|mcp.?tool|self.?modif|agent.?native|prompt.?native'
 SKILL_TIERS[agent-native-architecture]=2
 
@@ -108,4 +111,4 @@ SKILL_TIERS[resolve-pr-parallel]=3
 SKILL_PATTERNS[setup]='configure.*(review.?agent|compound)|setup.?compound'
 SKILL_TIERS[setup]=3
 
-# Total skills: 31
+# Total skills: 32

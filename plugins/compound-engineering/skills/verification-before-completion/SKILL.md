@@ -11,7 +11,7 @@ description: >-
 
 ## The Rule
 
-No completion claims without fresh verification evidence. If the verification command has not been run **immediately before the claim**, the claim cannot be made.
+No completion claims without fresh verification evidence. If the verification command has not been run **immediately before the claim**, the claim cannot be made. Violating the letter of this rule is violating the spirit — rephrasing a claim to technically avoid the wording does not exempt it from verification.
 
 "Should pass", "probably works", and "looks correct" are not verification. Only command output confirming the claim counts (typically exit code 0). If pre-existing failures cause non-zero exits unrelated to your changes, see "When Verification Fails" below.
 
@@ -36,6 +36,8 @@ Before any success claim, run through these five steps:
 - Moving to the next task in a plan
 - Reporting results to the user
 - Agent reports success on delegated work
+- ANY expression of satisfaction about work state ("looking good", "that should do it")
+- ANY positive statement about completion, including paraphrases and synonyms
 
 ## Agent Delegation
 
@@ -88,6 +90,16 @@ If the output does not confirm the claim:
 2. **Do not retry the same verification hoping for a different result.** If it failed, something is wrong.
 3. **Return to implementation.** Fix the issue, then re-run verification from Step 1 of the Gate Function.
 4. **If the failure is unrelated to your changes** (pre-existing flaky test, environment issue), state this explicitly with evidence — show that the failure also occurs on the base branch or is a known issue.
+
+## Rationalization Prevention
+
+| Rationalization | Reality |
+|----------------|---------|
+| "Should work now" | RUN the verification. "Should" is not evidence. |
+| "I'm confident this is correct" | Confidence is not evidence. Run it. |
+| "It's a trivial change" | Trivial changes still break builds. Run it. |
+| "I already verified something similar" | Similar is not identical. Run THIS verification. |
+| "The logic is obviously correct" | Obvious bugs ship to production daily. Run it. |
 
 ## Red Flags
 

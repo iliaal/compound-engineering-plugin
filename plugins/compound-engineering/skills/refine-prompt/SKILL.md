@@ -35,6 +35,16 @@ description: >-
 - **One output format** — specify exactly one format (JSON schema, markdown template, numbered list). Ambiguous format expectations cause inconsistent results.
 - **No meta-commentary** — output only the refined prompt as markdown. No preamble ("Here's an improved version..."), no explanation of changes unless explicitly requested.
 
+## Persistence
+
+After refining, save the result to `.ai/PROMPT.md` (create `.ai/` directory if needed). This builds a reusable prompt library over time. Append with a heading and date:
+
+```markdown
+## [Prompt Name] — YYYY-MM-DD
+
+[refined prompt content]
+```
+
 ## Anti-Patterns
 
 | Problem | Fix |

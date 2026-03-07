@@ -5,6 +5,45 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.44.0] - 2026-03-07
+
+### Changed
+
+- **code-review skill** — added SOLID smell patterns (God classes, leaky abstractions), next-steps action menu, behavior-vs-implementation test check
+- **brainstorming skill** — added non-goals topic, solution-first detection, 3-5 bullet summary gate before Phase 2, convergence loop cap
+- **git-worktree skill** — auto-detect and install dependencies after worktree creation, `git worktree prune` guidance
+- **python-services skill** — added `asyncio.TaskGroup` for structured concurrency, `lru_cache`/`cache` memoization, connection pooling mandate
+- **md-docs skill** — actionable heading style, collapsible `<details>` depth pattern, README anti-patterns section
+- **react-frontend skill** — Server Action auth/authz security warning, `<Activity>` component, `template.tsx`/`default.tsx` conventions, metadata templates, `after()` API, module-level I/O hoisting, `content-visibility: auto`, defer state reads
+- **nodejs-backend skill** — Piscina for worker threads, new Production Resilience section (Redis caching, load shedding, response schema serialization)
+- **php-laravel skill** — query scopes, `withCount`/`withExists`, `when()` conditional queries, `DB::transaction()`, `upsert()`, model pruning, Form Request `toDto()`, conditional validation rules
+- **postgresql skill** — safe schema evolution, `NULLS NOT DISTINCT`, `jsonb_path_ops`, materialized views, `fillfactor`, approximate counts, `pg_try_advisory_lock`
+- **meta-prompting skill** — steelmanning in `/adversarial`, new `/premortem` pattern, synthesis requirement for combos
+- **agent-native-architecture skill** — governance checklist (approval gates, audit trail, scope boundaries), VBR pattern, context durability/WAL pattern
+- **linux-bash-scripting skill** — `main()` + source guard, `PS4` debug tracing, named exit codes, `PIPESTATUS`, input validation, `umask 077`, signal traps
+- **terraform skill** — `moved` blocks, troubleshooting section (force-unlock, refresh-only, replace, import), `state_key` for parallel tests, Stacks awareness, `cidrsubnet()`, multi-region provider aliases
+- **resolve-pr-parallel skill** — severity classification, bot-comment filtering, batch commit strategy
+
+## [2.43.0] - 2026-03-07
+
+### Added
+
+- **tailwind-css skill** — new skill for Tailwind CSS v4: CSS-first configuration (`@theme`, `@utility`, `@custom-variant`), v3→v4 breaking changes, coding rules, class merging with `cn()`, component variants (`tailwind-variants`/CVA), common errors, dark mode patterns. Includes reference files for component patterns and layout patterns. Distilled from 8 skills.sh sources.
+
+### Changed
+
+- **code-review skill** — added scope resolution fallback chain, language-specific checks (TypeScript, Python, PHP, security), verification step, confidence levels, merge-readiness verdict
+- **verification-before-completion skill** — added "letter vs spirit" clause, broader trigger conditions, rationalization prevention table
+- **debugging skill** — added architectural problem indicators, expanded pattern comparison, 2 new anti-patterns
+- **receiving-code-review skill** — added "can't verify" escape hatch, 3 concrete good/bad examples
+- **writing-tests skill** — explicit verify steps for bug-fix-first testing, "test passes immediately" heuristic
+- **brainstorming skill** — hard gate blocking implementation until design approval, git commit for design docs
+- **simplifying-code skill** — stop conditions, 2 new constraints against scope creep
+- **git-worktree skill** — safety verification with `git check-ignore`, baseline test verification
+- **refine-prompt skill** — persistence section for saving prompts to `.ai/PROMPT.md`
+- **finishing-branch skill** — concise options, inline worktree cleanup
+- **md-docs skill** — CONTRIBUTING.md auto-detection, DOCS.md awareness
+
 ## [2.42.2] - 2026-02-28
 
 ### Fixed

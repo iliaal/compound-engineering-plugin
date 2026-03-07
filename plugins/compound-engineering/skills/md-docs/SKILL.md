@@ -47,6 +47,15 @@ Generate or refresh README.md from project metadata and structure. See [update-r
 
 Update existing CONTRIBUTING.md only — never auto-create. See [update-contributing.md](./references/update-contributing.md).
 
+When updating, detect project conventions automatically:
+- Package manager from lock files (package-lock.json → npm, yarn.lock → yarn, pnpm-lock.yaml → pnpm, bun.lockb → bun)
+- Branch conventions from git history (feature/, fix/, chore/ prefixes)
+- Test commands from package.json scripts or pyproject.toml
+
+### Update DOCS
+
+If `DOCS.md` exists, treat it as API-level documentation (endpoints, function signatures, type definitions). Verify against actual code the same way as AGENTS.md. Never auto-create DOCS.md — only update existing.
+
 ### Initialize Context
 
 Create AGENTS.md from scratch for projects without documentation. See [init-agents.md](./references/init-agents.md).
@@ -83,6 +92,16 @@ Never delete backups automatically.
 - Scannable: headings, lists, code blocks
 - Accurate: verify every command and path against codebase
 - Sentence case headings, no emoji headers
+- Actionable headings: "Set SAML before adding users" not "SAML configuration timing"
+- Collapse depth with `<details>` blocks instead of deleting it (blank line after `<summary>` required for GitHub rendering)
+
+## README Anti-Patterns
+
+Flag during `Update README` workflows:
+- Framework-first lead (explaining the tech stack before the problem it solves)
+- Jargon before definition (using project-specific terms without introduction)
+- Theory before try (architecture explanation before a working example)
+- Claims without evidence ("blazingly fast" with no benchmarks)
 
 ## Report Format
 

@@ -175,11 +175,13 @@ When designing an agent-native system, verify these **before implementation**:
 - [ ] **Shared Workspace:** Agent and user work in same data space
 - [ ] **context.md Pattern:** Agent reads/updates context file for accumulated knowledge
 - [ ] **File Organization:** Entity-scoped directories with consistent naming
+- [ ] **Context Durability:** Incremental progress writes (WAL pattern) so interrupted tasks resume from last checkpoint
 
 ### Agent Execution
 - [ ] **Completion Signals:** Agent has explicit `complete_task` tool (not heuristic detection)
 - [ ] **Partial Completion:** Multi-step tasks track progress for resume
 - [ ] **Context Limits:** Designed for bounded context from the start
+- [ ] **Validate-Before-Run:** Agent previews planned actions before executing destructive operations
 
 ### Context Injection
 - [ ] **Available Resources:** System prompt includes what exists (files, data, types)
@@ -190,6 +192,11 @@ When designing an agent-native system, verify these **before implementation**:
 - [ ] **Agent -> UI:** Agent changes reflect in UI (shared service, file watching, or event bus)
 - [ ] **No Silent Actions:** Agent writes trigger UI updates immediately
 - [ ] **Capability Discovery:** Users can learn what agent can do
+
+### Governance
+- [ ] **Approval Gates:** Destructive or irreversible actions require user confirmation
+- [ ] **Audit Trail:** Agent actions logged with timestamp, tool, and outcome
+- [ ] **Scope Boundaries:** Agent cannot access resources outside its designated workspace
 
 ### Mobile (if applicable)
 - [ ] **Checkpoint/Resume:** Handle iOS app suspension gracefully

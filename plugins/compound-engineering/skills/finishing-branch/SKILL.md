@@ -51,11 +51,9 @@ If incremental commits were already made during implementation (per `workflows:w
 
 ## Present Options
 
-Present exactly four options using AskUserQuestion:
+Present exactly four options using AskUserQuestion. Keep options concise — list the option names and when-to-use, don't add lengthy explanations. Let the user pick, then show the detailed steps.
 
 ### Option 1: Merge locally
-
-Merge the feature branch into the base branch on this machine.
 
 **Steps:**
 1. `git checkout $default_branch`
@@ -136,9 +134,14 @@ Delete the branch and all changes. Destructive — requires confirmation.
 
 ## Worktree Cleanup
 
-If working in a git worktree (not the main working tree), use the `git-worktree` skill for cleanup:
+If working in a git worktree (not the main working tree):
 
-- **After merge or discard:** clean up via `git-worktree` skill
+- **After merge or discard:** clean up immediately:
+  ```bash
+  git worktree list                          # find the worktree path
+  git worktree remove <worktree-path>        # remove it
+  git branch -d <branch-name>               # delete the branch if merged
+  ```
 - **After PR:** keep the worktree until PR is merged, then clean up
 - **Keep as-is:** worktree stays
 

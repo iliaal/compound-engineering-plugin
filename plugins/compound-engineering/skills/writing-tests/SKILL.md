@@ -80,9 +80,10 @@ For bug fixes, writing the failing test first is genuinely valuable — it prove
 ### Bug fixes: test first
 
 1. Write a test that reproduces the bug
-2. Watch it fail (confirms you've captured the bug)
+2. **Run it and confirm it fails for the right reason** — a test that fails due to a typo or import error hasn't captured the bug
 3. Fix the bug
-4. Watch the test pass (confirms the fix works)
+4. **Run it and confirm it passes AND other tests still pass** — a fix that breaks something else isn't a fix
+5. If the test passes immediately without a fix, you're testing existing behavior, not the bug
 
 This is non-negotiable for bugs — a fix without a regression test is a fix that will break again.
 

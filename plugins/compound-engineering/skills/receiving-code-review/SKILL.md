@@ -89,6 +89,8 @@ Never respond with:
 
 Instead: "Verified — this fixes [specific issue]. Implementing." or "Checked this — the current approach is correct because [reason]."
 
+**If verification isn't straightforward:** Say so: "Can't verify this without [X]. Should I [investigate/ask/proceed]?" — don't guess or implement blind.
+
 ## Implementation Order
 
 After triaging all feedback:
@@ -123,6 +125,28 @@ This skill and the `pr-comment-resolver` agent handle different situations:
 | **Use for** | Unclear suggestions, architectural feedback, debatable changes | Clear-cut fixes, style nits, typos, straightforward requests |
 
 When the `pr-comment-resolver` agent encounters feedback that requires judgment (architectural decisions, debatable trade-offs), it should escalate rather than implement.
+
+## Examples
+
+**Bad — performative agreement:**
+> Reviewer: "This should use a Map instead of an object for better performance."
+> Response: "Great catch! Switching to Map now."
+
+**Good — verify first:**
+> Reviewer: "This should use a Map instead of an object for better performance."
+> Response: "Checked this — the object has at most 5 keys (bounded by the enum). Map overhead isn't justified here. Keeping as-is."
+
+**Bad — blind implementation:**
+> Reviewer: "Add null checks for the user parameter."
+> Response: "Done, added null checks."
+
+**Good — verify the premise:**
+> Reviewer: "Add null checks for the user parameter."
+> Response: "Traced the call chain — `user` comes from the auth middleware which guarantees non-null (throws 401 otherwise). Adding a null check here would be dead code. Should I add it anyway for defense-in-depth?"
+
+**Good — unclear item:**
+> Reviewer: "This logic seems off."
+> Response: "Can you clarify which part? The filter predicate, the sort order, or the pagination logic?"
 
 ## Integration
 

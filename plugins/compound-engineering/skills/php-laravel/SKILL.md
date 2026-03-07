@@ -38,7 +38,8 @@ Use these when applicable — do not explain them in comments (Claude and develo
 - **Fat models, thin controllers** — controllers only: validate, call service/action, return response
 - **Service classes** for business logic with readonly DI: `__construct(private readonly PaymentService $payments)`
 - **Action classes** (single-purpose invokable) for operations that cross service boundaries
-- **Form Requests** for all validation — never validate inline in controllers
+- **Form Requests** for all validation — never validate inline in controllers. Add `toDto()` method to convert validated data to typed service parameters.
+- Conditional validation: `Rule::requiredIf()`, `sometimes`, `exclude_if` for complex form logic
 - **Events + Listeners** for side effects (notifications, logging, cache invalidation). Do not put side effects in services.
 - Feature folder organization over type-based when project exceeds ~20 models
 
@@ -50,6 +51,12 @@ Use these when applicable — do not explain them in comments (Claude and develo
 - `increment()`/`decrement()` for counters in a single query
 - Composite indexes for common query combinations
 - Chunking for large datasets (`chunk(1000)`), lazy collections for memory-constrained processing
+- Query scopes (`scopeActive`, `scopeRecent`) for reusable constraints
+- `withCount('comments')` / `withExists('approvals')` for aggregate subqueries — never load relations just to count
+- `->when($filter, fn($q) => $q->where(...))` for conditional query building
+- `DB::transaction(fn() => ...)` — automatic rollback on exception
+- `Model::upsert($rows, ['unique_key'], ['update_cols'])` for bulk insert-or-update
+- `Prunable` / `MassPrunable` trait with `prunable()` query for automatic stale record cleanup
 - `$guarded = []` is a mass assignment vulnerability — always use explicit `$fillable`
 
 ## API Resources

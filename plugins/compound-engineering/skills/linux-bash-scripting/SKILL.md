@@ -26,6 +26,7 @@ trap 'rm -rf -- "${_tmpdir:-}"' EXIT
 - `-E` propagates ERR traps into functions
 - `inherit_errexit` propagates errexit into `$()`  command substitutions
 - Always create temp dirs under the EXIT trap: `_tmpdir=$(mktemp -d)`
+- Wrap body in `main() { ... }` with source guard: `[[ "${BASH_SOURCE[0]}" == "$0" ]] && main "$@"` — enables sourcing for testing
 
 ## Core Rules
 
@@ -37,6 +38,9 @@ trap 'rm -rf -- "${_tmpdir:-}"' EXIT
 - Require env vars: `: "${VAR:?must be set}"`
 - Never `eval` user input; build commands as arrays: `cmd=("grep" "--" "$pat" "$f"); "${cmd[@]}"`
 - Separate `local` from assignment to preserve exit codes: `local val; val=$(cmd)`
+- Debug tracing: `PS4='+${BASH_SOURCE[0]}:${LINENO}: '` with `bash -x` — shows file:line per command
+- Named exit codes: `readonly EX_USAGE=64 EX_CONFIG=78` — no magic numbers in `exit`
+- Pipeline diagnostics: `"${PIPESTATUS[@]}"` shows exit code of each pipe stage, not just last failure
 
 ## Safe Iteration
 
@@ -107,6 +111,11 @@ flock -n 9 || { printf 'Already running\n' >&2; exit 1; }
 ensure_dir()  { [[ -d "$1" ]] || mkdir -p -- "$1"; }
 ensure_link() { [[ -L "$2" ]] || ln -s -- "$1" "$2"; }
 ```
+
+**Input validation:** `[[ "$1" =~ ^[1-9][0-9]*$ ]] || die "Invalid: $1"` — validate at script boundaries with `[[ =~ ]]`
+
+- `umask 077` for scripts creating sensitive files
+- Signal cleanup: `trap 'cleanup; exit 130' INT TERM` — preserves correct exit codes for callers
 
 ## Logging
 

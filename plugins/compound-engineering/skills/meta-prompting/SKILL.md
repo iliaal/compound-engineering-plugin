@@ -16,7 +16,7 @@ Enhanced reasoning via `/commands` or natural language. Commands combine left-to
 
 **`/think`** | `/show` — Show reasoning step-by-step: decision points, alternatives considered, why each accepted/rejected. With `/think doubt`: after each step, flag what could be wrong and why before proceeding.
 
-**`/adversarial`** | `/argue` — After answering, argue against it. 3 strongest counterarguments ranked by severity. Identify blind spots and unstated assumptions.
+**`/adversarial`** | `/argue` — After answering, steelman the opposing case. 3 strongest counterarguments ranked by severity. Identify blind spots and unstated assumptions.
 
 **`/constrain`** | `/strict` — Tight constraints: 3 sentences max, cite sources, no hedging. Override inline: `/constrain 5 sentences`.
 
@@ -44,11 +44,13 @@ Custom keys: `/json {keys: summary, risks, recommendation}`
 **`/assumptions`** | `/presume` — Before answering, list every implicit assumption in the question/task. Then answer with assumptions explicit. The assumption list is often more valuable than the answer.
 *Auto-triggers on: architecture reviews, ambiguous requirements.*
 
+**`/premortem`** | `/postmortem` — Assume the decision/project has already failed. Work backwards: what caused the failure? List 3-5 failure modes by likelihood. Focus on systemic risks, not edge cases.
+
 **`/tensions`** | `/perspectives` — Answer from two named opposing perspectives (e.g., security engineer vs. shipping PM). Focus output on where they *disagree* — that's where the real insight lives. Override roles: `/tensions [devops, security]`.
 
 ## Combos
 
-**`/analyze`** = `/think` + `/edge` + `/verify` — Code reviews, architecture, security-sensitive work.
+**`/analyze`** = `/think` + `/edge` + `/verify` — Code reviews, architecture, security-sensitive work. Synthesize findings into a unified recommendation — don't just concatenate pattern outputs.
 *Auto-triggers on: code review requests.*
 
 **`/trade`** = `/confidence` + `/adversarial` + `/edge` — Trade ideas, position analysis, market thesis.

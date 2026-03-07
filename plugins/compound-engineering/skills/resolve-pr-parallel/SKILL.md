@@ -29,6 +29,8 @@ bash ${CLAUDE_PLUGIN_ROOT}/skills/resolve-pr-parallel/scripts/get-pr-comments PR
 
 This returns only **unresolved, non-outdated** threads with file paths, line numbers, and comment bodies.
 
+Filter out bot comments (CI, linters, coverage) — only process human review threads.
+
 If the script fails, fall back to:
 ```bash
 gh pr view PR_NUMBER --json reviews,comments
@@ -37,11 +39,11 @@ gh api repos/{owner}/{repo}/pulls/PR_NUMBER/comments
 
 ### 2. Plan
 
-Create a TodoWrite list of all unresolved items grouped by type:
-- Code changes requested
-- Questions to answer
-- Style/convention fixes
-- Test additions needed
+Create a TodoWrite list of all unresolved items grouped by severity:
+- **Critical**: Logic bugs, security issues, broken functionality — resolve first
+- **Important**: Code quality, missing tests, architecture concerns
+- **Minor**: Style, naming, convention fixes
+- **Questions**: Clarifications to answer (not code changes)
 
 ### 3. Implement (PARALLEL)
 
@@ -57,7 +59,8 @@ Always run all in parallel subagents/Tasks for each Todo item.
 
 ### 4. Commit & Resolve
 
-- Commit changes with a clear message referencing the PR feedback
+- Group related changes into logical commits (one per reviewer concern, not per file)
+- Commit message: `address review: <summary>` — reference specific feedback
 - Resolve each thread programmatically:
 
 ```bash

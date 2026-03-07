@@ -80,7 +80,13 @@ Codes: 400 bad input | 401 no auth | 403 no permission | 404 missing | 409 confl
 | `Promise.allSettled` | Parallel, some may fail |
 | `Promise.race` | Timeout or first-wins |
 
-Never `readFileSync` / sync methods in production. Offload CPU work to worker threads. Stream large payloads.
+Never `readFileSync` / sync methods in production. Offload CPU work to worker threads (Piscina). Stream large payloads.
+
+## Production Resilience
+
+- **Caching**: Redis cache-aside for DB/API responses; in-memory LRU with TTL for hot paths. Always invalidate on writes.
+- **Load shedding**: `@fastify/under-pressure` (or equivalent) — monitor event loop delay, heap, RSS; return 503 when thresholds exceeded.
+- **Response schemas**: In Fastify, always define response schemas — enables `fast-json-stringify` for 2-3x faster serialization.
 
 ## Discipline
 

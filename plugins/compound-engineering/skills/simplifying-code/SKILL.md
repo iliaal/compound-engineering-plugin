@@ -49,9 +49,19 @@ When simplifying AI-generated code, specifically target:
 - **Over-abstraction** (factory for 2 objects, wrapper around a single call, util file with 1 function) — inline the code
 - **Inconsistent style** that drifts from the file's existing conventions — match the file
 
+## Stop Conditions
+
+Stop and ask before proceeding when:
+- Simplification requires changing a public API (function signatures, return types, exports)
+- Behavior parity cannot be verified (no tests exist and behavior is non-obvious)
+- Code is intentionally complex for domain reasons (performance-critical, protocol compliance)
+- Scope implies a redesign rather than a simplification
+
 ## Constraints
 
 - Only simplify what was requested — do not add features, expand scope, or introduce new dependencies
 - Leave unchanged code untouched — do not add comments, docstrings, or type annotations to lines that were not simplified
+- Do not bundle unrelated cleanups into one patch — each simplification should be a coherent, reviewable unit
+- Do not introduce framework-wide patterns while simplifying a small local change
 - If a simplification would make the code harder to understand, skip it
 - When unsure whether a block is dead code, ask instead of deleting

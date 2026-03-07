@@ -27,6 +27,20 @@ The script handles critical setup that raw git commands don't:
 1. Copies `.env`, `.env.local`, `.env.test`, etc. from main repo
 2. Ensures `.worktrees` is in `.gitignore`
 3. Creates consistent directory structure
+4. After creation, install dependencies if detected: `package.json` → `npm install`, `composer.json` → `composer install`, `pyproject.toml` → `pip install -e .`, `go.mod` → `go mod download`
+
+## Safety Verification
+
+Before creating a worktree, verify the worktree directory is gitignored:
+
+```bash
+# Verify .worktrees is ignored (should output ".worktrees")
+git check-ignore .worktrees || echo "WARNING: .worktrees not in .gitignore"
+```
+
+If not ignored, add it to `.gitignore` before proceeding. The manager script handles this, but verify when troubleshooting.
+
+After creating a worktree, run the project's test suite to establish a clean baseline. Pre-existing failures in the worktree should be caught before starting new work — not discovered mid-implementation.
 
 ```bash
 # CORRECT - Always use the script
@@ -45,6 +59,8 @@ git worktree add .worktrees/feature-name -b feature-name main
 | `switch <name>` / `go` | Switch to existing worktree | `...worktree-manager.sh switch feature-login` |
 | `copy-env <name>` | Copy .env files to existing worktree | `...worktree-manager.sh copy-env feature-login` |
 | `cleanup` / `clean` | Interactively remove inactive worktrees | `...worktree-manager.sh cleanup` |
+
+After cleanup, run `git worktree prune` to remove any orphaned worktree metadata from manually deleted directories.
 
 All commands use: `bash ${CLAUDE_PLUGIN_ROOT}/skills/git-worktree/scripts/worktree-manager.sh <command>`
 

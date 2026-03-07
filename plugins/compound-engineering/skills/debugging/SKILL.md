@@ -51,6 +51,11 @@ Collects system info, language versions, git state, project files, and environme
 
 After 3 failed fix attempts, STOP. The problem is likely architectural, not a surface bug. Escalate to the user before attempting further fixes. Step back and question assumptions about how the system works. Read the actual code path end-to-end instead of spot-checking.
 
+**Architectural problem indicators** — signals the bug is structural, not a surface fix:
+- Each fix reveals new shared state or coupling you didn't expect
+- Fixes require massive refactoring to implement correctly
+- Each fix creates new symptoms elsewhere in the system
+
 **No root cause found:** If investigation is exhausted without a clear root cause, say so explicitly. Document what was checked, what was ruled out, and what instrumentation to add for next occurrence. An honest "unknown" with good diagnostics beats a fabricated cause.
 
 ## Escalation: Competing Hypotheses
@@ -95,7 +100,7 @@ When multiple bugs exist, prioritize by:
 
 ## Pattern Comparison
 
-When the cause isn't obvious, find working similar code in the codebase and compare it structurally with the broken path. Enumerate every difference -- the bug is in one of them.
+When the cause isn't obvious, find working similar code in the codebase and compare it structurally with the broken path. Read the working reference implementation completely — don't skim. List every difference between working and broken, however small. Don't assume any difference can't matter. The bug is in one of them.
 
 ## Anti-Patterns and Red Flags
 
@@ -111,6 +116,8 @@ When you catch yourself doing or thinking these things, **stop and return to Pha
 | "Skip the test, I can see it works" | You can't. Run the verification. See `verification-before-completion`. |
 | "It's probably X" | "Probably" means you haven't verified. Trace the actual execution path. |
 | "One more fix attempt" (after 2+ failures) | You've hit the three-fix threshold. Step back and question assumptions. |
+| "I see the problem, let me fix it" | Seeing symptoms is not understanding root cause. Trace the actual execution path first. |
+| "Reference too long, I'll adapt the pattern" | Partial understanding guarantees bugs. Read it completely. |
 | "I'll clean up the debugging later" | Remove diagnostic code now or it ships to production. |
 
 ## Signals You're Off Track

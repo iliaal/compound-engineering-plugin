@@ -71,6 +71,7 @@ Form state           → React Hook Form
 - `next/dynamic` or `React.lazy()` for heavy components
 - Defer third-party scripts (analytics, logging) until after hydration
 - Preload on hover/focus for perceived speed
+- `content-visibility: auto` + `contain-intrinsic-size` on long lists -- skips off-screen layout/paint
 
 **Re-render optimization:**
 - Derive state during render, not in effects
@@ -79,6 +80,7 @@ Form state           → React Hook Form
 - Lazy state init: `useState(() => expensiveComputation())`
 - `useTransition` for non-urgent updates (search filtering)
 - `useDeferredValue` for expensive derived UI
+- Don't subscribe to searchParams/state if only read in callbacks -- read on demand instead
 - Use ternary (`condition ? <A /> : <B />`), not `&&` for conditionals
 - `React.memo` only for expensive subtrees with stable props
 - Hoist static JSX outside components
@@ -93,11 +95,12 @@ Form state           → React Hook Form
 - **useOptimistic** — `const [optimistic, addOptimistic] = useOptimistic(state, mergeFn)` for instant UI feedback
 - **useFormStatus** — `const { pending } = useFormStatus()` in child of `<form action={...}>`
 - **Server Components** — default in App Router. Async, access DB/secrets directly. No hooks, no event handlers
-- **Server Actions** — `'use server'` directive. Validate inputs (Zod), `revalidateTag`/`revalidatePath` after mutations
+- **Server Actions** — `'use server'` directive. Validate inputs (Zod), `revalidateTag`/`revalidatePath` after mutations. **Server Actions are public endpoints** — always verify auth/authz inside each action, not just in middleware or layout guards
+- **`<Activity mode='visible'|'hidden'>`** — preserves state/DOM for toggled components (experimental)
 
 ## Next.js App Router
 
-**File conventions:** `page.tsx` (route UI), `layout.tsx` (shared wrapper), `loading.tsx` (Suspense), `error.tsx` (error boundary), `not-found.tsx` (404), `route.ts` (API endpoint)
+**File conventions:** `page.tsx` (route UI), `layout.tsx` (shared wrapper), `template.tsx` (re-mounted on navigation, unlike layout), `loading.tsx` (Suspense), `error.tsx` (error boundary), `not-found.tsx` (404), `default.tsx` (parallel route fallback), `route.ts` (API endpoint)
 
 **Rendering modes:** Server Components (default) | Client (`'use client'`) | Static (build) | Dynamic (request) | Streaming (progressive)
 
@@ -114,7 +117,7 @@ Form state           → React Hook Form
 - `fetch(url, { cache: 'no-store' })` — dynamic
 - Tag-based: `fetch(url, { next: { tags: ['products'] } })` then `revalidateTag('products')`
 
-**Data fetching:** Fetch in Server Components where data is used. Use Suspense boundaries for slow queries. `React.cache()` for per-request dedup. `generateStaticParams` for static generation. `generateMetadata` for dynamic SEO.
+**Data fetching:** Fetch in Server Components where data is used. Use Suspense boundaries for slow queries. `React.cache()` for per-request dedup. `generateStaticParams` for static generation. `generateMetadata` for dynamic SEO. Static metadata with `title: { default: 'App', template: '%s | App' }` for cascading page titles. `after()` for non-blocking side effects (logging, analytics) -- runs after response is sent. Hoist static I/O (fonts, config) to module level -- runs once, not per request.
 
 ## Testing (Vitest + React Testing Library)
 
