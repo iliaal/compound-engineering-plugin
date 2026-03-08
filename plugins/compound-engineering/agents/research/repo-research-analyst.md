@@ -1,5 +1,6 @@
 ---
 name: repo-research-analyst
+autoApprove: read
 description: "Conducts thorough research on repository structure, documentation, conventions, and implementation patterns. Use when onboarding to a new codebase or understanding project conventions."
 ---
 

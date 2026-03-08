@@ -123,7 +123,7 @@ Task({
 - `deployment-verification-agent` - Pre-deploy checklists
 - `kieran-python-reviewer` - Python best practices
 - `kieran-typescript-reviewer` - TypeScript best practices
-- `pattern-recognition-specialist` - Design patterns and anti-patterns
+- `architecture-strategist` - Architecture, design patterns, and anti-patterns
 - `performance-oracle` - Performance analysis
 - `security-sentinel` - Security vulnerabilities
 
@@ -136,9 +136,9 @@ Task({
   prompt: "Research current best practices for JWT authentication 2024-2026"
 })
 
-// Framework documentation
+// Framework documentation (use best-practices-researcher — covers docs + best practices)
 Task({
-  subagent_type: "compound-engineering:research:framework-docs-researcher",
+  subagent_type: "compound-engineering:research:best-practices-researcher",
   description: "Research Active Storage",
   prompt: "Gather comprehensive documentation about Active Storage file uploads"
 })
@@ -152,8 +152,7 @@ Task({
 ```
 
 **All research agents:**
-- `best-practices-researcher` - External best practices
-- `framework-docs-researcher` - Framework documentation
+- `best-practices-researcher` - Best practices, framework docs, and implementation patterns
 - `git-history-analyzer` - Code archaeology
 - `learnings-researcher` - Search docs/solutions/
 - `repo-research-analyst` - Repository patterns

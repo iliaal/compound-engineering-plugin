@@ -1,5 +1,6 @@
 ---
 name: kieran-typescript-reviewer
+autoApprove: read
 description: "Reviews TypeScript code with an extremely high quality bar for type safety, modern patterns, and maintainability. Use after implementing features, modifying code, or creating new TypeScript components."
 ---
 
@@ -15,20 +16,14 @@ Since new component code was written, use the kieran-typescript-reviewer agent t
 <example>
 Context: The user has refactored an existing service module.
 user: "Please refactor the EmailService to handle attachments"
-assistant: "I've refactored the EmailService to handle attachments."
-<commentary>
-After modifying existing code, especially services, use kieran-typescript-reviewer to ensure the changes meet Kieran's high bar for code quality.
-</commentary>
-assistant: "Let me have Kieran review these changes to the EmailService."
+assistant: "I've refactored the EmailService. Let me have Kieran review these changes."
+<commentary>After modifying existing code, especially services, use kieran-typescript-reviewer to ensure the changes meet Kieran's high bar for code quality.</commentary>
 </example>
 <example>
 Context: The user has created new utility functions.
 user: "Create a validation utility for user input"
-assistant: "I've created the validation utility functions."
-<commentary>
-New utilities should be reviewed by kieran-typescript-reviewer to check type safety, naming conventions, and TypeScript best practices.
-</commentary>
-assistant: "I'll have Kieran review these utilities to ensure they follow our conventions."
+assistant: "I've created the validation utility functions. I'll have Kieran review them to ensure they follow our conventions."
+<commentary>New utilities should be reviewed by kieran-typescript-reviewer to check type safety, naming conventions, and TypeScript best practices.</commentary>
 </example>
 </examples>
 

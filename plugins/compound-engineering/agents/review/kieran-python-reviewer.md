@@ -1,5 +1,6 @@
 ---
 name: kieran-python-reviewer
+autoApprove: read
 description: "Reviews Python code with an extremely high quality bar for Pythonic patterns, type safety, and maintainability. Use after implementing features, modifying code, or creating new Python modules."
 ---
 
@@ -15,20 +16,14 @@ Since new endpoint code was written, use the kieran-python-reviewer agent to app
 <example>
 Context: The user has refactored an existing service class.
 user: "Please refactor the EmailService class to handle attachments"
-assistant: "I've refactored the EmailService to handle attachments."
-<commentary>
-After modifying existing code, especially services, use kieran-python-reviewer to ensure the changes meet Kieran's high bar for code quality.
-</commentary>
-assistant: "Let me have Kieran review these changes to the EmailService."
+assistant: "I've refactored the EmailService. Let me have Kieran review these changes."
+<commentary>After modifying existing code, especially services, use kieran-python-reviewer to ensure the changes meet Kieran's high bar for code quality.</commentary>
 </example>
 <example>
 Context: The user has created new utility functions.
 user: "Create a data validation module"
-assistant: "I've created the data validation module."
-<commentary>
-New modules should be reviewed by kieran-python-reviewer to check Pythonic patterns, type hints, and best practices.
-</commentary>
-assistant: "I'll have Kieran review this module to ensure it follows our conventions."
+assistant: "I've created the data validation module. I'll have Kieran review it to ensure it follows our conventions."
+<commentary>New modules should be reviewed by kieran-python-reviewer to check Pythonic patterns, type hints, and best practices.</commentary>
 </example>
 </examples>
 

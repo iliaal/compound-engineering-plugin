@@ -114,7 +114,6 @@ Examples:
 Run these agents in parallel:
 
 - Task best-practices-researcher(feature_description)
-- Task framework-docs-researcher(feature_description)
 
 ### 1.6. Consolidate Research
 

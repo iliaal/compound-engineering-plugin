@@ -213,7 +213,7 @@ Based on problem type, these agents can enhance documentation:
 
 ### Code Quality & Review
 - **code-simplicity-reviewer**: Ensures solution code is minimal and clear
-- **pattern-recognition-specialist**: Identifies anti-patterns or repeating issues
+- **architecture-strategist**: Identifies anti-patterns, design pattern issues, or structural problems
 
 ### Specific Domain Experts
 - **performance-oracle**: Analyzes performance_issue category solutions
@@ -223,7 +223,7 @@ Based on problem type, these agents can enhance documentation:
 
 ### Enhancement & Documentation
 - **best-practices-researcher**: Enriches solution with industry best practices
-- **framework-docs-researcher**: Links to Rails/gem documentation references
+- **best-practices-researcher**: Also links to framework/library documentation references
 
 ### When to Invoke
 - **Auto-triggered** (optional): Agents can run post-documentation for enhancement

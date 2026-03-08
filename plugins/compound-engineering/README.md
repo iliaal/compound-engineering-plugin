@@ -6,8 +6,8 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 | Component | Count |
 |-----------|-------|
-| Agents | 26 |
-| Commands | 19 |
+| Agents | 24 |
+| Commands | 20 |
 | Skills | 32 |
 | Hooks | 1 |
 | MCP Servers | 1 |
@@ -16,29 +16,27 @@ AI-powered development tools that get smarter with every use. Make each unit of 
 
 Agents are organized into categories for easier discovery.
 
-### Review (12)
+### Review (11)
 
 | Agent | Description |
 |-------|-------------|
 | [`accessibility-tester`](agents/review/accessibility-tester.md) | WCAG 2.1 accessibility audit: keyboard, screen reader, contrast, ARIA, forms |
 | [`agent-native-reviewer`](agents/review/agent-native-reviewer.md) | Verify features are agent-native (action + context parity) |
-| [`architecture-strategist`](agents/review/architecture-strategist.md) | Analyze architectural decisions and compliance |
+| [`architecture-strategist`](agents/review/architecture-strategist.md) | Architecture, design patterns, naming conventions, and structural integrity |
 | [`code-simplicity-reviewer`](agents/review/code-simplicity-reviewer.md) | Final pass for simplicity and minimalism |
 | [`data-integrity-guardian`](agents/review/data-integrity-guardian.md) | Database migrations and data integrity |
 | [`data-migration-expert`](agents/review/data-migration-expert.md) | Validate ID mappings match production, check for swapped values |
 | [`deployment-verification-agent`](agents/review/deployment-verification-agent.md) | Create Go/No-Go deployment checklists for risky data changes |
 | [`kieran-python-reviewer`](agents/review/kieran-python-reviewer.md) | Python code review with strict conventions |
 | [`kieran-typescript-reviewer`](agents/review/kieran-typescript-reviewer.md) | TypeScript code review with strict conventions |
-| [`pattern-recognition-specialist`](agents/review/pattern-recognition-specialist.md) | Analyze code for patterns and anti-patterns |
 | [`performance-oracle`](agents/review/performance-oracle.md) | Performance analysis and optimization |
 | [`security-sentinel`](agents/review/security-sentinel.md) | Security audits and vulnerability assessments |
 
-### Research (5)
+### Research (4)
 
 | Agent | Description |
 |-------|-------------|
-| [`best-practices-researcher`](agents/research/best-practices-researcher.md) | Gather external best practices and examples |
-| [`framework-docs-researcher`](agents/research/framework-docs-researcher.md) | Research framework documentation and best practices |
+| [`best-practices-researcher`](agents/research/best-practices-researcher.md) | Best practices, framework docs, and implementation patterns |
 | [`git-history-analyzer`](agents/research/git-history-analyzer.md) | Analyze git history and code evolution |
 | [`learnings-researcher`](agents/research/learnings-researcher.md) | Search institutional learnings for relevant past solutions |
 | [`repo-research-analyst`](agents/research/repo-research-analyst.md) | Research repository structure and conventions |
@@ -94,6 +92,7 @@ Core workflow commands use `workflows:` prefix to avoid collisions with built-in
 | `/triage` | Triage and prioritize issues |
 | `/test-browser` | Run browser tests on PR-affected pages |
 | `/feature-video` | Record video walkthroughs and add to PR description |
+| `/verify` | Pre-PR verification pipeline (build, types, lint, tests, security) |
 
 ## Skills
 

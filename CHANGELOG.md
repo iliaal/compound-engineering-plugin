@@ -5,6 +5,42 @@ All notable changes to the compound-engineering plugin will be documented in thi
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.45.0] - 2026-03-07
+
+### Added
+
+- **`/verify` command** — pre-PR verification pipeline with 4 modes (quick, full, pre-commit, pre-pr). Runs build, types, lint, tests, security scan, and diff review. Produces structured READY/NOT READY report.
+- **`scripts/validate-cross-refs.sh`** — CI validation script that checks agents, commands, skills, and README for broken cross-references to nonexistent components. Strips code blocks to avoid false positives.
+
+### Changed
+
+- **writing skill** — added explicit banned phrases list ("In today's rapidly evolving landscape", "game-changer", "Moreover" as sentence starter, etc.) with "delete and rewrite on sight" instruction
+- **best-practices-researcher agent** — merged `framework-docs-researcher` into this agent. Now covers best practices, framework docs, source code analysis, and deprecation checks in one agent.
+- **architecture-strategist agent** — merged `pattern-recognition-specialist` into this agent. Now covers architecture, design patterns, naming conventions, and structural integrity.
+- **design-iterator agent** — removed verbatim `frontend-design` skill aesthetics block; now references the skill instead of duplicating it
+- **figma-design-sync agent** — removed 80+ lines of Tailwind CSS patterns and Rails ERB examples; now references the `tailwind-css` skill
+- **design-implementation-reviewer agent** — removed persona filler, added `tailwind-css` skill reference
+- **performance-oracle agent** — removed hardcoded benchmarks (200ms API, 5KB bundle), removed persona filler, added `postgresql` and `react-frontend` skill references
+- **pr-comment-resolver agent** — added references to `receiving-code-review` and `verification-before-completion` skills, removed generic professional conduct filler
+- **bug-reproduction-validator agent** — stripped persona filler ("meticulous Bug Reproduction Specialist"), now opens with mission statement
+- **spec-flow-analyzer agent** — stripped persona filler ("elite User Experience Flow Analyst"), kept scope/mission
+- **security-sentinel agent** — stripped persona opener and motivational closer, replaced with direct instructions
+- **data-integrity-guardian agent** — stripped persona filler, kept mission statement
+
+### Fixed
+
+- **kieran-python-reviewer agent** — fixed malformed example block (two assistant responses in one example)
+- **kieran-typescript-reviewer agent** — fixed malformed example block (same issue)
+- **bug-reproduction-validator agent** — fixed duplicate section numbering (two sections numbered "6.")
+- **git-history-analyzer agent** — rewritten with concrete step-by-step methodology, explicit Bash tool usage, structured output template, and scope boundaries
+- **All 21 read-only agents** — added `autoApprove: read` for frictionless file access during reviews and research
+- **4 agents** (`deployment-engineer`, `devops-engineer`, `cloud-architect`, `accessibility-tester`) — added missing `<examples>` blocks for better routing
+
+### Removed
+
+- **framework-docs-researcher agent** — merged into `best-practices-researcher`
+- **pattern-recognition-specialist agent** — merged into `architecture-strategist`
+
 ## [2.44.0] - 2026-03-07
 
 ### Changed

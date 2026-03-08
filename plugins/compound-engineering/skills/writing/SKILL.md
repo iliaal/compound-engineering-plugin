@@ -39,10 +39,15 @@ description: >-
 - Bolded-header bullet lists (**Thing:** explanation of thing)
 - Title Case In Every Heading Word — use sentence case instead
 
-**Filler** (compress or delete):
+**Banned phrases — delete and rewrite any of these on sight:**
+- "In today's rapidly evolving landscape"
+- "game-changer", "revolutionary", "transformative"
+- "Moreover", "Furthermore", "Additionally" (as sentence starters)
+- "It's worth noting that", "It is important to note that"
+- "At the end of the day"
+- "Navigate the complexities of"
 - "In order to" → "To"
 - "Due to the fact that" → "Because"
-- "It is important to note that" → delete
 - Generic conclusions: "The future looks bright" → state the actual plan
 - Excessive hedging: "It could potentially possibly be argued" → "The policy may affect outcomes"
 

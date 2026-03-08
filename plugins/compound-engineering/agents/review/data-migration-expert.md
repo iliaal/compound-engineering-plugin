@@ -1,5 +1,6 @@
 ---
 name: data-migration-expert
+autoApprove: read
 description: "Validates data migrations, backfills, and production data transformations against reality. Use when PRs involve ID mappings, column renames, enum conversions, or schema changes."
 ---
 

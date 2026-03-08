@@ -1,5 +1,6 @@
 ---
 name: agent-native-reviewer
+autoApprove: read
 description: "Reviews code to ensure agent-native parity — any action a user can take, an agent can also take. Use after adding UI features, agent tools, or system prompts."
 ---
 
